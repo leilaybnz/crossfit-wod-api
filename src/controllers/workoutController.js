@@ -10,7 +10,7 @@ export const getAllWorkouts = (req, res) => {
     res.send({status: 'OK', data: allWorkouts});
 };
 
-const getOneWorkout = (req, res) => {
+export const getOneWorkout = (req, res) => {
     const {
         params: {workoutId}
     } = req;
@@ -23,7 +23,7 @@ const getOneWorkout = (req, res) => {
     res.send({status: "OK", data: workout});
 };
 
-const createNewWorkout = (req, res) => {
+export const createNewWorkout = (req, res) => {
     const {body} = req;
 
     if (!body.name || 
@@ -43,11 +43,11 @@ const createNewWorkout = (req, res) => {
         trainerTips: body.trainerTips
     };
 
-    const createdWorkout = createNewWorkoutService.createNewWorkout(newWorkout);
+    const createdWorkout = createNewWorkoutService(newWorkout);
     res.status(201).send({status: 'OK', data: createdWorkout});
 };
 
-const updateOneWorkout = (req, res) => {
+export const updateOneWorkout = (req, res) => {
     const {
         body,
         params: {workoutId}
@@ -61,7 +61,7 @@ const updateOneWorkout = (req, res) => {
     res.send({status: "OK", data: updatedWorkout});
 };
 
-const deleteOneWorkout = (req, res) => {
+export const deleteOneWorkout = (req, res) => {
     const {
         params: {workoutId}
     } = req;
@@ -73,11 +73,3 @@ const deleteOneWorkout = (req, res) => {
     const deletedWorkout = deleteOneWorkoutService(workoutId);
     res.send({status: "OK", data: deletedWorkout});
 };
-
-module.exports = {
-    getAllWorkouts,                   
-    getOneWorkout,
-    createNewWorkout,
-    updateOneWorkout,
-    deleteOneWorkout 
-}

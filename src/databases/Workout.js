@@ -1,11 +1,11 @@
 import db from './db.json' assert {type: 'json'};
 import { saveToDatabase } from './utils.js';
 
-const getAllWorkouts = () => {
+export const getAllWorkouts = () => {
     return db.workouts;
 }
 
-const getOneWorkout = (workoutId) => {
+export const getOneWorkout = (workoutId) => {
     const workout = DB.workouts.find((workout) => workout.id === workoutId);
 
     if (!workout) {
@@ -15,7 +15,7 @@ const getOneWorkout = (workoutId) => {
     return workout;
 }
 
-const createNewWorkout = (newWorkout) => {
+export const createNewWorkout = (newWorkout) => {
     const isAlreadyAdded = DB.workouts.findIndex((workout) => workout.name === newWorkout.name) > -1; //> /1 && if I try to add the same workout it will return a 201 without the newly inserted workout
     
     if (isAlreadyAdded) {
@@ -27,7 +27,7 @@ const createNewWorkout = (newWorkout) => {
     return newWorkout;
 }
 
-const updateOneWorkout = (workoutId, changes) => {
+export const updateOneWorkout = (workoutId, changes) => {
     const indexForUpdate = DB.workouts.findIndex((workout) => workout.id === workoutId);
 
     if (indexForUpdate === -1) {
@@ -45,7 +45,7 @@ const updateOneWorkout = (workoutId, changes) => {
     return updatedWorkout;
 }
 
-const deleteOneWorkout = (workoutId) => {
+export const deleteOneWorkout = (workoutId) => {
     const indexForDeletion = DB.workouts.findIndex((workout) => workout.id === workoutId);
 
     if (indexForDeletion === -1) {
@@ -54,12 +54,4 @@ const deleteOneWorkout = (workoutId) => {
 
     DB.workouts.splice(indexForDeletion, 1);
     saveToDatabase(DB);
-}
-
-module.exports = {
-    getAllWorkouts,
-    getOneWorkout,
-    createNewWorkout,
-    updateOneWorkout,
-    deleteOneWorkout
 }

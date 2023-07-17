@@ -7,13 +7,15 @@ import
     deleteOneWorkout} 
 from '../../controllers/workoutController.js';
 
-const router = express.Router();
+export const router = express.Router();
 
 router.get('/', getAllWorkouts);
 
 router.get('/:workoutId', getOneWorkout);
 
 router.post('/', createNewWorkout);
+
+router.patch('/:workoutId', updateOneWorkout);
 
 router.patch('/:workoutId', updateOneWorkout);
 

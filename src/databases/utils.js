@@ -1,4 +1,5 @@
-import fs from 'fs';
+// import fs from 'fs';
+const fs = require("fs");
 
 export const saveToDatabase = (DB) => {
     fs.writeFileSync('./src/databases/db.json', JSON.stringify(DB, null, 2), {

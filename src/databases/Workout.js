@@ -1,5 +1,7 @@
-import db from './db.json' assert {type: 'json'};
-import { saveToDatabase } from './utils.js';
+// import db from './db.json' assert {type: 'json'};
+const db = require("../databases/db.json");
+// import { saveToDatabase } from './utils.js';
+const {saveToDatabase} = require("./utils");
 
 export const getAllWorkouts = () => {
     return db.workouts;

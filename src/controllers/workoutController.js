@@ -1,7 +1,12 @@
-const workoutService = require("../services/workoutService");
+import { getAllWorkoutsService, 
+        getOneWorkoutService, 
+        createNewWorkoutService, 
+        updateOneWorkoutService, 
+        deleteOneWorkoutService } 
+from "../services/workoutService.js";
 
-const getAllWorkouts = (req, res) => {
-    const allWorkouts = workoutService.getAllWorkoutsService();
+export const getAllWorkouts = (req, res) => {
+    const allWorkouts = getAllWorkoutsService();
     res.send({status: 'OK', data: allWorkouts});
 };
 
@@ -14,7 +19,7 @@ const getOneWorkout = (req, res) => {
         return;
     }
 
-    const workout = workoutService.getOneWorkoutService(workoutId);
+    const workout = getOneWorkoutService(workoutId);
     res.send({status: "OK", data: workout});
 };
 
@@ -38,7 +43,7 @@ const createNewWorkout = (req, res) => {
         trainerTips: body.trainerTips
     };
 
-    const createdWorkout = workoutService.createNewWorkout(newWorkout);
+    const createdWorkout = createNewWorkoutService.createNewWorkout(newWorkout);
     res.status(201).send({status: 'OK', data: createdWorkout});
 };
 
@@ -52,7 +57,7 @@ const updateOneWorkout = (req, res) => {
         return;
     }
 
-    const updatedWorkout = workoutService.updateOneWorkoutService(workoutId, body);
+    const updatedWorkout = updateOneWorkoutService(workoutId, body);
     res.send({status: "OK", data: updatedWorkout});
 };
 
@@ -64,9 +69,9 @@ const deleteOneWorkout = (req, res) => {
     if (!workoutId) {
         return;
     }
-    
-    workoutService.deleteOneWorkoutService(workoutId);
-    res.status(204).send({status: "OK"});
+
+    const deletedWorkout = deleteOneWorkoutService(workoutId);
+    res.send({status: "OK", data: deletedWorkout});
 };
 
 module.exports = {

@@ -1,7 +1,5 @@
-// import { v4 as uuid } from 'uuid';
-const {v4: uuid} = require("uuid");
-// import {getAllWorkouts as Workout} from '../databases/Workout.js';
-const Workout = require("../databases/Workout");
+import { v4 as uuid } from 'uuid';
+import {getAllWorkouts as Workout} from '../databases/Workout.js';
 
 const getAllWorkoutsService = () => {
     const allWorkouts = Workout();

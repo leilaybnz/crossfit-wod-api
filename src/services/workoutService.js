@@ -6,8 +6,9 @@ export const getAllWorkoutsService = () => {
     return allWorkouts;
 }
 
-export const getOneWorkoutService = () => {
-    return;
+export const getOneWorkoutService = (workoutId) => {
+    const workout = Workout.getOneWorkout(workoutId);
+    return workout;
 }
 
 export const createNewWorkoutService = (newWorkout) => {
@@ -22,10 +23,11 @@ export const createNewWorkoutService = (newWorkout) => {
     return createdWorkout;
 }
 
-export const updateOneWorkoutService = () => {
-    return;
+export const updateOneWorkoutService = (workoutId, changes) => {
+    const updatedWorkout = Workout.updateOneWorkout(workoutId, changes);
+    return updatedWorkout;
 }
 
-export const deleteOneWorkoutService = () => {
-    return;
+export const deleteOneWorkoutService = (workoutId) => {
+    Workout.deleteOneWorkout(workoutId); //why not assign it to a const? why no return?
 }

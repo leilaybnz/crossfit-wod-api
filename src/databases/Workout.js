@@ -1,8 +1,8 @@
-import db from './db.json' assert {type: 'json'};
+import DB from './db.json' assert {type: 'json'};
 import { saveToDatabase } from './utils.js';
 
 export const getAllWorkouts = () => {
-    return db.workouts;
+    return DB.workouts;
 }
 
 export const getOneWorkout = (workoutId) => {

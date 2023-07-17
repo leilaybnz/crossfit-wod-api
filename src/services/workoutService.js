@@ -11,7 +11,7 @@ export const getOneWorkoutService = () => {
 }
 
 export const createNewWorkoutService = (newWorkout) => {
-    const workoutToInsert = 
+    const workoutToInsert = //will add the remaining properties
     {...newWorkout, 
         id: uuid(),
     createdAt: new Date().toLocaleString('en-US', {timeZone: 'UTC'}),

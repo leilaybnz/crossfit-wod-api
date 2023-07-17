@@ -1,11 +1,11 @@
 const workoutService = require("../services/workoutService");
 
-export const getAllWorkouts = (req, res) => {
+const getAllWorkouts = (req, res) => {
     const allWorkouts = workoutService.getAllWorkoutsService();
     res.send({status: 'OK', data: allWorkouts});
 };
 
-export const getOneWorkout = (req, res) => {
+const getOneWorkout = (req, res) => {
     const {
         params: {workoutId}
     } = req;
@@ -18,7 +18,7 @@ export const getOneWorkout = (req, res) => {
     res.send({status: "OK", data: workout});
 };
 
-export const createNewWorkout = (req, res) => {
+const createNewWorkout = (req, res) => {
     const {body} = req;
 
     if (!body.name || 
@@ -42,7 +42,7 @@ export const createNewWorkout = (req, res) => {
     res.status(201).send({status: 'OK', data: createdWorkout});
 };
 
-export const updateOneWorkout = (req, res) => {
+const updateOneWorkout = (req, res) => {
     const {
         body,
         params: {workoutId}
@@ -56,7 +56,7 @@ export const updateOneWorkout = (req, res) => {
     res.send({status: "OK", data: updatedWorkout});
 };
 
-export const deleteOneWorkout = (req, res) => {
+const deleteOneWorkout = (req, res) => {
     const {
         params: {workoutId}
     } = req;
@@ -68,3 +68,11 @@ export const deleteOneWorkout = (req, res) => {
     workoutService.deleteOneWorkoutService(workoutId);
     res.status(204).send({status: "OK"});
 };
+
+module.exports = {
+    getAllWorkouts,                   
+    getOneWorkout,
+    createNewWorkout,
+    updateOneWorkout,
+    deleteOneWorkout 
+}

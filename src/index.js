@@ -1,6 +1,9 @@
-import express from 'express';
-import bodyParser from 'body-parser';
-import {router as v1WorkoutRouer} from './v1/routes/workoutRoutes.js';
+// import express from 'express';
+const express = require("express");
+// import bodyParser from 'body-parser';
+const bodyParser = require("body-parser");
+// import {router as v1WorkoutRouer} from './v1/routes/workoutRoutes.js';
+const v1WorkoutRouer = require("./v1/routes/workoutRoutes.js")
 
 const app = express();
 const PORT = process.env.PORT || 3000;

@@ -1,4 +1,4 @@
-import { getRecordForWorkout } from "../databases/Record";
+import { getRecordForWorkout } from "../databases/Record.js";
 
 export const getRecordForWorkoutService = (workoutId) => {
     try {

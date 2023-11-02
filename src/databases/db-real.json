@@ -1,0 +1,204 @@
+{
+  "workouts": [
+    {
+      "name": "Leg Day 1",
+      "mode": "AMRAP 20",
+      "equipment": [
+        "rack",
+        "barbell",
+        "kettlebell",
+        "leg press",
+        "hamstring curl machine",
+        "cable"
+      ],
+      "exercises": [
+        "Squats 4x12x 3 secs excéntrico + single leg assisted RDL 4x8-6",
+        "Deficit reverse lunges 4x8 + prensa 4x12x 3 secs excéntrico y 3 secs concéntrico",
+        "Sillón de cuádriceps 3x8-drop 10",
+        "Isquios en polea 3x12/12"
+      ],
+      "trainerTips": [
+        "Split your toes to bars into two sets maximum",
+        "Go unbroken on the thrusters",
+        "Take the abmat sit-ups as a chance to normalize your breath"
+      ],
+      "id": "d75fa271-1bb7-4f33-891d-ca37467f6b6d",
+      "createdAt": "10/31/2023, 6:20:41 PM",
+      "updatedAt": "10/31/2023, 6:20:41 PM"
+    },
+    {
+      "name": "Leg day 2",
+      "mode": "For Reps",
+      "equipment": [
+        "barbell",
+        "smith machine",
+        "cable",
+        "dumbbells"
+      ],
+      "exercises": [
+        "HT 12-10-8-8",
+        "Sumo deadlift 6-8-10-12-15",
+        "Squat en smith profundas 3x10 + búlgaras 3x8/8 Aductores en polea 3x10 + abductores en máquina 3x15"
+      ],
+      "trainerTips": [
+        "Split the 21 thrusters as needed",
+        "Try to do the 9 and 6 thrusters unbroken",
+        "RX Weights: 115lb/75lb"
+      ],
+      "id": "1bafc301-b35c-40cf-bd3f-b3db78246382",
+      "createdAt": "10/31/2023, 6:25:44 PM",
+      "updatedAt": "10/31/2023, 6:25:44 PM"
+    },
+    {
+      "name": "Upper body day 1",
+      "mode": "For Reps",
+      "equipment": [
+        "barbell",
+        "smith machine",
+        "cable",
+        "dumbbells"
+      ],
+      "exercises": [
+        "Remo angosto 12-12-10-10 + biceps martillo con 3 secs excéntrico 4x10",
+        "Press banco plano (barra o manc) 12-12-10-10 + triceps francés 4x15",
+        "Polea prona 3x8 + biceps barrita plana polea 3x12",
+        "Apertura banco inclinado 3x8 + extensiones de triceps con barrita (polea) 3x12",
+        "Press de hombros con mancuernas 10-10-8-8 Vuelos laterales 3x10-drop12"
+      ],
+      "trainerTips": [
+        "none"
+      ],
+      "id": "5cb028f9-c728-4086-af32-beadba73fc08",
+      "createdAt": "10/31/2023, 6:29:56 PM",
+      "updatedAt": "10/31/2023, 6:29:56 PM"
+    },
+    {
+      "name": "Upper body day 2",
+      "mode": "For Reps",
+      "equipment": [
+        "barbell",
+        "smith machine",
+        "cable",
+        "dumbbells"
+      ],
+      "exercises": [
+        "Remo prona con barra 12-10-8-8 + high pull unilateral 4x8",
+        "Press banco inclinado con manc 4x12 + aperturas en banco plano 4x10",
+        "Press declinado mancuernas 3x10 + remo en máquina unilateral 3x12",
+        "Biceps mancuernas normal 3x10 + biceps W 3x12+max hold",
+        "Triceps tras nuca"
+      ],
+      "trainerTips": [
+        "none"
+      ],
+      "id": "790c2fa7-609c-47a8-acaf-72bee8553b90",
+      "createdAt": "10/31/2023, 6:31:35 PM",
+      "updatedAt": "10/31/2023, 6:31:35 PM"
+    },
+    {
+      "name": "Core Day 1",
+      "mode": "AMRAP",
+      "equipment": [
+        "barbell",
+        "smith machine",
+        "cable",
+        "dumbbells"
+      ],
+      "exercises": [
+        "Hollow hold + crunch 10",
+        "Zercher Goodmorning 12",
+        "Toe taps en carpa 14 total",
+        "Up-down plank 16 total"
+      ],
+      "trainerTips": [
+        "none"
+      ],
+      "id": "d9d6ef14-db36-4b42-a5ef-5c8868ebba11",
+      "createdAt": "10/31/2023, 6:33:17 PM",
+      "updatedAt": "10/31/2023, 6:33:17 PM"
+    },
+    {
+      "name": "Core Day 2",
+      "mode": "MB complex: 10 reps de cada, 5 series, 1' rest entre serie",
+      "equipment": [
+        "dumb-bell",
+        "barbell",
+        "medball"
+      ],
+      "exercises": [
+        "Split stance chest pass",
+        "Parallel throw",
+        "Slam",
+        "Jump squat"
+      ],
+      "trainerTips": [
+        "none"
+      ],
+      "id": "5e7a1d7f-7500-4a05-b9f2-1db5cf3cfb2d",
+      "createdAt": "11/1/2023, 8:49:36 PM",
+      "updatedAt": "1/11/2023, 18:09:25"
+    }
+  ],
+  "members": [
+    {
+      "id": "12a410bc-849f-4e7e-bfc8-4ef283ee4b19",
+      "name": "Jason Miller",
+      "gender": "male",
+      "dateOfBirth": "23/04/1990",
+      "email": "jason@mail.com",
+      "password": "666349420ec497c1dc890c45179d44fb13220239325172af02d1fb6635922956"
+    },
+    {
+      "id": "2b9130d4-47a7-4085-800e-0144f6a46059",
+      "name": "Tiffany Brookston",
+      "gender": "female",
+      "dateOfBirth": "09/06/1996",
+      "email": "tiffy@mail.com",
+      "password": "8a1ea5669b749354110dcba3fac5546c16e6d0f73a37f35a84f6b0d7b3c22fcc"
+    },
+    {
+      "id": "11817fb1-03a1-4b4a-8d27-854ac893cf41",
+      "name": "Catrin Stevenson",
+      "gender": "female",
+      "dateOfBirth": "17/08/2001",
+      "email": "catrin@mail.com",
+      "password": "18eb2d6c5373c94c6d5d707650d02c3c06f33fac557c9cfb8cb1ee625a649ff3"
+    },
+    {
+      "id": "6a89217b-7c28-4219-bd7f-af119c314159",
+      "name": "Greg Bronson",
+      "gender": "male",
+      "dateOfBirth": "08/04/1993",
+      "email": "greg@mail.com",
+      "password": "a6dcde7eceb689142f21a1e30b5fdb868ec4cd25d5537d67ac7e8c7816b0e862"
+    }
+  ],
+  "records": [
+    {
+      "id": "ad75d475-ac57-44f4-a02a-8f6def58ff56",
+      "workout": "d75fa271-1bb7-4f33-891d-ca37467f6b6d",
+      "record": "160 reps"
+    },
+    {
+      "id": "0bff586f-2017-4526-9e52-fe3ea46d55ab",
+      "workout": "1bafc301-b35c-40cf-bd3f-b3db78246382",
+      "record": "7:23 minutes"
+    },
+    {
+      "id": "365cc0bb-ba8f-41d3-bf82-83d041d38b82",
+      "workout": "790c2fa7-609c-47a8-acaf-72bee8553b90",
+      "record": "358 reps"
+    },
+    {
+      "id": "62251cfe-fdb6-4fa6-9a2d-c21be93ac78d",
+      "workout": "a85c652c-d1f8-43fc-a85d-9c07cb31caf5",
+      "record": "145 reps"
+    },
+    {
+      "record": "145 reps",
+      "id": "9c6684a3-7291-4f2b-8ee0-d9a25b7d39f5",
+      "createdAt": "11/1/2023, 8:37:58 PM",
+      "updatedAt": "11/1/2023, 8:37:58 PM"
+    }
+  ]
+}

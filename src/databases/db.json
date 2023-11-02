@@ -4,7 +4,10 @@
       "id": "61dbae02-c147-4e28-863c-db7bd402b2d6",
       "name": "Tommy V",
       "mode": "For Time",
-      "equipment": ["barbell", "rope"],
+      "equipment": [
+        "barbell",
+        "rope"
+      ],
       "exercises": [
         "21 thrusters",
         "12 rope climbs, 15 ft",
@@ -25,8 +28,13 @@
       "id": "4a3d9aaa-608c-49a7-a004-66305ad4ab50",
       "name": "Dead Push-Ups",
       "mode": "AMRAP 10",
-      "equipment": ["barbell"],
-      "exercises": ["15 deadlifts", "15 hand-release push-ups"],
+      "equipment": [
+        "barbell"
+      ],
+      "exercises": [
+        "15 deadlifts",
+        "15 hand-release push-ups"
+      ],
       "createdAt": "1/25/2022, 1:15:44 PM",
       "updatedAt": "3/10/2022, 8:21:56 AM",
       "trainerTips": [
@@ -39,8 +47,15 @@
       "id": "d8be2362-7b68-4ea4-a1f6-03f8bc4eede7",
       "name": "Heavy DT",
       "mode": "5 Rounds For Time",
-      "equipment": ["barbell", "rope"],
-      "exercises": ["12 deadlifts", "9 hang power cleans", "6 push jerks"],
+      "equipment": [
+        "barbell",
+        "rope"
+      ],
+      "exercises": [
+        "12 deadlifts",
+        "9 hang power cleans",
+        "6 push jerks"
+      ],
       "createdAt": "11/20/2021, 5:39:07 PM",
       "updatedAt": "4/22/2022, 5:49:18 PM",
       "trainerTips": [
@@ -52,8 +67,16 @@
     {
       "name": "Core Buster",
       "mode": "AMRAP 20",
-      "equipment": ["rack", "barbell", "abmat"],
-      "exercises": ["15 toes to bars", "10 thrusters", "30 abmat sit-ups"],
+      "equipment": [
+        "rack",
+        "barbell",
+        "abmat"
+      ],
+      "exercises": [
+        "15 toes to bars",
+        "10 thrusters",
+        "30 abmat sit-ups"
+      ],
       "trainerTips": [
         "Split your toes to bars in two sets maximum",
         "Go unbroken on the thrusters",
@@ -118,6 +141,30 @@
       "id": "62251cfe-fdb6-4fa6-9a2d-c21be93ac78d",
       "workout": "4a3d9aaa-608c-49a7-a004-66305ad4ab50",
       "record": "145 reps"
+    },
+    {
+      "record": "20 reps",
+      "id": "b6501341-7dda-4a13-bc61-23de4ad8d85d",
+      "createdAt": "11/2/2023, 1:49:17 PM",
+      "updatedAt": "11/2/2023, 1:49:17 PM"
+    },
+    {
+      "record": "20 reps",
+      "id": "1f10ecfa-192f-4877-a6bd-2150ebac99a5",
+      "createdAt": "11/2/2023, 1:52:09 PM",
+      "updatedAt": "11/2/2023, 1:52:09 PM"
+    },
+    {
+      "record": "20 reps",
+      "id": "1f0629c8-651f-4671-891a-57dcfff9b988",
+      "createdAt": "11/2/2023, 1:55:55 PM",
+      "updatedAt": "11/2/2023, 1:55:55 PM"
+    },
+    {
+      "record": "20 reps",
+      "id": "11718cad-d4e1-4c62-bd10-64d57de94d0a",
+      "createdAt": "11/2/2023, 2:00:55 PM",
+      "updatedAt": "11/2/2023, 2:00:55 PM"
     }
   ]
 }

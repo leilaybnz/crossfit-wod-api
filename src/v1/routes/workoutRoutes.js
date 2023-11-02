@@ -1,25 +1,38 @@
 import express from "express";
 import {
-  getAllWorkouts,
-  getOneWorkout,
-  createNewWorkout,
-  updateOneWorkout,
-  deleteOneWorkout,
+  getAllWorkoutsController,
+  getOneWorkoutController,
+  createNewWorkoutController,
+  updateOneWorkoutController,
+  deleteOneWorkoutController,
 } from "../../controllers/workoutController.js";
-import { getRecordForWorkout } from "../../controllers/recordController.js";
+
+import {
+  getAllRecordsController,
+  getRecordForWorkoutController,
+  createNewRecordController,
+  updateOneRecordController,
+  deleteOneRecordController,
+} from "../../controllers/recordController.js";
 
 export const router = express.Router();
 
-router.get("/", getAllWorkouts);
+router.get("/", getAllWorkoutsController);
 
-router.get("/:workoutId", getOneWorkout);
+router.get("/records", getAllRecordsController);
 
-router.get("/:workoutId/records", getRecordForWorkout);
+router.get("/:workoutId", getOneWorkoutController);
 
-router.post("/", createNewWorkout);
+router.get("/:workoutId/records", getRecordForWorkoutController);
 
-router.patch("/:workoutId", updateOneWorkout);
+router.post("/", createNewWorkoutController);
 
-router.patch("/:workoutId", updateOneWorkout);
+router.post("/:workoutId/records", createNewRecordController);
 
-router.delete("/:workoutId", deleteOneWorkout);
+router.patch("/:workoutId", updateOneWorkoutController);
+
+router.patch("/:workoutId/records/:recordId", updateOneRecordController);
+
+router.delete("/:workoutId", deleteOneWorkoutController);
+
+router.delete("/:workoutId/records/:recordId", deleteOneRecordController);//THROWS 200 BUT DOESNT DELETE

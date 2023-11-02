@@ -5,7 +5,8 @@ import { getAllWorkoutsService,
         deleteOneWorkoutService } 
 from "../services/workoutService.js";
 
-export const getAllWorkouts = (req, res) => {
+export const getAllWorkoutsController = (req, res) => {
+    
     try {
         const allWorkouts = getAllWorkoutsService();
         res.send({status: 'OK', data: allWorkouts});
@@ -19,7 +20,7 @@ export const getAllWorkouts = (req, res) => {
 
 };
 
-export const getOneWorkout = (req, res) => {
+export const getOneWorkoutController = (req, res) => {
     const {
         params: {workoutId}
     } = req;
@@ -43,7 +44,7 @@ export const getOneWorkout = (req, res) => {
 
 };
 
-export const createNewWorkout = (req, res) => {
+export const createNewWorkoutController = (req, res) => {
     const {body} = req;
 
     if (!body.name || 
@@ -82,7 +83,7 @@ export const createNewWorkout = (req, res) => {
     }
 };
 
-export const updateOneWorkout = (req, res) => {
+export const updateOneWorkoutController = (req, res) => {
     const {
         body,
         params: {workoutId}
@@ -105,7 +106,7 @@ export const updateOneWorkout = (req, res) => {
 
 };
 
-export const deleteOneWorkout = (req, res) => {
+export const deleteOneWorkoutController = (req, res) => {
     const {
         params: {workoutId}
     } = req;

@@ -40,17 +40,8 @@ export const createNewRecord = (newRecord) => {
 };
 
 export const updateOneRecord = (recordId, changes) => {
+  
   try {
-    const isAlreadyAdded =
-      DB.records.findIndex((record) => record.workout === changes.workout) > -1;
-
-    if (isAlreadyAdded) {
-      throw {
-        status: 400,
-        message: `'Record corresponding to the workout ${changes.workout} already exists.`,
-      };
-    }
-
     const indexForUpdate = DB.records.findIndex(
       (record) => record.id === recordId
     );
@@ -80,9 +71,8 @@ export const updateOneRecord = (recordId, changes) => {
 
 export const deleteOneRecord = (recordId) => {
   try {
-    const indexForDeletion = DB.records.findIndex(
-      (record) => record.id === recordId
-    );
+    const indexForDeletion = DB.records.findIndex((record) => 
+    record.id === recordId);
 
     if (indexForDeletion === -1) {
       throw {

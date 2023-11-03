@@ -177,45 +177,57 @@
   "records": [
     {
       "workout": "d75fa271-1bb7-4f33-891d-ca37467f6b6d",
-      "record": "406 reps",
+      "record": "200 reps",
       "id": "1cbbc1ee-df0d-463c-8939-c947c22831ec",
       "createdAt": "3/11/2023, 10:57:08",
-      "updatedAt": "3/11/2023, 10:57:08"
+      "updatedAt": "3/11/2023, 12:13:30",
+      "memberId": "11817fb1-03a1-4b4a-8d27-854ac893cf41",
+      "member": "/members/:memberId"
     },
     {
       "workout": "1bafc301-b35c-40cf-bd3f-b3db78246382",
       "record": "316 reps",
       "id": "2b6a0718-4b22-4026-83da-47e2be3920e3",
       "createdAt": "3/11/2023, 10:58:33",
-      "updatedAt": "3/11/2023, 10:58:33"
+      "updatedAt": "3/11/2023, 12:14:49",
+      "memberId": "6a89217b-7c28-4219-bd7f-af119c314159",
+      "member": "/members/:memberId"
     },
     {
       "workout": "5cb028f9-c728-4086-af32-beadba73fc08",
       "record": "410 reps",
       "id": "482b2819-c4bb-417a-a973-ccaddef4ced4",
       "createdAt": "3/11/2023, 11:00:20",
-      "updatedAt": "3/11/2023, 11:00:20"
+      "updatedAt": "3/11/2023, 12:16:25",
+      "memberId": "6a89217b-7c28-4219-bd7f-af119c314159",
+      "member": "/members/:memberId"
     },
     {
       "workout": "790c2fa7-609c-47a8-acaf-72bee8553b90",
       "record": "470 reps",
       "id": "b10bdde5-8894-493c-b3c8-da1f03c5aaad",
       "createdAt": "3/11/2023, 11:03:31",
-      "updatedAt": "3/11/2023, 11:03:31"
+      "updatedAt": "3/11/2023, 12:17:26",
+      "memberId": "2b9130d4-47a7-4085-800e-0144f6a46059",
+      "member": "/members/:memberId"
     },
     {
       "workout": "5e7a1d7f-7500-4a05-b9f2-1db5cf3cfb2d",
       "record": "200 reps",
       "id": "4e646654-ba40-438b-81c7-09ff2f5836c8",
       "createdAt": "3/11/2023, 11:05:36",
-      "updatedAt": "3/11/2023, 11:05:36"
+      "updatedAt": "3/11/2023, 12:19:13",
+      "memberId": "2b9130d4-47a7-4085-800e-0144f6a46059",
+      "member": "/members/:memberId"
     },
     {
       "workout": "d9d6ef14-db36-4b42-a5ef-5c8868ebba11",
       "record": "52 reps",
-      "id": "071bceaf-9b9f-4233-b4ee-fdad061ab749",
-      "createdAt": "3/11/2023, 11:07:32",
-      "updatedAt": "3/11/2023, 11:07:32"
+      "member": "/members/:memberId",
+      "memberId": "12a410bc-849f-4e7e-bfc8-4ef283ee4b19",
+      "id": "ded11cfc-faf5-4b31-a9aa-27b9da482453",
+      "createdAt": "3/11/2023, 11:37:20",
+      "updatedAt": "3/11/2023, 11:37:20"
     }
   ]
 }

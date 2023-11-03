@@ -1,170 +1,221 @@
 {
   "workouts": [
     {
-      "id": "61dbae02-c147-4e28-863c-db7bd402b2d6",
-      "name": "Tommy V",
-      "mode": "For Time",
-      "equipment": [
-        "barbell",
-        "rope"
-      ],
-      "exercises": [
-        "21 thrusters",
-        "12 rope climbs, 15 ft",
-        "15 thrusters",
-        "9 rope climbs, 15 ft",
-        "9 thrusters",
-        "6 rope climbs, 15 ft"
-      ],
-      "createdAt": "4/20/2022, 2:21:56 PM",
-      "updatedAt": "4/20/2022, 2:21:56 PM",
-      "trainerTips": [
-        "Split the 21 thrusters as needed",
-        "Try to do the 9 and 6 thrusters unbroken",
-        "RX Weights: 115lb/75lb"
-      ]
-    },
-    {
-      "id": "4a3d9aaa-608c-49a7-a004-66305ad4ab50",
-      "name": "Dead Push-Ups",
-      "mode": "AMRAP 10",
-      "equipment": [
-        "barbell"
-      ],
-      "exercises": [
-        "15 deadlifts",
-        "15 hand-release push-ups"
-      ],
-      "createdAt": "1/25/2022, 1:15:44 PM",
-      "updatedAt": "3/10/2022, 8:21:56 AM",
-      "trainerTips": [
-        "Deadlifts are meant to be light and fast",
-        "Try to aim for unbroken sets",
-        "RX Weights: 135lb/95lb"
-      ]
-    },
-    {
-      "id": "d8be2362-7b68-4ea4-a1f6-03f8bc4eede7",
-      "name": "Heavy DT",
-      "mode": "5 Rounds For Time",
-      "equipment": [
-        "barbell",
-        "rope"
-      ],
-      "exercises": [
-        "12 deadlifts",
-        "9 hang power cleans",
-        "6 push jerks"
-      ],
-      "createdAt": "11/20/2021, 5:39:07 PM",
-      "updatedAt": "4/22/2022, 5:49:18 PM",
-      "trainerTips": [
-        "Aim for unbroken push jerks",
-        "The first three rounds might feel terrible, but stick to it",
-        "RX Weights: 205lb/145lb"
-      ]
-    },
-    {
-      "name": "Core Buster",
+      "name": "Leg Day 1",
       "mode": "AMRAP 20",
       "equipment": [
         "rack",
         "barbell",
-        "abmat"
+        "kettlebell",
+        "leg press",
+        "hamstring curl machine",
+        "cable"
       ],
       "exercises": [
-        "15 toes to bars",
-        "10 thrusters",
-        "30 abmat sit-ups"
+        "Squats 4x12x 3 secs excéntrico + single leg assisted RDL 4x8-6",
+        "Deficit reverse lunges 4x8 + prensa 4x12x 3 secs excéntrico y 3 secs concéntrico",
+        "Sillón de cuádriceps 3x8-drop 10",
+        "Isquios en polea 3x12/12"
       ],
       "trainerTips": [
-        "Split your toes to bars in two sets maximum",
+        "Split your toes to bars into two sets maximum",
         "Go unbroken on the thrusters",
         "Take the abmat sit-ups as a chance to normalize your breath"
       ],
-      "id": "a24d2618-01d1-4682-9288-8de1343e53c7",
-      "createdAt": "4/22/2022, 5:50:17 PM",
-      "updatedAt": "4/22/2022, 5:50:17 PM"
+      "id": "d75fa271-1bb7-4f33-891d-ca37467f6b6d",
+      "createdAt": "10/31/2023, 6:20:41 PM",
+      "updatedAt": "10/31/2023, 6:20:41 PM"
+    },
+    {
+      "name": "Leg day 2",
+      "mode": "For Reps",
+      "equipment": [
+        "barbell",
+        "smith machine",
+        "cable",
+        "dumbbells"
+      ],
+      "exercises": [
+        "HT 12-10-8-8",
+        "Sumo deadlift 6-8-10-12-15",
+        "Squat en smith profundas 3x10 + búlgaras 3x8/8 Aductores en polea 3x10 + abductores en máquina 3x15"
+      ],
+      "trainerTips": [
+        "Split the 21 thrusters as needed",
+        "Try to do the 9 and 6 thrusters unbroken",
+        "RX Weights: 115lb/75lb"
+      ],
+      "id": "1bafc301-b35c-40cf-bd3f-b3db78246382",
+      "createdAt": "10/31/2023, 6:25:44 PM",
+      "updatedAt": "10/31/2023, 6:25:44 PM"
+    },
+    {
+      "name": "Upper body day 1",
+      "mode": "For Reps",
+      "equipment": [
+        "barbell",
+        "smith machine",
+        "cable",
+        "dumbbells"
+      ],
+      "exercises": [
+        "Remo angosto 12-12-10-10 + biceps martillo con 3 secs excéntrico 4x10",
+        "Press banco plano (barra o manc) 12-12-10-10 + triceps francés 4x15",
+        "Polea prona 3x8 + biceps barrita plana polea 3x12",
+        "Apertura banco inclinado 3x8 + extensiones de triceps con barrita (polea) 3x12",
+        "Press de hombros con mancuernas 10-10-8-8 Vuelos laterales 3x10-drop12"
+      ],
+      "trainerTips": [
+        "none"
+      ],
+      "id": "5cb028f9-c728-4086-af32-beadba73fc08",
+      "createdAt": "10/31/2023, 6:29:56 PM",
+      "updatedAt": "10/31/2023, 6:29:56 PM"
+    },
+    {
+      "name": "Upper body day 2",
+      "mode": "For Reps",
+      "equipment": [
+        "barbell",
+        "smith machine",
+        "cable",
+        "dumbbells"
+      ],
+      "exercises": [
+        "Remo prona con barra 12-10-8-8 + high pull unilateral 4x8",
+        "Press banco inclinado con manc 4x12 + aperturas en banco plano 4x10",
+        "Press declinado mancuernas 3x10 + remo en máquina unilateral 3x12",
+        "Biceps mancuernas normal 3x10 + biceps W 3x12+max hold",
+        "Triceps tras nuca soga 3x15 + press de triceps en banco plano 3x10",
+        "Around the world 3x8 + vuelos frontales 3x12 + que me importa 3x15"
+      ],
+      "trainerTips": [
+        "none"
+      ],
+      "id": "790c2fa7-609c-47a8-acaf-72bee8553b90",
+      "createdAt": "10/31/2023, 6:31:35 PM",
+      "updatedAt": "10/31/2023, 6:31:35 PM"
+    },
+    {
+      "name": "Core Day 1",
+      "mode": "AMRAP",
+      "equipment": [
+        "barbell",
+        "smith machine",
+        "cable",
+        "dumbbells"
+      ],
+      "exercises": [
+        "Hollow hold + crunch 10",
+        "Zercher Goodmorning 12",
+        "Toe taps en carpa 14 total",
+        "Up-down plank 16 total"
+      ],
+      "trainerTips": [
+        "none"
+      ],
+      "id": "d9d6ef14-db36-4b42-a5ef-5c8868ebba11",
+      "createdAt": "10/31/2023, 6:33:17 PM",
+      "updatedAt": "10/31/2023, 6:33:17 PM"
+    },
+    {
+      "name": "Core Day 2",
+      "mode": "MB complex: 10 reps de cada, 5 series, 1' rest entre serie",
+      "equipment": [
+        "dumb-bell",
+        "barbell",
+        "medball"
+      ],
+      "exercises": [
+        "Split stance chest pass",
+        "Parallel throw",
+        "Slam",
+        "Jump squat"
+      ],
+      "trainerTips": [
+        "none"
+      ],
+      "id": "5e7a1d7f-7500-4a05-b9f2-1db5cf3cfb2d",
+      "createdAt": "11/1/2023, 8:49:36 PM",
+      "updatedAt": "1/11/2023, 18:09:25"
     }
   ],
   "members": [
     {
       "id": "12a410bc-849f-4e7e-bfc8-4ef283ee4b19",
-      "name": "Jason Miller",
-      "gender": "male",
-      "dateOfBirth": "23/04/1990",
-      "email": "jason@mail.com",
+      "name": "Leila Ybañez",
+      "gender": "female",
+      "dateOfBirth": "22/07/1997",
+      "email": "leilanybanez@gmail.com",
       "password": "666349420ec497c1dc890c45179d44fb13220239325172af02d1fb6635922956"
     },
     {
       "id": "2b9130d4-47a7-4085-800e-0144f6a46059",
-      "name": "Tiffany Brookston",
+      "name": "Beatriz Gramajo",
       "gender": "female",
-      "dateOfBirth": "09/06/1996",
-      "email": "tiffy@mail.com",
+      "dateOfBirth": "27/01/1962",
+      "email": "beatriz@mail.com",
       "password": "8a1ea5669b749354110dcba3fac5546c16e6d0f73a37f35a84f6b0d7b3c22fcc"
     },
     {
       "id": "11817fb1-03a1-4b4a-8d27-854ac893cf41",
-      "name": "Catrin Stevenson",
-      "gender": "female",
-      "dateOfBirth": "17/08/2001",
-      "email": "catrin@mail.com",
+      "name": "Lido Bruschi",
+      "gender": "male",
+      "dateOfBirth": "30/05/1953",
+      "email": "lido@mail.com",
       "password": "18eb2d6c5373c94c6d5d707650d02c3c06f33fac557c9cfb8cb1ee625a649ff3"
     },
     {
       "id": "6a89217b-7c28-4219-bd7f-af119c314159",
-      "name": "Greg Bronson",
+      "name": "Pablo Albertari",
       "gender": "male",
-      "dateOfBirth": "08/04/1993",
-      "email": "greg@mail.com",
+      "dateOfBirth": "31/01/1984",
+      "email": "pablo@mail.com",
       "password": "a6dcde7eceb689142f21a1e30b5fdb868ec4cd25d5537d67ac7e8c7816b0e862"
     }
   ],
   "records": [
     {
-      "id": "ad75d475-ac57-44f4-a02a-8f6def58ff56",
-      "workout": "4a3d9aaa-608c-49a7-a004-66305ad4ab50",
-      "record": "160 reps"
+      "workout": "d75fa271-1bb7-4f33-891d-ca37467f6b6d",
+      "record": "406 reps",
+      "id": "1cbbc1ee-df0d-463c-8939-c947c22831ec",
+      "createdAt": "3/11/2023, 10:57:08",
+      "updatedAt": "3/11/2023, 10:57:08"
     },
     {
-      "id": "0bff586f-2017-4526-9e52-fe3ea46d55ab",
-      "workout": "d8be2362-7b68-4ea4-a1f6-03f8bc4eede7",
-      "record": "7:23 minutes"
+      "workout": "1bafc301-b35c-40cf-bd3f-b3db78246382",
+      "record": "316 reps",
+      "id": "2b6a0718-4b22-4026-83da-47e2be3920e3",
+      "createdAt": "3/11/2023, 10:58:33",
+      "updatedAt": "3/11/2023, 10:58:33"
     },
     {
-      "id": "365cc0bb-ba8f-41d3-bf82-83d041d38b82",
-      "workout": "a24d2618-01d1-4682-9288-8de1343e53c7",
-      "record": "358 reps"
+      "workout": "5cb028f9-c728-4086-af32-beadba73fc08",
+      "record": "410 reps",
+      "id": "482b2819-c4bb-417a-a973-ccaddef4ced4",
+      "createdAt": "3/11/2023, 11:00:20",
+      "updatedAt": "3/11/2023, 11:00:20"
     },
     {
-      "id": "62251cfe-fdb6-4fa6-9a2d-c21be93ac78d",
-      "workout": "4a3d9aaa-608c-49a7-a004-66305ad4ab50",
-      "record": "145 reps"
+      "workout": "790c2fa7-609c-47a8-acaf-72bee8553b90",
+      "record": "470 reps",
+      "id": "b10bdde5-8894-493c-b3c8-da1f03c5aaad",
+      "createdAt": "3/11/2023, 11:03:31",
+      "updatedAt": "3/11/2023, 11:03:31"
     },
     {
-      "record": "20 reps",
-      "id": "b6501341-7dda-4a13-bc61-23de4ad8d85d",
-      "createdAt": "11/2/2023, 1:49:17 PM",
-      "updatedAt": "11/2/2023, 1:49:17 PM"
+      "workout": "5e7a1d7f-7500-4a05-b9f2-1db5cf3cfb2d",
+      "record": "200 reps",
+      "id": "4e646654-ba40-438b-81c7-09ff2f5836c8",
+      "createdAt": "3/11/2023, 11:05:36",
+      "updatedAt": "3/11/2023, 11:05:36"
     },
     {
-      "record": "20 reps",
-      "id": "1f10ecfa-192f-4877-a6bd-2150ebac99a5",
-      "createdAt": "11/2/2023, 1:52:09 PM",
-      "updatedAt": "11/2/2023, 1:52:09 PM"
-    },
-    {
-      "record": "20 reps",
-      "id": "1f0629c8-651f-4671-891a-57dcfff9b988",
-      "createdAt": "11/2/2023, 1:55:55 PM",
-      "updatedAt": "11/2/2023, 1:55:55 PM"
-    },
-    {
-      "record": "20 reps",
-      "id": "11718cad-d4e1-4c62-bd10-64d57de94d0a",
-      "createdAt": "11/2/2023, 2:00:55 PM",
-      "updatedAt": "11/2/2023, 2:00:55 PM"
+      "workout": "d9d6ef14-db36-4b42-a5ef-5c8868ebba11",
+      "record": "52 reps",
+      "id": "071bceaf-9b9f-4233-b4ee-fdad061ab749",
+      "createdAt": "3/11/2023, 11:07:32",
+      "updatedAt": "3/11/2023, 11:07:32"
     }
   ]
 }

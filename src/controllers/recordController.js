@@ -46,6 +46,7 @@ export const getRecordForWorkoutController = (req, res) => {
 
 export const createNewRecordController = (req, res) => {
   const { body } = req;
+  const memberURI = "/members/:memberId";
 
   if (!body.record) {
     res.status(400).send({
@@ -61,6 +62,8 @@ export const createNewRecordController = (req, res) => {
   const newRecord = {
     workout: body.workout,
     record: body.record,
+    member: memberURI,
+    memberId: body.memberId
   };
 
   try {

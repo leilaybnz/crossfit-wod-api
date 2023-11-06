@@ -48,12 +48,12 @@ import {
     const { body } = req;
     const memberURI = "/members/:memberId";
   
-    if (!body.memberId) {
+    if (!body.name) {
       res.status(400).send({
         status: "FAILED",
         data: {
           error:
-            "One of the following keys is missing or is empty in request body: 'memberId'",
+            "One of the following keys is missing or is empty in request body: 'name'",
         },
       });
       return;

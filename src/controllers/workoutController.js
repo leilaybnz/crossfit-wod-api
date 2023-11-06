@@ -6,9 +6,11 @@ import { getAllWorkoutsService,
 from "../services/workoutService.js";
 
 export const getAllWorkoutsController = (req, res) => {
+
+    const { mode } = req.query;
     
     try {
-        const allWorkouts = getAllWorkoutsService();
+        const allWorkouts = getAllWorkoutsService({mode});
         res.send({status: 'OK', data: allWorkouts});
     } catch (error) {
         res

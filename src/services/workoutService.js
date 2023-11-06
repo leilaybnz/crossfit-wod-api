@@ -7,9 +7,9 @@ import {
   deleteOneWorkout,
 } from "../databases/Workout.js";
 
-export const getAllWorkoutsService = () => {
+export const getAllWorkoutsService = (filterParams) => {
   try {
-    const allWorkouts = getAllWorkouts();
+    const allWorkouts = getAllWorkouts(filterParams);
     return allWorkouts;
   } catch (error) {
     throw error;

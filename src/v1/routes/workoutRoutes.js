@@ -1,4 +1,5 @@
 import express from "express";
+import apicache from "apicache";
 import {
   getAllWorkoutsController,
   getOneWorkoutController,
@@ -24,10 +25,11 @@ import {
 } from '../../controllers/memberController.js';
 
 export const router = express.Router();
+const cache = apicache.middleware;
 
 //WORKOUT ROUTES
 
-router.get("/", getAllWorkoutsController);
+router.get("/", cache("2 minutes"), getAllWorkoutsController);
 
 router.get("/:workoutId", getOneWorkoutController);
 
@@ -39,7 +41,7 @@ router.delete("/:workoutId", deleteOneWorkoutController);
 
 //RECORDS ROUTES
 
-router.get("/", getAllRecordsController);
+router.get("/records/", getAllRecordsController); //Cannot GET /api/v1/records/
 
 router.get("/:workoutId/records", getRecordForWorkoutController);
 
@@ -51,7 +53,7 @@ router.delete("/:workoutId/records/:recordId", deleteOneRecordController);//THRO
 
 //MEMBERS ROUTES
 
-router.get("/", getAllMembersController);
+router.get("/", getAllMembersController); //Cannot GET /api/v1/members/
 
 router.get("/:workoutId/records/:recordId/member", getMemberForRecordController);
 

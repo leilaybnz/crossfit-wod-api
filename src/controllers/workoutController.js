@@ -11,7 +11,7 @@ export const getAllWorkoutsController = (req, res) => {
     
     try {
         const allWorkouts = getAllWorkoutsService({mode});
-        res.send({status: 'OK', data: allWorkouts});
+        res.send({allWorkouts});
     } catch (error) {
         res
         .status(error?.status || 500)

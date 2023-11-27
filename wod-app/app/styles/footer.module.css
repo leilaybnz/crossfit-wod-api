@@ -1,0 +1,12 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100px;
+  width: 100%;
+}
+
+.text {
+  text-shadow: rgb(236, 181, 223) 0px 0px 12px;
+  text-transform: uppercase;
+}

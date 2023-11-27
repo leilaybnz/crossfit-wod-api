@@ -1,0 +1,7 @@
+.container {
+  height: 120px;
+  text-align: center;
+  padding-top: 30px;
+  font-size: 40px;
+  text-shadow: rgba(115, 193, 245, 1) 0px 0px 12px;
+}

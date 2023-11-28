@@ -5,6 +5,8 @@ import Footer from './components/Footer';
 import Nav from './components/Nav';
 import CardsContainer from './components/CardsContainer';
 import styles from './styles/layout.module.css';
+import { Suspense } from 'react';
+import Loading from './loading';
 
 const redHatMono = Red_Hat_Mono({ subsets: ['latin'] });
 
@@ -19,7 +21,9 @@ export default function RootLayout() {
       <body className={redHatMono.className}>
         <main className={styles.main}>
           <Nav/>
-          <CardsContainer/>
+          <Suspense fallback={<Loading/>}>
+            <CardsContainer/>
+          </Suspense>
           <Footer />
         </main>
       </body>

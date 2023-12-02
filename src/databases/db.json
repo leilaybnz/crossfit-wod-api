@@ -4,46 +4,46 @@
       "name": "Leg Day 1",
       "mode": "AMRAP 20",
       "equipment": [
-        "rack",
-        "barbell",
-        "kettlebell",
-        "leg press",
-        "hamstring curl machine",
-        "cable"
+        "rack,\n",
+        "barbell,\n",
+        "kettlebell,\n",
+        "leg press,\n",
+        "hamstring curl machine,\n",
+        "cable\n"
       ],
       "exercises": [
-        "Squats 4x12x 3 secs excéntrico + single leg assisted RDL 4x8-6",
-        "Deficit reverse lunges 4x8 + prensa 4x12x 3 secs excéntrico y 3 secs concéntrico",
-        "Sillón de cuádriceps 3x8-drop 10",
-        "Isquios en polea 3x12/12"
+        "Squats 4x12x 3 secs excéntrico + single leg assisted RDL 4x8-6,\n",
+        "Deficit reverse lunges 4x8 + prensa 4x12x 3 secs excéntrico y 3 secs concéntrico,\n",
+        "Sillón de cuádriceps 3x8-drop 10,\n",
+        "Isquios en polea 3x12/12,\n"
       ],
       "trainerTips": [
-        "Split your toes to bars into two sets maximum",
-        "Go unbroken on the thrusters",
-        "Take the abmat sit-ups as a chance to normalize your breath"
+        "Split your toes to bars into two sets maximum,\n",
+        "Go unbroken on the thrusters,\n",
+        "Take the abmat sit-ups as a chance to normalize your breath,\n"
       ],
       "id": "d75fa271-1bb7-4f33-891d-ca37467f6b6d",
       "createdAt": "10/31/2023, 6:20:41 PM",
       "updatedAt": "10/31/2023, 6:20:41 PM"
     },
     {
-      "name": "Leg day 2",
-      "mode": "For Reps",
+      "name": "Leg day 2,\n",
+      "mode": "For Reps,\n",
       "equipment": [
-        "barbell",
-        "smith machine",
-        "cable",
-        "dumbbells"
+        "barbell,\n",
+        "smith machine,\n",
+        "cable,\n",
+        "dumbbells,\n"
       ],
       "exercises": [
-        "HT 12-10-8-8",
-        "Sumo deadlift 6-8-10-12-15",
-        "Squat en smith profundas 3x10 + búlgaras 3x8/8 Aductores en polea 3x10 + abductores en máquina 3x15"
+        "HT 12-10-8-8,\n",
+        "Sumo deadlift 6-8-10-12-15,\n",
+        "Squat en smith profundas 3x10 + búlgaras 3x8/8 Aductores en polea 3x10 + abductores en máquina 3x15\n"
       ],
       "trainerTips": [
-        "Split the 21 thrusters as needed",
-        "Try to do the 9 and 6 thrusters unbroken",
-        "RX Weights: 115lb/75lb"
+        "Split the 21 thrusters as needed,\n",
+        "Try to do the 9 and 6 thrusters unbroken,\n",
+        "RX Weights: 115lb/75lb,\n"
       ],
       "id": "1bafc301-b35c-40cf-bd3f-b3db78246382",
       "createdAt": "10/31/2023, 6:25:44 PM",
@@ -53,17 +53,17 @@
       "name": "Upper body day 1",
       "mode": "For Reps",
       "equipment": [
-        "barbell",
-        "smith machine",
-        "cable",
-        "dumbbells"
+        "barbell,\n",
+        "smith machine,\n",
+        "cable,\n",
+        "dumbbells,\n"
       ],
       "exercises": [
-        "Remo angosto 12-12-10-10 + biceps martillo con 3 secs excéntrico 4x10",
-        "Press banco plano (barra o manc) 12-12-10-10 + triceps francés 4x15",
-        "Polea prona 3x8 + biceps barrita plana polea 3x12",
-        "Apertura banco inclinado 3x8 + extensiones de triceps con barrita (polea) 3x12",
-        "Press de hombros con mancuernas 10-10-8-8 Vuelos laterales 3x10-drop12"
+        "Remo angosto 12-12-10-10 + biceps martillo con 3 secs excéntrico 4x10,\n",
+        "Press banco plano (barra o manc) 12-12-10-10 + triceps francés 4x15,\n",
+        "Polea prona 3x8 + biceps barrita plana polea 3x12,\n",
+        "Apertura banco inclinado 3x8 + extensiones de triceps con barrita (polea) 3x12,\n",
+        "Press de hombros con mancuernas 10-10-8-8 Vuelos laterales 3x10-drop12,\n"
       ],
       "trainerTips": [
         "none"

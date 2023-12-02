@@ -21,6 +21,7 @@ export default function Workout({ workout }: {workout: WorkoutType}) {
          <p className={styles.name}>
            Trainer tips: <span className={styles.text}>{workout.trainerTips}</span>
          </p>
+         <div className={styles.arrow}></div>
        </article>
   )
 }

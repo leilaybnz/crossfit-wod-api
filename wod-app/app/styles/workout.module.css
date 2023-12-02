@@ -1,3 +1,4 @@
+
 .container {
   width: 308px;
   padding: 8px 15px;
@@ -7,6 +8,7 @@
   white-space: wrap;
   overflow: scroll;
   text-overflow: ellipsis;
+  position: relative;
 }
 
 .title {
@@ -24,4 +26,15 @@
 .text {
   text-shadow: none;
   font-weight: 300;
+}
+
+.arrow {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  background-image: url(../../public/arrow.svg);
+  background-color: rgba(23, 22, 23, 0.36);
+  position: sticky;
+  left: 300px;
+  bottom: 10px;
 }

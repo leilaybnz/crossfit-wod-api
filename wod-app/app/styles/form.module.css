@@ -1,0 +1,43 @@
+.form {
+    padding: 20px 25px;
+    box-shadow: 0 0 6px 6px aquamarine;
+}
+
+.form form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.label {
+    display: block;
+    margin-bottom: 12px;
+    font-size: 18px;
+}
+
+.label input, .label textarea {
+    display: block;
+    margin-top: 8px;
+    margin-left: 8px;
+    min-height: 20px;
+    width: 250px;
+    border: transparent;
+    border-radius: 5px;
+    padding-left: 5px;
+    font-family: monospace;
+    font-size: 16px;
+}
+
+.label textarea {
+    height: 40px;
+    overflow: hidden;
+    resize: vertical;
+}
+
+.button {
+    height: 30px;
+    width: 80px;
+    margin: auto;
+    font-family: monospace;
+    font-size: 15px;
+}

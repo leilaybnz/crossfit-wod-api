@@ -1,43 +1,63 @@
 .form {
-    padding: 20px 25px;
-    box-shadow: 0 0 6px 6px aquamarine;
+  padding: 25px 50px;
+  box-shadow: 0 0 6px 6px aquamarine;
 }
 
 .form form {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .label {
-    display: block;
-    margin-bottom: 12px;
-    font-size: 18px;
+  display: block;
+  margin-bottom: 12px;
+  font-size: 18px;
 }
 
-.label input, .label textarea {
-    display: block;
-    margin-top: 8px;
-    margin-left: 8px;
-    min-height: 20px;
-    width: 250px;
-    border: transparent;
-    border-radius: 5px;
-    padding-left: 5px;
-    font-family: monospace;
-    font-size: 16px;
+.label input,
+.label textarea {
+  display: block;
+  margin-top: 8px;
+  margin-left: 8px;
+  width: 250px;
+  border: transparent;
+  border-radius: 5px;
+  padding-left: 5px;
+  font-family: monospace;
+  font-size: 16px;
+  overflow-wrap: break-word;
 }
 
 .label textarea {
-    height: 40px;
-    overflow: hidden;
-    resize: vertical;
+  height: 40px;
+  overflow: hidden;
+  resize: vertical;
 }
 
 .button {
-    height: 30px;
-    width: 80px;
-    margin: auto;
-    font-family: monospace;
-    font-size: 15px;
+  height: 30px;
+  width: 80px;
+  margin: auto;
+  margin-top: 12px;
+  font-family: monospace;
+  font-size: 15px;
+  background-color: #3b3b3b;
+  border: none;
+  border-radius: 5px;
+  -webkit-box-shadow: 0px 0px 6px 1px rgba(222, 150, 159, 1);
+  -moz-box-shadow: 0px 0px 6px 1px rgba(222, 150, 159, 1);
+  box-shadow: 0px 0px 6px 1px rgba(222, 150, 159, 1);
+}
+
+.button:active {
+  box-shadow: 0px 0px 5px rgba(130, 203, 202, 1);
+  -webkit-box-shadow: 0px 0px 5px rgba(130, 203, 202, 1);
+  -moz-box-shadow: 0px 0px 5px rgba(130, 203, 202, 1);
+}
+
+.button:focus {
+  -webkit-box-shadow: 0px 0px 5px rgba(149, 62, 222, 1);
+  -moz-box-shadow: 0px 0px 5px rgba(149, 62, 222, 1);
+  box-shadow: 0px 0px 5px rgba(149, 62, 222, 1);
 }

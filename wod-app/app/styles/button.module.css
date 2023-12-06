@@ -1,0 +1,25 @@
+.button {
+  font-size: 16px;
+  padding: 15px 25px;
+  width: 214px;
+  background-color: transparent;
+  text-transform: uppercase;
+  cursor: pointer;
+  border-radius: 5px;
+  border: none;
+  -webkit-box-shadow: 0px 0px 6px 1px rgba(222, 150, 159, 1);
+  -moz-box-shadow: 0px 0px 6px 1px rgba(222, 150, 159, 1);
+  box-shadow: 0px 0px 6px 1px rgba(222, 150, 159, 1);
+}
+
+.button:active {
+  box-shadow: 0px 0px 5px rgba(130, 203, 202, 1);
+  -webkit-box-shadow: 0px 0px 5px rgba(130, 203, 202, 1);
+  -moz-box-shadow: 0px 0px 5px rgba(130, 203, 202, 1);
+}
+
+.button:focus {
+  -webkit-box-shadow: 0px 0px 5px rgba(149, 62, 222, 1);
+  -moz-box-shadow: 0px 0px 5px rgba(149, 62, 222, 1);
+  box-shadow: 0px 0px 5px rgba(149, 62, 222, 1);
+}

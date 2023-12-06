@@ -1,7 +1,7 @@
 import { ChangeEvent, useState } from "react";
 import styles from "../styles/addRemoveInput.module.css";
 
-function AddRemoveInputField() {
+export default function AddRemoveInputField() {
   const [inputFields, setInputFields] = useState([{ equipment: "" }]);
 
   const handleFormChange = (
@@ -39,4 +39,3 @@ function AddRemoveInputField() {
     </div>
   );
 }
-export default AddRemoveInputField;

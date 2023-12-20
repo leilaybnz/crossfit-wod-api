@@ -1,14 +1,17 @@
 "use client";
 import Workout from "./Workout";
 import Member from "./Member";
-import styles from "../styles/cardsContainer.module.css";
+import styles from "../styles/container.module.css";
 import { useEffect, useState } from "react";
 import { WorkoutType } from "../types";
 import Button from "./Button";
+import CreateWorkoutButton from "./CreateWorkoutButton";
+import Form from "./Form";
 
-export default function CardsContainer() {
+export default function Container() {
   const [workouts, setWorkouts] = useState<WorkoutType[]>([]);
   const [isShown, setIsShown] = useState(false);
+  const [showForm, setShowForm] = useState(false);
 
   useEffect(() => {
     fetch(`http://localhost:5000/api/v1/workouts`)
@@ -21,7 +24,11 @@ export default function CardsContainer() {
 
   const handleClick = () => {
     console.log("click");
-    setIsShown(true);
+    setIsShown(!isShown);
+  };
+
+  const handleClickCreateBtn = () => {
+    setShowForm(!showForm);
   };
 
   return (
@@ -35,8 +42,8 @@ export default function CardsContainer() {
         <Member />
         <Member />
       </section> */}
-      <Button title="workouts" handleClick={handleClick} />
-      <Button title="members" />
+      <Button title="workouts" onClick={handleClick} />
+      {/* <Button title="members" onClick={handleClick} /> */}
       {isShown && (
         <section className={styles.container}>
           {workouts.map((workout, i) => (
@@ -44,6 +51,8 @@ export default function CardsContainer() {
           ))}
         </section>
       )}
+      <CreateWorkoutButton onClick={handleClickCreateBtn} />
+      {showForm && <Form />}
     </>
   );
 }

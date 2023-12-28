@@ -1,13 +1,12 @@
 .form {
-  padding: 25px 50px;
-  box-shadow: 0 0 6px 6px aquamarine;
-}
-
-.form form {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  padding: 25px 60px 25px 20px;
+  box-shadow: 0 0 6px 6px aquamarine;
+  border-radius: 5px;
 }
+
 
 .label {
   display: block;

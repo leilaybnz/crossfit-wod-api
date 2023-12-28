@@ -40,8 +40,7 @@ export default function Form() {
   }
 
   return (
-    <div className={styles.form}>
-      <form>
+      <form className={styles.form}>
         <label className={styles.label}>
           Name
           <input
@@ -82,6 +81,5 @@ export default function Form() {
           Submit
         </button>
       </form>
-    </div>
   );
 }

@@ -1,16 +1,21 @@
 import { ChangeEvent, Dispatch, Fragment, SetStateAction } from "react";
 import styles from "../styles/addRemoveInput.module.css";
+import { Control, UseFormRegister, useFieldArray } from "react-hook-form";
+import { FormWorkoutProps } from "./Form";
 
 interface TrainerTipsInputProps {
-  trainerTips: string[];
-  setTrainerTips: Dispatch<SetStateAction<string[]>>;
+  formControl: Control<FormWorkoutProps>;
+  register: UseFormRegister<FormWorkoutProps>;
 }
 
 export default function TrainerTipsInput({
-  trainerTips,
-  setTrainerTips,
+  register,
+  formControl,
 }: TrainerTipsInputProps) {
-  //const [inputList, setInputList] = useState([{ equipment: "" }]);
+  const { append, remove, fields } = useFieldArray({
+    control: formControl,
+    name: "trainerTips",
+  });
 
   const handleInputChange = (
     index: any,
@@ -28,32 +33,25 @@ export default function TrainerTipsInput({
   };
 
   const addInput = () => {
-    setTrainerTips((trainerTips) => [...trainerTips, ""]);
+    append({ value: "" });
   };
   const removeInput = (index: number) => {
-    setTrainerTips((trainerTips) => {
-      const newTrainerTips = [...trainerTips];
-      trainerTips.splice(index, 1);
-      return newTrainerTips;
-    });
+    remove(index);
   };
 
   return (
     <div className={styles.form}>
-      {trainerTips.map((input, index) => {
+      <label htmlFor="trainer tips">Trainer tips</label>
+      {fields.map((input, index) => {
         return (
-          <Fragment key={index}>
+          <Fragment key={input.id}>
             <div className={styles.inputContainer}>
-              <label htmlFor="trainer tips">Trainer tips</label>
               <input
-                name="trainer tips"
                 id="trainer tips"
                 placeholder="Add workout trainer tips"
-                value={input}
+                {...register(`trainerTips.${index}.value`)}
                 required
-                onChange={(event) => handleInputChange(index, event)}
                 className={styles.input}
-                key={index}
               />
             </div>
             <div className={styles.buttonContainer}>

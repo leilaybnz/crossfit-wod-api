@@ -44,10 +44,13 @@ export default function EquipmentInput({
         return (
           <Fragment key={index}>
             <div className={styles.inputContainer}>
+              <label htmlFor="equipment">Equipment</label>
               <input
                 name="equipment"
+                id="equipment"
                 placeholder="Add workout equipment"
                 value={input}
+                required
                 onChange={(event) => handleInputChange(index, event)}
                 className={styles.input}
                 key={index}

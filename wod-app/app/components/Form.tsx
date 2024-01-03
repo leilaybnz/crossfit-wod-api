@@ -79,7 +79,7 @@ export default function Form() {
           type="text"
           name="name"
           placeholder="Add workout name"
-          aria-required="true"
+          required
           value={newName}
           onChange={(e) => setNewName(e.target.value)}
         />
@@ -90,26 +90,23 @@ export default function Form() {
           type="text"
           name="mode"
           placeholder="Add workout mode"
-          aria-required="true"
+          required
           value={newMode}
           onChange={(e) => setNewMode(e.target.value)}
         />
       </label>
-      <label className={styles.label}>
-        Equipment
+      <div className={styles.label}>
         <EquipmentInput equipment={equipment} setEquipment={setEquipment} />
-      </label>
-      <label className={styles.label}>
-        Exercises
+      </div>
+      <div className={styles.label}>
         <ExercisesInput exercises={exercises} setExercises={setExercises} />
-      </label>
-      <label className={styles.label}>
-        Trainer tips
+      </div>
+      <div className={styles.label}>
         <TrainerTipsInput
           trainerTips={trainerTips}
           setTrainerTips={setTrainerTips}
         />
-      </label>
+      </div>
       <button className={styles.button} type="submit">
         Submit
       </button>

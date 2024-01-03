@@ -106,7 +106,7 @@ export default function Form() {
   };
 
   return (
-    <form className={styles.form} onClick={addWorkout}>
+    <form className={styles.form} onSubmit={addWorkout}>
       <label className={styles.label}>
         Name
         <input

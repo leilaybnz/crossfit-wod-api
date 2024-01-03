@@ -2,26 +2,29 @@ import { ChangeEvent, Dispatch, Fragment, SetStateAction } from "react";
 import styles from "../styles/addRemoveInput.module.css";
 
 interface EquipmentInputProps {
-  equipment: string[],
+  equipment: string[];
   setEquipment: Dispatch<SetStateAction<string[]>>;
 }
 
-export default function EquipmentInput({equipment, setEquipment}: EquipmentInputProps) {
+export default function EquipmentInput({
+  equipment,
+  setEquipment,
+}: EquipmentInputProps) {
   //const [inputList, setInputList] = useState([{ equipment: "" }]);
 
   const handleInputChange = (
     index: any,
     event: ChangeEvent<HTMLInputElement>
   ) => {
-    setEquipment(oldEquipment => {
+    setEquipment((oldEquipment) => {
       return oldEquipment.map((equipment, i) => {
-        if(i === index) {
+        if (i === index) {
           return event.target.value;
         } else {
           return equipment;
         }
-      })
-    })
+      });
+    });
   };
 
   const addInput = () => {
@@ -30,9 +33,9 @@ export default function EquipmentInput({equipment, setEquipment}: EquipmentInput
   const removeInput = (index: number) => {
     setEquipment((equipment) => {
       const newEquipment = [...equipment];
-      newEquipment.splice(index, 1)
+      newEquipment.splice(index, 1);
       return newEquipment;
-    })
+    });
   };
 
   return (
@@ -52,12 +55,14 @@ export default function EquipmentInput({equipment, setEquipment}: EquipmentInput
             </div>
             <div className={styles.buttonContainer}>
               <button
+                type="button"
                 onClick={addInput}
                 className={`${styles.button} ${styles.add}`}
               >
                 +
               </button>
               <button
+                type="button"
                 onClick={() => removeInput(index)}
                 className={`${styles.button} ${styles.remove}`}
               >

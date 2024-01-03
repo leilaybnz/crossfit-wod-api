@@ -10,6 +10,22 @@ interface PostWorkoutProps {
   trainerTips: string[];
 }
 
+export interface PostWorkoutResponseData {
+  status: string;
+  data:   WorkoutData;
+}
+
+export interface WorkoutData {
+  name:        string;
+  mode:        string;
+  equipment:   any[];
+  exercises:   any[];
+  trainerTips: any[];
+  id:          string;
+  createdAt:   string;
+  updatedAt:   string;
+}
+
 function postWorkout(body: PostWorkoutProps) {
   return fetch("http://localhost:5000/api/v1/workouts", {
     method: "POST",
@@ -17,7 +33,7 @@ function postWorkout(body: PostWorkoutProps) {
     headers: {
       "Content-type": "application/json; charset=UTF-8",
     },
-  }).then((response) => response.json());
+  }).then((response) => response.json() as Promise<PostWorkoutResponseData>);
 }
 
 export default function Form() {

@@ -1,56 +1,56 @@
 import { ChangeEvent, Dispatch, Fragment, SetStateAction } from "react";
 import styles from "../styles/addRemoveInput.module.css";
 
-interface AddRemoveInputFieldProps {
-  equipment: string[],
-  setEquipment: Dispatch<SetStateAction<string[]>>;
+interface ExercisesInputProps {
+  exercises: string[],
+  setExercises: Dispatch<SetStateAction<string[]>>;
 }
 
-export default function AddRemoveInputField({equipment, setEquipment}: AddRemoveInputFieldProps) {
+export default function ExercisesInput({exercises, setExercises}: ExercisesInputProps) {
   //const [inputList, setInputList] = useState([{ equipment: "" }]);
 
   const handleInputChange = (
     index: any,
     event: ChangeEvent<HTMLInputElement>
   ) => {
-    setEquipment(oldEquipment => {
-      return oldEquipment.map((equipment, i) => {
+    setExercises(oldExercises => {
+      return oldExercises.map((exercises, i) => {
         if(i === index) {
           return event.target.value;
         } else {
-          return equipment;
+          return exercises;
         }
       })
     })
   };
 
   const addInput = () => {
-    setEquipment((equipment) => [...equipment, ""]);
+    setExercises((exercises) => [...exercises, ""]);
   };
   const removeInput = (index: number) => {
-    setEquipment((equipment) => {
-      const newEquipment = [...equipment];
-      newEquipment.splice(index, 1)
-      return newEquipment;
+    setExercises((exercises) => {
+      const newExercises = [...exercises];
+      newExercises.splice(index, 1)
+      return newExercises;
     })
   };
 
   return (
     <div className={styles.form}>
-      {equipment.map((input, index) => {
+      {exercises.map((input, index) => {
         return (
           <Fragment key={index}>
-            <div key={input} className={styles.inputContainer}>
+            <div className={styles.inputContainer}>
               <input
-                name="equipment"
-                placeholder="Add workout equipment"
+                name="exercises"
+                placeholder="Add workout exercises"
                 value={input}
                 onChange={(event) => handleInputChange(index, event)}
                 className={styles.input}
                 key={index}
               />
             </div>
-            <div key={input} className={styles.buttonContainer}>
+            <div className={styles.buttonContainer}>
               <button
                 onClick={addInput}
                 className={`${styles.button} ${styles.add}`}

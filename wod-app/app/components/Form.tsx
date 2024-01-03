@@ -1,6 +1,8 @@
-import { FormEvent, useState } from "react";
+import { useState } from "react";
 import styles from "../styles/form.module.css";
-import AddRemoveInputField from "./AddRemoveInput";
+import EquipmentInput from "./EquipmentInput";
+import ExercisesInput from "./ExercisesInput";
+import TrainerTipsInput from "./TrainerTipsInput";
 
 interface PostWorkoutProps {
   name: string;
@@ -12,18 +14,18 @@ interface PostWorkoutProps {
 
 export interface PostWorkoutResponseData {
   status: string;
-  data:   WorkoutData;
+  data: WorkoutData;
 }
 
 export interface WorkoutData {
-  name:        string;
-  mode:        string;
-  equipment:   any[];
-  exercises:   any[];
+  name: string;
+  mode: string;
+  equipment: any[];
+  exercises: any[];
   trainerTips: any[];
-  id:          string;
-  createdAt:   string;
-  updatedAt:   string;
+  id: string;
+  createdAt: string;
+  updatedAt: string;
 }
 
 function postWorkout(body: PostWorkoutProps) {
@@ -39,17 +41,22 @@ function postWorkout(body: PostWorkoutProps) {
 export default function Form() {
   const [newName, setNewName] = useState("");
   const [newMode, setNewMode] = useState("");
-  const [newEquipment, setNewEquipment] = useState([]);
-  const [newExercises, setNewExercises] = useState([]);
-  const [newTrainerTips, setNewTrainerTips] = useState([]);
+  const [equipment, setEquipment] = useState([""]);
+  const [exercises, setExercises] = useState([""]);
+  const [trainerTips, setTrainerTips] = useState([""]);
+
+  const reset = () => {
+    setNewName("");
+    setNewMode("");
+    setEquipment([""]);
+    setExercises([""]);
+    setTrainerTips([""]);
+  };
 
   const addWorkout = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const name = newName.trim();
     const mode = newMode.trim();
-    const equipment = newEquipment;
-    const exercises = newExercises;
-    const trainerTips = newTrainerTips;
 
     if (name && mode && equipment && exercises && trainerTips) {
       postWorkout({
@@ -59,11 +66,7 @@ export default function Form() {
         exercises,
         trainerTips,
       }).then((data) => {
-        setNewName("");
-        setNewMode("");
-        setNewEquipment([]);
-        setNewExercises([]);
-        setNewTrainerTips([]);
+        reset();
       });
     }
   };
@@ -94,42 +97,17 @@ export default function Form() {
       </label>
       <label className={styles.label}>
         Equipment
-        <AddRemoveInputField />
+        <EquipmentInput equipment={equipment} setEquipment={setEquipment} />
       </label>
       <label className={styles.label}>
         Exercises
-        <input
-          name="exercises"
-          placeholder="Add workout exercises"
-          aria-required="true"
-        />
-        <input
-          name="exercises"
-          placeholder="Add workout exercises"
-          aria-required="true"
-        />
-        <input
-          name="exercises"
-          placeholder="Add workout exercises"
-          aria-required="true"
-        />
+        <ExercisesInput exercises={exercises} setExercises={setExercises} />
       </label>
       <label className={styles.label}>
         Trainer tips
-        <input
-          name="trainer tips"
-          placeholder="Add workout trainer tips"
-          aria-required="true"
-        />
-        <input
-          name="trainer tips"
-          placeholder="Add workout trainer tips"
-          aria-required="true"
-        />
-        <input
-          name="trainer tips"
-          placeholder="Add workout trainer tips"
-          aria-required="true"
+        <TrainerTipsInput
+          trainerTips={trainerTips}
+          setTrainerTips={setTrainerTips}
         />
       </label>
       <button className={styles.button} type="submit">

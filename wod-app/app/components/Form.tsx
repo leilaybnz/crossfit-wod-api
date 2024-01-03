@@ -1,6 +1,42 @@
 import { useState } from "react";
 import styles from "../styles/form.module.css";
-import AddRemoveInputField from "./AddRemoveInput";
+import EquipmentInput from "./EquipmentInput";
+import ExercisesInput from "./ExercisesInput";
+import TrainerTipsInput from "./TrainerTipsInput";
+
+interface PostWorkoutProps {
+  name: string;
+  mode: string;
+  equipment: string[];
+  exercises: string[];
+  trainerTips: string[];
+}
+
+export interface PostWorkoutResponseData {
+  status: string;
+  data: WorkoutData;
+}
+
+export interface WorkoutData {
+  name: string;
+  mode: string;
+  equipment: any[];
+  exercises: any[];
+  trainerTips: any[];
+  id: string;
+  createdAt: string;
+  updatedAt: string;
+}
+
+function postWorkout(body: PostWorkoutProps) {
+  return fetch("http://localhost:5000/api/v1/workouts", {
+    method: "POST",
+    body: JSON.stringify(body),
+    headers: {
+      "Content-type": "application/json; charset=UTF-8",
+    },
+  }).then((response) => response.json() as Promise<PostWorkoutResponseData>);
+}
 
 interface AddWorkoutPostProps {
   name: string;
@@ -40,25 +76,24 @@ export default function Form() {
   const [newName, setNewName] = useState("");
   const [newMode, setNewMode] = useState("");
   const [equipment, setEquipment] = useState([""]);
-  const [exercises, setExercises] = useState<string[]>([]);
-  const [trainerTips, setTrainerTips] = useState<string[]>([]);
+  const [exercises, setExercises] = useState([""]);
+  const [trainerTips, setTrainerTips] = useState([""]);
 
   const reset = () => {
     setNewName("");
     setNewMode("");
     setEquipment([""]);
-    setExercises([]);
-    setTrainerTips([]);
+    setExercises([""]);
+    setTrainerTips([""]);
   };
 
   const addWorkout = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-
     const name = newName.trim();
     const mode = newMode.trim();
 
     if (name && mode && equipment && exercises && trainerTips) {
-      addWorkoutPost({
+      postWorkout({
         name,
         mode,
         equipment,
@@ -71,11 +106,12 @@ export default function Form() {
   };
 
   return (
-    <form className={styles.form} onSubmit={addWorkout}>
+    <form className={styles.form} onClick={addWorkout}>
       <label className={styles.label}>
         Name
         <input
           type="text"
+          name="name"
           placeholder="Add workout name"
           aria-required="true"
           value={newName}
@@ -86,6 +122,7 @@ export default function Form() {
         Mode
         <input
           type="text"
+          name="mode"
           placeholder="Add workout mode"
           aria-required="true"
           value={newMode}
@@ -94,22 +131,18 @@ export default function Form() {
       </label>
       <label className={styles.label}>
         Equipment
-        <AddRemoveInputField
-          equipment={equipment}
-          setEquipment={setEquipment}
-        />
+        <EquipmentInput equipment={equipment} setEquipment={setEquipment} />
       </label>
       <label className={styles.label}>
         Exercises
-        <input placeholder="Add workout exercises" aria-required="true" />
-        <input placeholder="Add workout exercises" aria-required="true" />
-        <input placeholder="Add workout exercises" aria-required="true" />
+        <ExercisesInput exercises={exercises} setExercises={setExercises} />
       </label>
       <label className={styles.label}>
         Trainer tips
-        <input placeholder="Add workout trainer tips" aria-required="true" />
-        <input placeholder="Add workout trainer tips" aria-required="true" />
-        <input placeholder="Add workout trainer tips" aria-required="true" />
+        <TrainerTipsInput
+          trainerTips={trainerTips}
+          setTrainerTips={setTrainerTips}
+        />
       </label>
       <button className={styles.button} type="submit">
         Submit

@@ -1,17 +1,21 @@
 import { ChangeEvent, Dispatch, Fragment, SetStateAction } from "react";
 import styles from "../styles/addRemoveInput.module.css";
+import { Control, UseFormRegister, useFieldArray } from "react-hook-form";
+import { FormWorkoutProps } from "./Form";
 
 interface EquipmentInputProps {
-  equipment: string[];
-  setEquipment: Dispatch<SetStateAction<string[]>>;
+  formControl: Control<FormWorkoutProps>;
+  register: UseFormRegister<FormWorkoutProps>;
 }
 
 export default function EquipmentInput({
-  equipment,
-  setEquipment,
+  register,
+  formControl,
 }: EquipmentInputProps) {
-  //const [inputList, setInputList] = useState([{ equipment: "" }]);
-
+  const { append, remove, fields } = useFieldArray({
+    control: formControl,
+    name: "equipment",
+  });
   const handleInputChange = (
     index: any,
     event: ChangeEvent<HTMLInputElement>
@@ -28,32 +32,25 @@ export default function EquipmentInput({
   };
 
   const addInput = () => {
-    setEquipment((equipment) => [...equipment, ""]);
+    append({ value: "" });
   };
   const removeInput = (index: number) => {
-    setEquipment((equipment) => {
-      const newEquipment = [...equipment];
-      newEquipment.splice(index, 1);
-      return newEquipment;
-    });
+    remove(index);
   };
 
   return (
     <div className={styles.form}>
-      {equipment.map((input, index) => {
+      <label htmlFor="equipment">Equipment</label>
+      {fields.map((input, index) => {
         return (
-          <Fragment key={index}>
+          <Fragment key={input.id}>
             <div className={styles.inputContainer}>
-              <label htmlFor="equipment">Equipment</label>
               <input
-                name="equipment"
                 id="equipment"
                 placeholder="Add workout equipment"
-                value={input}
+                {...register(`equipment.${index}.value`)}
                 required
-                onChange={(event) => handleInputChange(index, event)}
                 className={styles.input}
-                key={index}
               />
             </div>
             <div className={styles.buttonContainer}>

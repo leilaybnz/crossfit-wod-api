@@ -3,13 +3,15 @@ import styles from "../styles/form.module.css";
 import EquipmentInput from "./EquipmentInput";
 import ExercisesInput from "./ExercisesInput";
 import TrainerTipsInput from "./TrainerTipsInput";
+import { SubmitHandler, useForm } from "react-hook-form";
+import { json } from "stream/consumers";
 
-interface PostWorkoutProps {
+export interface FormWorkoutProps {
   name: string;
   mode: string;
-  equipment: string[];
-  exercises: string[];
-  trainerTips: string[];
+  equipment: { value: string }[];
+  exercises: { value: string }[];
+  trainerTips: { value: string }[];
 }
 
 export interface PostWorkoutResponseData {
@@ -28,7 +30,13 @@ export interface WorkoutData {
   updatedAt: string;
 }
 
-function postWorkout(body: PostWorkoutProps) {
+function postWorkout(body: {
+  name: string;
+  mode: string;
+  equipment: { value: string[] };
+  exercises: { value: string[] };
+  trainerTips: { value: string[] };
+}) {
   return fetch("http://localhost:5000/api/v1/workouts", {
     method: "POST",
     body: JSON.stringify(body),
@@ -39,73 +47,71 @@ function postWorkout(body: PostWorkoutProps) {
 }
 
 export default function Form() {
-  const [newName, setNewName] = useState("");
-  const [newMode, setNewMode] = useState("");
+  const { reset, handleSubmit, register, control } = useForm<FormWorkoutProps>({
+    defaultValues: {
+      name: "",
+      mode: "",
+      equipment: [{ value: "" }],
+      exercises: [{ value: "" }],
+      trainerTips: [{ value: "" }],
+    },
+  });
+
+  const [name, setNewName] = useState("");
+  const [mode, setNewMode] = useState("");
   const [equipment, setEquipment] = useState([""]);
   const [exercises, setExercises] = useState([""]);
   const [trainerTips, setTrainerTips] = useState([""]);
 
-  const reset = () => {
-    setNewName("");
-    setNewMode("");
-    setEquipment([""]);
-    setExercises([""]);
-    setTrainerTips([""]);
-  };
-
-  const addWorkout = (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    const name = newName.trim();
-    const mode = newMode.trim();
-
-    if (name && mode && equipment && exercises && trainerTips) {
-      postWorkout({
-        name,
-        mode,
-        equipment,
-        exercises,
-        trainerTips,
-      }).then((data) => {
-        reset();
-      });
-    }
+  const addWorkout: SubmitHandler<FormWorkoutProps> = ({
+    name,
+    mode,
+    equipment,
+    exercises,
+    trainerTips,
+  }) => {
+    postWorkout({
+      name: name.trim(),
+      mode: mode.trim(),
+      equipment: equipment.map((item) => item.value),
+      exercises: exercises.map((item) => item.value),
+      trainerTips: trainerTips.map((item) => item.value),
+    }).then(() => {
+      reset();
+    });
   };
 
   return (
-    <form className={styles.form} onSubmit={addWorkout}>
+    <form className={styles.form} onSubmit={handleSubmit(addWorkout)}>
       <label className={styles.label}>
         Name
         <input
           type="text"
-          name="name"
           placeholder="Add workout name"
-          required
-          value={newName}
-          onChange={(e) => setNewName(e.target.value)}
+          {...register("name", {
+            required: true,
+            minLength: 3,
+          })}
         />
       </label>
       <label className={styles.label}>
         Mode
         <input
           type="text"
-          name="mode"
           placeholder="Add workout mode"
-          required
-          value={newMode}
-          onChange={(e) => setNewMode(e.target.value)}
+          {...register("mode", {
+            required: true,
+          })}
         />
       </label>
       <div className={styles.label}>
-        <EquipmentInput equipment={equipment} setEquipment={setEquipment} />
+        <EquipmentInput register={register} formControl={control} />
       </div>
       <div className={styles.label}>
-        <ExercisesInput exercises={exercises} setExercises={setExercises} />
+        <ExercisesInput register={register} formControl={control} />
       </div>
       <div className={styles.label}>
-        <TrainerTipsInput
-          trainerTips={trainerTips}
-          setTrainerTips={setTrainerTips}
-        />
+        <TrainerTipsInput register={register} formControl={control} />
       </div>
       <button className={styles.button} type="submit">
         Submit

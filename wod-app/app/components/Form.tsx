@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { FormEvent, useState } from "react";
 import styles from "../styles/form.module.css";
 import AddRemoveInputField from "./AddRemoveInput";
 
@@ -9,7 +9,8 @@ export default function Form() {
   const [newExercises, setNewExercises] = useState([]);
   const [newTrainerTips, setNewTrainerTips] = useState([]);
 
-  const addWorkout = () => {
+  const addWorkout = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
     const name = newName.trim()
     const mode = newMode.trim()
     const equipment = newEquipment;
@@ -42,11 +43,12 @@ export default function Form() {
   }
 
   return (
-      <form className={styles.form}>
+      <form className={styles.form} onClick={addWorkout}>
         <label className={styles.label}>
           Name
           <input
             type="text"
+            name="name"
             placeholder="Add workout name"
             aria-required="true"
             value={newName}
@@ -57,6 +59,7 @@ export default function Form() {
           Mode
           <input
             type="text"
+            name="mode"
             placeholder="Add workout mode"
             aria-required="true"
             value={newMode}
@@ -69,17 +72,17 @@ export default function Form() {
         </label>
         <label className={styles.label}>
           Exercises
-          <input placeholder="Add workout exercises" aria-required="true" />
-          <input placeholder="Add workout exercises" aria-required="true" />
-          <input placeholder="Add workout exercises" aria-required="true" />
+          <input name="exercises" placeholder="Add workout exercises" aria-required="true" />
+          <input name="exercises" placeholder="Add workout exercises" aria-required="true" />
+          <input name="exercises" placeholder="Add workout exercises" aria-required="true" />
         </label>
         <label className={styles.label}>
           Trainer tips
-          <input placeholder="Add workout trainer tips" aria-required="true" />
-          <input placeholder="Add workout trainer tips" aria-required="true" />
-          <input placeholder="Add workout trainer tips" aria-required="true" />
+          <input name="trainer tips" placeholder="Add workout trainer tips" aria-required="true" />
+          <input name="trainer tips" placeholder="Add workout trainer tips" aria-required="true" />
+          <input name="trainer tips" placeholder="Add workout trainer tips" aria-required="true" />
         </label>
-        <button className={styles.button} type="submit" onClick={addWorkout}>
+        <button className={styles.button} type="submit">
           Submit
         </button>
       </form>

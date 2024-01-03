@@ -1,40 +1,54 @@
-import { ChangeEvent, useState } from "react";
+import { ChangeEvent, Dispatch, Fragment, SetStateAction } from "react";
 import styles from "../styles/addRemoveInput.module.css";
 
-export default function AddRemoveInputField() {
-  const [inputList, setInputList] = useState([{ equipment: "" }]);
+interface AddRemoveInputFieldProps {
+  equipment: string[];
+  setEquipment: Dispatch<SetStateAction<string[]>>;
+}
 
+export default function AddRemoveInputField({
+  equipment,
+  setEquipment,
+}: AddRemoveInputFieldProps) {
   const handleInputChange = (
-    index: any,
+    index: number,
     event: ChangeEvent<HTMLInputElement>
   ) => {
-    const { name, value } = event.target;
-    let fields = [...inputList];
-    fields[index][name] = value;
-    setInputList(fields);
+    setEquipment((oldEquipment) => {
+      return oldEquipment.map((equipment, i) => {
+        if (i === index) {
+          return event.target.value;
+        } else {
+          return equipment;
+        }
+      });
+    });
   };
 
   const addInput = () => {
-    let newInput = { equipment: "" };
-    setInputList([...inputList, newInput]);
+    setEquipment((equipment) => [...equipment, ""]);
   };
-  const removeInput = (index: any) => {
-    const list = [...inputList];
-    list.splice(index, 1);
-    setInputList(list);
+
+  const removeInput = (index: number) => {
+    setEquipment((equipment) => {
+      const newEquipment = [...equipment];
+      newEquipment.splice(index, 1);
+
+      return newEquipment;
+    });
   };
 
   return (
     <div className={styles.form}>
-      {inputList.map((input, index) => {
+      {equipment.map((input, index) => {
         return (
-          <>
+          <Fragment key={index}>
             <div className={styles.inputContainer}>
               <input
                 name="equipment"
                 placeholder="Add workout equipment"
-                value={input.equipment}
-                onChange={() => handleInputChange(index, event)}
+                value={input}
+                onChange={(event) => handleInputChange(index, event)}
                 className={styles.input}
                 key={index}
               />
@@ -47,13 +61,13 @@ export default function AddRemoveInputField() {
                 +
               </button>
               <button
-                onClick={removeInput}
+                onClick={() => removeInput(index)}
                 className={`${styles.button} ${styles.remove}`}
               >
                 -
               </button>
             </div>
-          </>
+          </Fragment>
         );
       })}
     </div>

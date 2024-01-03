@@ -39,18 +39,23 @@ function addWorkoutPost(body: AddWorkoutPostProps) {
 export default function Form() {
   const [newName, setNewName] = useState("");
   const [newMode, setNewMode] = useState("");
-  const [newEquipment, setNewEquipment] = useState([]);
-  const [newExercises, setNewExercises] = useState([]);
-  const [newTrainerTips, setNewTrainerTips] = useState([]);
+  const [equipment, setEquipment] = useState([""]);
+  const [exercises, setExercises] = useState<string[]>([]);
+  const [trainerTips, setTrainerTips] = useState<string[]>([]);
+
+  const reset = () => {
+    setNewName("");
+    setNewMode("");
+    setEquipment([""]);
+    setExercises([]);
+    setTrainerTips([]);
+  };
 
   const addWorkout = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
     const name = newName.trim();
     const mode = newMode.trim();
-    const equipment = newEquipment;
-    const exercises = newExercises;
-    const trainerTips = newTrainerTips;
 
     if (name && mode && equipment && exercises && trainerTips) {
       addWorkoutPost({
@@ -60,11 +65,7 @@ export default function Form() {
         exercises,
         trainerTips,
       }).then((data) => {
-        setNewName("");
-        setNewMode("");
-        setNewEquipment([]);
-        setNewExercises([]);
-        setNewTrainerTips([]);
+        reset();
       });
     }
   };
@@ -93,7 +94,10 @@ export default function Form() {
       </label>
       <label className={styles.label}>
         Equipment
-        <AddRemoveInputField />
+        <AddRemoveInputField
+          equipment={equipment}
+          setEquipment={setEquipment}
+        />
       </label>
       <label className={styles.label}>
         Exercises

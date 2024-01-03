@@ -2,26 +2,29 @@ import { ChangeEvent, Dispatch, Fragment, SetStateAction } from "react";
 import styles from "../styles/addRemoveInput.module.css";
 
 interface TrainerTipsInputProps {
-  trainerTips: string[],
+  trainerTips: string[];
   setTrainerTips: Dispatch<SetStateAction<string[]>>;
 }
 
-export default function TrainerTipsInput({trainerTips, setTrainerTips}: TrainerTipsInputProps) {
+export default function TrainerTipsInput({
+  trainerTips,
+  setTrainerTips,
+}: TrainerTipsInputProps) {
   //const [inputList, setInputList] = useState([{ equipment: "" }]);
 
   const handleInputChange = (
     index: any,
     event: ChangeEvent<HTMLInputElement>
   ) => {
-    setTrainerTips(oldTrainerTips => {
+    setTrainerTips((oldTrainerTips) => {
       return oldTrainerTips.map((trainerTips, i) => {
-        if(i === index) {
+        if (i === index) {
           return event.target.value;
         } else {
           return trainerTips;
         }
-      })
-    })
+      });
+    });
   };
 
   const addInput = () => {
@@ -30,9 +33,9 @@ export default function TrainerTipsInput({trainerTips, setTrainerTips}: TrainerT
   const removeInput = (index: number) => {
     setTrainerTips((trainerTips) => {
       const newTrainerTips = [...trainerTips];
-      trainerTips.splice(index, 1)
+      trainerTips.splice(index, 1);
       return newTrainerTips;
-    })
+    });
   };
 
   return (
@@ -41,10 +44,13 @@ export default function TrainerTipsInput({trainerTips, setTrainerTips}: TrainerT
         return (
           <Fragment key={index}>
             <div className={styles.inputContainer}>
+              <label htmlFor="trainer tips">Trainer tips</label>
               <input
                 name="trainer tips"
+                id="trainer tips"
                 placeholder="Add workout trainer tips"
                 value={input}
+                required
                 onChange={(event) => handleInputChange(index, event)}
                 className={styles.input}
                 key={index}
@@ -52,14 +58,14 @@ export default function TrainerTipsInput({trainerTips, setTrainerTips}: TrainerT
             </div>
             <div className={styles.buttonContainer}>
               <button
-              type="button"
+                type="button"
                 onClick={addInput}
                 className={`${styles.button} ${styles.add}`}
               >
                 +
               </button>
               <button
-              type="button"
+                type="button"
                 onClick={() => removeInput(index)}
                 className={`${styles.button} ${styles.remove}`}
               >

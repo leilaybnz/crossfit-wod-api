@@ -52,12 +52,14 @@ export default function TrainerTipsInput({trainerTips, setTrainerTips}: TrainerT
             </div>
             <div className={styles.buttonContainer}>
               <button
+              type="button"
                 onClick={addInput}
                 className={`${styles.button} ${styles.add}`}
               >
                 +
               </button>
               <button
+              type="button"
                 onClick={() => removeInput(index)}
                 className={`${styles.button} ${styles.remove}`}
               >

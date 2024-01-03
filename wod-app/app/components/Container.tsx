@@ -1,12 +1,11 @@
 "use client";
-import Workout from "./Workout";
-import Member from "./Member";
-import styles from "../styles/container.module.css";
 import { useEffect, useState } from "react";
+import styles from "../styles/container.module.css";
 import { WorkoutType } from "../types";
 import Button from "./Button";
 import CreateWorkoutButton from "./CreateWorkoutButton";
 import Form from "./Form";
+import Workout from "./Workout";
 
 export default function Container() {
   const [workouts, setWorkouts] = useState<WorkoutType[]>([]);
@@ -14,7 +13,7 @@ export default function Container() {
   const [showForm, setShowForm] = useState(false);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/api/v1/workouts`)
+    fetch(`http://localhost:3001/api/v1/workouts`)
       .then((response) => response.json())
       .then((json) => {
         const data = json.allWorkouts;

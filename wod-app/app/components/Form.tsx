@@ -38,40 +38,6 @@ function postWorkout(body: PostWorkoutProps) {
   }).then((response) => response.json() as Promise<PostWorkoutResponseData>);
 }
 
-interface AddWorkoutPostProps {
-  name: string;
-  mode: string;
-  equipment: string[];
-  exercises: string[];
-  trainerTips: string[];
-}
-
-export interface WorkoutPostResponseData {
-  status: string;
-  data: WorkoutData;
-}
-
-export interface WorkoutData {
-  name: string;
-  mode: string;
-  equipment: any[];
-  exercises: any[];
-  trainerTips: any[];
-  id: string;
-  createdAt: string;
-  updatedAt: string;
-}
-
-function addWorkoutPost(body: AddWorkoutPostProps) {
-  return fetch("http://localhost:3001/api/v1/workouts", {
-    method: "POST",
-    body: JSON.stringify(body),
-    headers: {
-      "Content-type": "application/json; charset=UTF-8",
-    },
-  }).then((response) => response.json() as Promise<WorkoutPostResponseData>);
-}
-
 export default function Form() {
   const [newName, setNewName] = useState("");
   const [newMode, setNewMode] = useState("");

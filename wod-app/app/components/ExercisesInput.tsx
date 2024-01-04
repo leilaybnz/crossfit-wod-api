@@ -14,7 +14,7 @@ export default function ExercisesInput({
 }: ExercisesInputProps) {
   const { append, remove, fields } = useFieldArray({
     control: formControl,
-    name: "equipment",
+    name: "exercises",
   });
   const handleInputChange = (
     index: any,

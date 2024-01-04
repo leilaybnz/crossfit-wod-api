@@ -8,24 +8,24 @@ interface EquipmentInputProps {
   register: UseFormRegister<FormWorkoutProps>;
 }
 
-export default function EquipmentInput({
+export default function MobilityInput({
   register,
   formControl,
 }: EquipmentInputProps) {
   const { append, remove, fields } = useFieldArray({
     control: formControl,
-    name: "equipment",
+    name: "mobility",
   });
   const handleInputChange = (
     index: any,
     event: ChangeEvent<HTMLInputElement>
   ) => {
-    setEquipment((oldEquipment) => {
-      return oldEquipment.map((equipment, i) => {
+    setMobility((oldMobility) => {
+      return oldMobility.map((mobility, i) => {
         if (i === index) {
           return event.target.value;
         } else {
-          return equipment;
+          return mobility;
         }
       });
     });
@@ -40,15 +40,15 @@ export default function EquipmentInput({
 
   return (
     <div className={styles.form}>
-      <label htmlFor="equipment">Equipment</label>
+      <label htmlFor="mobility">Mobility</label>
       {fields.map((input, index) => {
         return (
           <Fragment key={input.id}>
             <div className={styles.inputContainer}>
               <input
-                id="equipment"
-                placeholder="Add workout equipment"
-                {...register(`equipment.${index}.value`)}
+                id="mobility"
+                placeholder="Add workout mobility"
+                {...register(`mobility.${index}.value`)}
                 required
                 className={styles.input}
               />

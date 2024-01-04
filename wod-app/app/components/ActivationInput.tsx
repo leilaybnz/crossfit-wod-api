@@ -8,24 +8,24 @@ interface EquipmentInputProps {
   register: UseFormRegister<FormWorkoutProps>;
 }
 
-export default function EquipmentInput({
+export default function ActivationInput({
   register,
   formControl,
 }: EquipmentInputProps) {
   const { append, remove, fields } = useFieldArray({
     control: formControl,
-    name: "equipment",
+    name: "activation",
   });
   const handleInputChange = (
     index: any,
     event: ChangeEvent<HTMLInputElement>
   ) => {
-    setEquipment((oldEquipment) => {
-      return oldEquipment.map((equipment, i) => {
+    setActivation((oldActivation) => {
+      return oldActivation.map((activation, i) => {
         if (i === index) {
           return event.target.value;
         } else {
-          return equipment;
+          return activation;
         }
       });
     });
@@ -40,15 +40,15 @@ export default function EquipmentInput({
 
   return (
     <div className={styles.form}>
-      <label htmlFor="equipment">Equipment</label>
+      <label htmlFor="activation">Activation</label>
       {fields.map((input, index) => {
         return (
           <Fragment key={input.id}>
             <div className={styles.inputContainer}>
               <input
-                id="equipment"
-                placeholder="Add workout equipment"
-                {...register(`equipment.${index}.value`)}
+                id="activation"
+                placeholder="Add workout activation"
+                {...register(`activation.${index}.value`)}
                 required
                 className={styles.input}
               />

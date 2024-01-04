@@ -1,14 +1,17 @@
 export interface WorkoutType {
-    name: string,
-    mode: string,
-    equipment: string,
-    exercises: string,
-    trainerTips: string
+  name: string;
+  mode: string;
+  equipment: string;
+  mobility: string,
+  activation: string,
+  exercises: string;
+  trainerTips: string;
+  id: string;
 }
 
 export interface Member {
-    name: string,
-    gender: number,
-    email: string,
-    birthday?: string
-  }
+  name: string;
+  gender: number;
+  email: string;
+  birthday?: string;
+}

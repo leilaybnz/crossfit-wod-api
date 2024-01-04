@@ -11,6 +11,16 @@
         "hamstring curl machine,\n",
         "cable\n"
       ],
+      "mobility": [
+        "Mountain climbers 2x20secs,\n",
+        "Walk out 2x5,\n",
+        "V-ups con pelota 2x10,\n"
+      ],
+      "activation": [
+        "KB swing 2x15,\n",
+        "Isquios en pelota 2x6/6,\n",
+        "Puente de gluteos unilateral 2x10/10,\n"
+      ],
       "exercises": [
         "Squats 4x12x 3 secs excéntrico + single leg assisted RDL 4x8-6,\n",
         "Deficit reverse lunges 4x8 + prensa 4x12x 3 secs excéntrico y 3 secs concéntrico,\n",
@@ -65,9 +75,7 @@
         "Apertura banco inclinado 3x8 + extensiones de triceps con barrita (polea) 3x12,\n",
         "Press de hombros con mancuernas 10-10-8-8 Vuelos laterales 3x10-drop12,\n"
       ],
-      "trainerTips": [
-        "none"
-      ],
+      "trainerTips": ["none"],
       "id": "5cb028f9-c728-4086-af32-beadba73fc08",
       "createdAt": "10/31/2023, 6:29:56 PM",
       "updatedAt": "10/31/2023, 6:29:56 PM"
@@ -75,12 +83,7 @@
     {
       "name": "Upper body day 2",
       "mode": "For Reps",
-      "equipment": [
-        "barbell",
-        "smith machine",
-        "cable",
-        "dumbbells"
-      ],
+      "equipment": ["barbell", "smith machine", "cable", "dumbbells"],
       "exercises": [
         "Remo prona con barra 12-10-8-8 + high pull unilateral 4x8",
         "Press banco inclinado con manc 4x12 + aperturas en banco plano 4x10",
@@ -89,9 +92,7 @@
         "Triceps tras nuca soga 3x15 + press de triceps en banco plano 3x10",
         "Around the world 3x8 + vuelos frontales 3x12 + que me importa 3x15"
       ],
-      "trainerTips": [
-        "none"
-      ],
+      "trainerTips": ["none"],
       "id": "790c2fa7-609c-47a8-acaf-72bee8553b90",
       "createdAt": "10/31/2023, 6:31:35 PM",
       "updatedAt": "10/31/2023, 6:31:35 PM"
@@ -99,21 +100,14 @@
     {
       "name": "Core Day 1",
       "mode": "AMRAP",
-      "equipment": [
-        "barbell",
-        "smith machine",
-        "cable",
-        "dumbbells"
-      ],
+      "equipment": ["barbell", "smith machine", "cable", "dumbbells"],
       "exercises": [
         "Hollow hold + crunch 10",
         "Zercher Goodmorning 12",
         "Toe taps en carpa 14 total",
         "Up-down plank 16 total"
       ],
-      "trainerTips": [
-        "none"
-      ],
+      "trainerTips": ["none"],
       "id": "d9d6ef14-db36-4b42-a5ef-5c8868ebba11",
       "createdAt": "10/31/2023, 6:33:17 PM",
       "updatedAt": "10/31/2023, 6:33:17 PM"
@@ -121,20 +115,14 @@
     {
       "name": "Core Day 2",
       "mode": "MB complex: 10 reps de cada, 5 series, 1' rest entre serie",
-      "equipment": [
-        "dumb-bell",
-        "barbell",
-        "medball"
-      ],
+      "equipment": ["dumb-bell", "barbell", "medball"],
       "exercises": [
         "Split stance chest pass",
         "Parallel throw",
         "Slam",
         "Jump squat"
       ],
-      "trainerTips": [
-        "none"
-      ],
+      "trainerTips": ["none"],
       "id": "5e7a1d7f-7500-4a05-b9f2-1db5cf3cfb2d",
       "createdAt": "11/1/2023, 8:49:36 PM",
       "updatedAt": "1/11/2023, 18:09:25"
@@ -142,15 +130,9 @@
     {
       "name": "DUMMY",
       "mode": "dummy",
-      "equipment": [
-        "dummy"
-      ],
-      "exercises": [
-        "dummy"
-      ],
-      "trainerTips": [
-        "dummy"
-      ],
+      "equipment": ["dummy"],
+      "exercises": ["dummy"],
+      "trainerTips": ["dummy"],
       "id": "f25c1930-3485-48df-93a2-8b599ccd37c1",
       "createdAt": "6/11/2023, 11:40:58",
       "updatedAt": "6/11/2023, 11:40:58"
@@ -158,13 +140,8 @@
     {
       "name": "Jumping (Not) Made Easy",
       "mode": "AMRAP 12",
-      "equipment": [
-        "jump rope"
-      ],
-      "exercises": [
-        "10 burpees",
-        "25 double-unders"
-      ],
+      "equipment": ["jump rope"],
+      "exercises": ["10 burpees", "25 double-unders"],
       "trainerTips": [
         "Scale to do 50 single-unders, if double-unders are too difficult"
       ],
@@ -175,9 +152,7 @@
     {
       "name": "Burpee Meters",
       "mode": "3 Rounds For Time",
-      "equipment": [
-        "Row Erg"
-      ],
+      "equipment": ["Row Erg"],
       "exercises": [
         "Row 500 meters",
         "21 burpees",
@@ -196,9 +171,7 @@
     {
       "name": "Dumbbell Rower",
       "mode": "AMRAP 15",
-      "equipment": [
-        "Dumbbell"
-      ],
+      "equipment": ["Dumbbell"],
       "exercises": [
         "15 dumbbell rows, left arm",
         "15 dumbbell rows, right arm",

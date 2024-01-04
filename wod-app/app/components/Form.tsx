@@ -33,9 +33,9 @@ export interface WorkoutData {
 function postWorkout(body: {
   name: string;
   mode: string;
-  equipment: { value: string[] };
-  exercises: { value: string[] };
-  trainerTips: { value: string[] };
+  equipment: string[];
+  exercises: string[];
+  trainerTips: string[];
 }) {
   return fetch("http://localhost:5000/api/v1/workouts", {
     method: "POST",

@@ -1,15 +1,17 @@
-import { useState } from "react";
 import styles from "../styles/form.module.css";
+import ActivationInput from "./ActivationInput";
 import EquipmentInput from "./EquipmentInput";
 import ExercisesInput from "./ExercisesInput";
+import MobilityInput from "./MobilityInput";
 import TrainerTipsInput from "./TrainerTipsInput";
 import { SubmitHandler, useForm } from "react-hook-form";
-import { json } from "stream/consumers";
 
 export interface FormWorkoutProps {
   name: string;
   mode: string;
   equipment: { value: string }[];
+  mobility: {value: string}[];
+  activation: {value: string}[];
   exercises: { value: string }[];
   trainerTips: { value: string }[];
 }
@@ -22,9 +24,11 @@ export interface PostWorkoutResponseData {
 export interface WorkoutData {
   name: string;
   mode: string;
-  equipment: any[];
-  exercises: any[];
-  trainerTips: any[];
+  equipment: string[];
+  mobility: string[];
+  activation: string[];
+  exercises: string[];
+  trainerTips: string[];
   id: string;
   createdAt: string;
   updatedAt: string;
@@ -34,6 +38,8 @@ function postWorkout(body: {
   name: string;
   mode: string;
   equipment: string[];
+  mobility: string[];
+  activation: string[];
   exercises: string[];
   trainerTips: string[];
 }) {
@@ -52,21 +58,19 @@ export default function Form() {
       name: "",
       mode: "",
       equipment: [{ value: "" }],
+      mobility: [{ value: "" }],
+      activation: [{ value: "" }],
       exercises: [{ value: "" }],
       trainerTips: [{ value: "" }],
     },
   });
 
-  const [name, setNewName] = useState("");
-  const [mode, setNewMode] = useState("");
-  const [equipment, setEquipment] = useState([""]);
-  const [exercises, setExercises] = useState([""]);
-  const [trainerTips, setTrainerTips] = useState([""]);
-
   const addWorkout: SubmitHandler<FormWorkoutProps> = ({
     name,
     mode,
     equipment,
+    mobility,
+    activation,
     exercises,
     trainerTips,
   }) => {
@@ -74,6 +78,8 @@ export default function Form() {
       name: name.trim(),
       mode: mode.trim(),
       equipment: equipment.map((item) => item.value),
+      mobility: mobility.map((item) => item.value),
+      activation: activation.map((item) => item.value),
       exercises: exercises.map((item) => item.value),
       trainerTips: trainerTips.map((item) => item.value),
     }).then(() => {
@@ -106,6 +112,12 @@ export default function Form() {
       </label>
       <div className={styles.label}>
         <EquipmentInput register={register} formControl={control} />
+      </div>
+      <div className={styles.label}>
+          <MobilityInput register={register} formControl={control}/>
+      </div>
+      <div className={styles.label}>
+          <ActivationInput register={register} formControl={control}/>
       </div>
       <div className={styles.label}>
         <ExercisesInput register={register} formControl={control} />

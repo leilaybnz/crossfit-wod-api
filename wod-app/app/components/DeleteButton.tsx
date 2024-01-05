@@ -7,7 +7,11 @@ function deleteWorkout(workoutId: string) {
   }).then((response) => response.json());
 }
 
-export default function DeleteButton(workoutId: string) {
+interface DeleteButtonProps {
+  workoutId: string;
+}
+
+export default function DeleteButton({ workoutId }: DeleteButtonProps) {
   return (
     <button
       type="button"

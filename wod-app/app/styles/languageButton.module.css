@@ -1,0 +1,7 @@
+.container {
+    height: 50px;
+    width: 50px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}

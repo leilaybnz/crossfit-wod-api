@@ -1,7 +1,8 @@
 .container {
+  width: 60%;
   height: 120px;
   text-align: center;
   padding-top: 30px;
-  font-size: 40px;
+  font-size: 26px; /*40px desktop*/
   text-shadow: rgba(115, 193, 245, 1) 0px 0px 12px;
 }

@@ -7,6 +7,7 @@ import Container from './components/Container';
 import styles from './styles/layout.module.css';
 import { Suspense } from 'react';
 import Loading from './loading';
+import LanguageButton from './components/LanguageButton';
 
 const redHatMono = Red_Hat_Mono({ subsets: ['latin'] });
 
@@ -24,6 +25,7 @@ export default function RootLayout() {
           <Suspense fallback={<Loading/>}>
             <Container/>
           </Suspense>
+          <LanguageButton/>
           <Footer />
         </main>
       </body>

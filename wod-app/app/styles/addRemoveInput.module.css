@@ -3,8 +3,13 @@
   position: relative;
 }
 
+.form label {
+  font-size: calc(12px + 0.390625vw);
+}
+
 .inputContainer {
   display: block;
+  font-size: calc(11px + 0.390625vw);
 }
 
 .buttonContainer {

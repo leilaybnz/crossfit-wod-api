@@ -1,89 +1,14 @@
 {
   "workouts": [
     {
-      "name": "Leg Day 1",
-      "mode": "AMRAP 20",
-      "equipment": [
-        "rack,\n",
-        "barbell,\n",
-        "kettlebell,\n",
-        "leg press,\n",
-        "hamstring curl machine,\n",
-        "cable\n"
-      ],
-      "mobility": [
-        "Mountain climbers 2x20secs,\n",
-        "Walk out 2x5,\n",
-        "V-ups con pelota 2x10,\n"
-      ],
-      "activation": [
-        "KB swing 2x15,\n",
-        "Isquios en pelota 2x6/6,\n",
-        "Puente de gluteos unilateral 2x10/10,\n"
-      ],
-      "exercises": [
-        "Squats 4x12x 3 secs excéntrico + single leg assisted RDL 4x8-6,\n",
-        "Deficit reverse lunges 4x8 + prensa 4x12x 3 secs excéntrico y 3 secs concéntrico,\n",
-        "Sillón de cuádriceps 3x8-drop 10,\n",
-        "Isquios en polea 3x12/12,\n"
-      ],
-      "trainerTips": [
-        "Split your toes to bars into two sets maximum,\n",
-        "Go unbroken on the thrusters,\n",
-        "Take the abmat sit-ups as a chance to normalize your breath,\n"
-      ],
-      "id": "d75fa271-1bb7-4f33-891d-ca37467f6b6d",
-      "createdAt": "10/31/2023, 6:20:41 PM",
-      "updatedAt": "10/31/2023, 6:20:41 PM"
-    },
-    {
-      "name": "Leg day 2,\n",
-      "mode": "For Reps,\n",
-      "equipment": [
-        "barbell,\n",
-        "smith machine,\n",
-        "cable,\n",
-        "dumbbells,\n"
-      ],
-      "exercises": [
-        "HT 12-10-8-8,\n",
-        "Sumo deadlift 6-8-10-12-15,\n",
-        "Squat en smith profundas 3x10 + búlgaras 3x8/8 Aductores en polea 3x10 + abductores en máquina 3x15\n"
-      ],
-      "trainerTips": [
-        "Split the 21 thrusters as needed,\n",
-        "Try to do the 9 and 6 thrusters unbroken,\n",
-        "RX Weights: 115lb/75lb,\n"
-      ],
-      "id": "1bafc301-b35c-40cf-bd3f-b3db78246382",
-      "createdAt": "10/31/2023, 6:25:44 PM",
-      "updatedAt": "10/31/2023, 6:25:44 PM"
-    },
-    {
-      "name": "Upper body day 1",
-      "mode": "For Reps",
-      "equipment": [
-        "barbell,\n",
-        "smith machine,\n",
-        "cable,\n",
-        "dumbbells,\n"
-      ],
-      "exercises": [
-        "Remo angosto 12-12-10-10 + biceps martillo con 3 secs excéntrico 4x10,\n",
-        "Press banco plano (barra o manc) 12-12-10-10 + triceps francés 4x15,\n",
-        "Polea prona 3x8 + biceps barrita plana polea 3x12,\n",
-        "Apertura banco inclinado 3x8 + extensiones de triceps con barrita (polea) 3x12,\n",
-        "Press de hombros con mancuernas 10-10-8-8 Vuelos laterales 3x10-drop12,\n"
-      ],
-      "trainerTips": ["none"],
-      "id": "5cb028f9-c728-4086-af32-beadba73fc08",
-      "createdAt": "10/31/2023, 6:29:56 PM",
-      "updatedAt": "10/31/2023, 6:29:56 PM"
-    },
-    {
       "name": "Upper body day 2",
       "mode": "For Reps",
-      "equipment": ["barbell", "smith machine", "cable", "dumbbells"],
+      "equipment": [
+        "barbell",
+        "smith machine",
+        "cable",
+        "dumbbells"
+      ],
       "exercises": [
         "Remo prona con barra 12-10-8-8 + high pull unilateral 4x8",
         "Press banco inclinado con manc 4x12 + aperturas en banco plano 4x10",
@@ -92,7 +17,9 @@
         "Triceps tras nuca soga 3x15 + press de triceps en banco plano 3x10",
         "Around the world 3x8 + vuelos frontales 3x12 + que me importa 3x15"
       ],
-      "trainerTips": ["none"],
+      "trainerTips": [
+        "none"
+      ],
       "id": "790c2fa7-609c-47a8-acaf-72bee8553b90",
       "createdAt": "10/31/2023, 6:31:35 PM",
       "updatedAt": "10/31/2023, 6:31:35 PM"
@@ -100,14 +27,21 @@
     {
       "name": "Core Day 1",
       "mode": "AMRAP",
-      "equipment": ["barbell", "smith machine", "cable", "dumbbells"],
+      "equipment": [
+        "barbell",
+        "smith machine",
+        "cable",
+        "dumbbells"
+      ],
       "exercises": [
         "Hollow hold + crunch 10",
         "Zercher Goodmorning 12",
         "Toe taps en carpa 14 total",
         "Up-down plank 16 total"
       ],
-      "trainerTips": ["none"],
+      "trainerTips": [
+        "none"
+      ],
       "id": "d9d6ef14-db36-4b42-a5ef-5c8868ebba11",
       "createdAt": "10/31/2023, 6:33:17 PM",
       "updatedAt": "10/31/2023, 6:33:17 PM"
@@ -115,14 +49,20 @@
     {
       "name": "Core Day 2",
       "mode": "MB complex: 10 reps de cada, 5 series, 1' rest entre serie",
-      "equipment": ["dumb-bell", "barbell", "medball"],
+      "equipment": [
+        "dumb-bell",
+        "barbell",
+        "medball"
+      ],
       "exercises": [
         "Split stance chest pass",
         "Parallel throw",
         "Slam",
         "Jump squat"
       ],
-      "trainerTips": ["none"],
+      "trainerTips": [
+        "none"
+      ],
       "id": "5e7a1d7f-7500-4a05-b9f2-1db5cf3cfb2d",
       "createdAt": "11/1/2023, 8:49:36 PM",
       "updatedAt": "1/11/2023, 18:09:25"
@@ -130,9 +70,15 @@
     {
       "name": "DUMMY",
       "mode": "dummy",
-      "equipment": ["dummy"],
-      "exercises": ["dummy"],
-      "trainerTips": ["dummy"],
+      "equipment": [
+        "dummy"
+      ],
+      "exercises": [
+        "dummy"
+      ],
+      "trainerTips": [
+        "dummy"
+      ],
       "id": "f25c1930-3485-48df-93a2-8b599ccd37c1",
       "createdAt": "6/11/2023, 11:40:58",
       "updatedAt": "6/11/2023, 11:40:58"
@@ -140,8 +86,13 @@
     {
       "name": "Jumping (Not) Made Easy",
       "mode": "AMRAP 12",
-      "equipment": ["jump rope"],
-      "exercises": ["10 burpees", "25 double-unders"],
+      "equipment": [
+        "jump rope"
+      ],
+      "exercises": [
+        "10 burpees",
+        "25 double-unders"
+      ],
       "trainerTips": [
         "Scale to do 50 single-unders, if double-unders are too difficult"
       ],
@@ -152,7 +103,9 @@
     {
       "name": "Burpee Meters",
       "mode": "3 Rounds For Time",
-      "equipment": ["Row Erg"],
+      "equipment": [
+        "Row Erg"
+      ],
       "exercises": [
         "Row 500 meters",
         "21 burpees",
@@ -171,7 +124,9 @@
     {
       "name": "Dumbbell Rower",
       "mode": "AMRAP 15",
-      "equipment": ["Dumbbell"],
+      "equipment": [
+        "Dumbbell"
+      ],
       "exercises": [
         "15 dumbbell rows, left arm",
         "15 dumbbell rows, right arm",
@@ -184,6 +139,132 @@
       "id": "3dc53bc8-27b8-4773-b85d-89f0a354d437",
       "createdAt": "4/25/2022, 2:56:03 PM",
       "updatedAt": "4/25/2022, 2:56:03 PM"
+    },
+    {
+      "name": "Leg Day 1 Jan-Feb",
+      "mode": "Reps",
+      "equipment": [
+        "Barbell",
+        "Dumbbells",
+        "Kettlebells"
+      ],
+      "mobility": [
+        "Feet 2 feet 2x30",
+        "Hollow flutters 2x30",
+        "V-ups cruzados 2x30"
+      ],
+      "activation": [
+        "Bw squats 1.5 2x12",
+        "Wall sit 2x30''",
+        "Gemelos 2x15"
+      ],
+      "exercises": [
+        "Sentadilla con pausa 3''",
+        "Deficit reverse lunges con barra 12-10-8-8",
+        "Prensa unilateral + Single leg RDL landmine 3x12/12 + 3x8/8",
+        "Sillon de cuadriceps 2x1 3x20",
+        "Aductores 2x15"
+      ],
+      "trainerTips": [
+        "None"
+      ],
+      "id": "6739cf95-9763-403f-ab6f-bfa64c21b668",
+      "createdAt": "10/1/2024, 16:30:37",
+      "updatedAt": "10/1/2024, 16:30:37"
+    },
+    {
+      "name": "Upper body Day 1 Jan-Feb",
+      "mode": "Reps",
+      "equipment": [
+        "Kettlebells",
+        "Barbell",
+        "Dumbbells",
+        "W Barbell"
+      ],
+      "mobility": [
+        "Up down plank 2x20''",
+        "Abs bolita 2x10",
+        "Hollow + crunch 2x15''"
+      ],
+      "activation": [
+        "Push up hand release 2x5",
+        "Gorilla row 2x6/6"
+      ],
+      "exercises": [
+        "Regresion de pull ups 3x15",
+        "Press de hombros + Vuelos combo 3x10 + 3x5",
+        "Press plano con barra + Extensiones de triceps con barrita 3x12 + 3x15",
+        "Remo bajo con drop + Biceps W 1.5 3x10-10 + 3x12",
+        "Polea prona + Apertura banco inclinado 3x12 + 3x15"
+      ],
+      "trainerTips": [
+        "None"
+      ],
+      "id": "4e66439a-5b7d-48be-bd11-490d8bb1e4b0",
+      "createdAt": "10/1/2024, 16:36:10",
+      "updatedAt": "10/1/2024, 16:36:10"
+    },
+    {
+      "name": "Leg Day 2 Jan-Feb",
+      "mode": "Reps",
+      "equipment": [
+        "Pelota",
+        "Kettlebell",
+        "Barbell",
+        "Dumbbell"
+      ],
+      "mobility": [
+        "Mountain climbers 2x20''",
+        "Walk out 2x5",
+        "V-ups con pelota 2x10"
+      ],
+      "activation": [
+        "KB swing 2x15",
+        "Isquios en pelota 2x6/6",
+        "Puente de gluteos unilateral 2x10/10"
+      ],
+      "exercises": [
+        "Peso muerto 5xmax",
+        "Hip thrust 4x12-12 cortos",
+        "Bulgaras con doble drop 3xmax",
+        "Camilla de isquios + abductores 3x12 + 3x15"
+      ],
+      "trainerTips": [
+        "None"
+      ],
+      "id": "e6dad4e3-7796-4e33-92bf-44c01b8e171b",
+      "createdAt": "10/1/2024, 16:41:01",
+      "updatedAt": "10/1/2024, 16:41:01"
+    },
+    {
+      "name": "Upper body Day 2 Jan-Feb",
+      "mode": "Reps",
+      "equipment": [
+        "Barbell",
+        "Dumbbells",
+        "Weights"
+      ],
+      "mobility": [
+        "Bird dog 2x10/10",
+        "Bicho muerto uni isometrico 2x15''x15''",
+        "In and out 2x20''"
+      ],
+      "activation": [
+        "Push press 2x15",
+        "Push up isometrica 2xmax hold"
+      ],
+      "exercises": [
+        "Remo en maquina 4x12 + Pull over 4x15",
+        "Press inclinado 4x10 + Apertura plano 4x12",
+        "Biceps con drop 3x10-12",
+        "Triceps frances 3x15 + Extensiones polea 3xmax"
+      ],
+      "trainerTips": [
+        "None"
+      ],
+      "id": "b8ede594-74d7-4f78-af30-ea220619b16c",
+      "createdAt": "10/1/2024, 16:48:26",
+      "updatedAt": "10/1/2024, 16:48:26"
     }
   ],
   "members": [

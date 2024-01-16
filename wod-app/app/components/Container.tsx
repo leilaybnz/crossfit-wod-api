@@ -22,7 +22,6 @@ export default function Container() {
   }, []);
 
   const handleClick = () => {
-    console.log("click");
     setIsShown(!isShown);
   };
 

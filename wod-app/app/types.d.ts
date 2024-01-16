@@ -1,3 +1,5 @@
+import { Dispatch, SetStateAction } from "react";
+
 export interface WorkoutType {
   name: string;
   mode: string;
@@ -7,6 +9,7 @@ export interface WorkoutType {
   exercises: string;
   trainerTips: string;
   id: string;
+  setShouldRefresh:  Dispatch<SetStateAction<boolean>>;
 }
 
 export interface Member {

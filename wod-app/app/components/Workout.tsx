@@ -2,7 +2,7 @@ import styles from "../styles/workout.module.css";
 import { WorkoutType } from "../types";
 import DeleteButton from "./DeleteButton";
 
-export default function Workout({ workout }: { workout: WorkoutType }) {
+export default function Workout({ workout, setShouldRefresh }) {
   return (
     <article className={styles.container}>
       <p className={styles.title}>Workout</p>
@@ -28,7 +28,10 @@ export default function Workout({ workout }: { workout: WorkoutType }) {
         Trainer tips: <span className={styles.text}>{workout.trainerTips}</span>
       </p>
       <div className={styles.arrow}></div>
-      <DeleteButton workoutId={workout.id} />
+      <DeleteButton
+        workoutId={workout.id}
+        setShouldRefresh={setShouldRefresh}
+      />
     </article>
   );
 }

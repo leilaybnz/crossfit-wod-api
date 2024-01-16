@@ -1,52 +1,6 @@
 {
   "workouts": [
     {
-      "name": "Upper body day 2",
-      "mode": "For Reps",
-      "equipment": [
-        "barbell",
-        "smith machine",
-        "cable",
-        "dumbbells"
-      ],
-      "exercises": [
-        "Remo prona con barra 12-10-8-8 + high pull unilateral 4x8",
-        "Press banco inclinado con manc 4x12 + aperturas en banco plano 4x10",
-        "Press declinado mancuernas 3x10 + remo en máquina unilateral 3x12",
-        "Biceps mancuernas normal 3x10 + biceps W 3x12+max hold",
-        "Triceps tras nuca soga 3x15 + press de triceps en banco plano 3x10",
-        "Around the world 3x8 + vuelos frontales 3x12 + que me importa 3x15"
-      ],
-      "trainerTips": [
-        "none"
-      ],
-      "id": "790c2fa7-609c-47a8-acaf-72bee8553b90",
-      "createdAt": "10/31/2023, 6:31:35 PM",
-      "updatedAt": "10/31/2023, 6:31:35 PM"
-    },
-    {
-      "name": "Core Day 1",
-      "mode": "AMRAP",
-      "equipment": [
-        "barbell",
-        "smith machine",
-        "cable",
-        "dumbbells"
-      ],
-      "exercises": [
-        "Hollow hold + crunch 10",
-        "Zercher Goodmorning 12",
-        "Toe taps en carpa 14 total",
-        "Up-down plank 16 total"
-      ],
-      "trainerTips": [
-        "none"
-      ],
-      "id": "d9d6ef14-db36-4b42-a5ef-5c8868ebba11",
-      "createdAt": "10/31/2023, 6:33:17 PM",
-      "updatedAt": "10/31/2023, 6:33:17 PM"
-    },
-    {
       "name": "Core Day 2",
       "mode": "MB complex: 10 reps de cada, 5 series, 1' rest entre serie",
       "equipment": [
@@ -66,22 +20,6 @@
       "id": "5e7a1d7f-7500-4a05-b9f2-1db5cf3cfb2d",
       "createdAt": "11/1/2023, 8:49:36 PM",
       "updatedAt": "1/11/2023, 18:09:25"
-    },
-    {
-      "name": "DUMMY",
-      "mode": "dummy",
-      "equipment": [
-        "dummy"
-      ],
-      "exercises": [
-        "dummy"
-      ],
-      "trainerTips": [
-        "dummy"
-      ],
-      "id": "f25c1930-3485-48df-93a2-8b599ccd37c1",
-      "createdAt": "6/11/2023, 11:40:58",
-      "updatedAt": "6/11/2023, 11:40:58"
     },
     {
       "name": "Jumping (Not) Made Easy",
@@ -235,36 +173,6 @@
       "id": "e6dad4e3-7796-4e33-92bf-44c01b8e171b",
       "createdAt": "10/1/2024, 16:41:01",
       "updatedAt": "10/1/2024, 16:41:01"
-    },
-    {
-      "name": "Upper body Day 2 Jan-Feb",
-      "mode": "Reps",
-      "equipment": [
-        "Barbell",
-        "Dumbbells",
-        "Weights"
-      ],
-      "mobility": [
-        "Bird dog 2x10/10",
-        "Bicho muerto uni isometrico 2x15''x15''",
-        "In and out 2x20''"
-      ],
-      "activation": [
-        "Push press 2x15",
-        "Push up isometrica 2xmax hold"
-      ],
-      "exercises": [
-        "Remo en maquina 4x12 + Pull over 4x15",
-        "Press inclinado 4x10 + Apertura plano 4x12",
-        "Biceps con drop 3x10-12",
-        "Triceps frances 3x15 + Extensiones polea 3xmax"
-      ],
-      "trainerTips": [
-        "None"
-      ],
-      "id": "b8ede594-74d7-4f78-af30-ea220619b16c",
-      "createdAt": "10/1/2024, 16:48:26",
-      "updatedAt": "10/1/2024, 16:48:26"
     }
   ],
   "members": [

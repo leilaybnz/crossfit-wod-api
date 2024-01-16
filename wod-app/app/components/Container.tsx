@@ -12,6 +12,7 @@ export default function Container() {
   const [workouts, setWorkouts] = useState<WorkoutType[]>([]);
   const [isShown, setIsShown] = useState(false);
   const [showForm, setShowForm] = useState(false);
+  const [shouldRefresh, setShouldRefresh] = useState(false);
 
   useEffect(() => {
     fetch(`http://localhost:5000/api/v1/workouts`)
@@ -20,7 +21,8 @@ export default function Container() {
         const data = json.allWorkouts;
         setWorkouts(data);
       });
-  }, []);
+      //setShouldRefresh(false);
+  }, [shouldRefresh]);
 
   const handleClick = () => {
     setIsShown(!isShown);
@@ -46,7 +48,7 @@ export default function Container() {
       {isShown && (
         <section className={styles.container}>
           {workouts.map((workout, i) => (
-            <Workout workout={workout} key={i} />
+            <Workout workout={workout} key={i} setShouldRefresh={setShouldRefresh}/>
           ))}
         </section>
       )}

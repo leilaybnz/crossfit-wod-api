@@ -1,8 +1,14 @@
+import { Dispatch, SetStateAction } from "react";
 import styles from "../styles/workout.module.css";
 import { WorkoutType } from "../types";
 import DeleteButton from "./DeleteButton";
 
-export default function Workout({ workout, setShouldRefresh }) {
+interface WorkoutProps{
+  workout: WorkoutType;
+  setShouldRefresh: Dispatch<SetStateAction<boolean>>;
+}
+
+export default function Workout({ workout, setShouldRefresh }: WorkoutProps) {
   return (
     <article className={styles.container}>
       <p className={styles.title}>Workout</p>

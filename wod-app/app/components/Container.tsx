@@ -20,8 +20,8 @@ export default function Container() {
       .then((json) => {
         const data = json.allWorkouts;
         setWorkouts(data);
+        setShouldRefresh(false); //executes after the fetch && after we get the response
       });
-      //setShouldRefresh(false);
   }, [shouldRefresh]);
 
   const handleClick = () => {

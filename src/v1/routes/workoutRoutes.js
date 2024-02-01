@@ -25,7 +25,7 @@ import {
 } from "../../controllers/memberController.js";
 
 export const router = express.Router();
-const cache = apicache.middleware;
+const cache = apicache.middleware;  
 
 function groupCacheBy(key) {
   return (req, res, next) => {
@@ -49,24 +49,24 @@ const workoutsCache = {
 //WORKOUT ROUTES
 
 router.get(
-  "/",
+  "/workouts/",
   cache("30 seconds"),
   workoutsCache.addToGroup,
   getAllWorkoutsController
 );
 
-router.get("/:workoutId", getOneWorkoutController);
+router.get("/workouts/:workoutId", getOneWorkoutController);
 
-router.post("/", workoutsCache.clearGroup, createNewWorkoutController);
+router.post("/workouts/", workoutsCache.clearGroup, createNewWorkoutController);
 
 router.patch(
-  "/:workoutId",
+  "/workouts/:workoutId",
   workoutsCache.clearGroup,
   updateOneWorkoutController
 );
 
 router.delete(
-  "/:workoutId",
+  "/workouts/:workoutId",
   workoutsCache.clearGroup,
   deleteOneWorkoutController
 );
@@ -85,7 +85,7 @@ router.delete("/:workoutId/records/:recordId", deleteOneRecordController); //THR
 
 //MEMBERS ROUTES
 
-router.get("/", getAllMembersController); //Cannot GET /api/v1/members/
+router.get("/members/", getAllMembersController); //Cannot GET /api/v1/members/
 
 router.get(
   "/:workoutId/records/:recordId/member",

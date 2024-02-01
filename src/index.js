@@ -13,9 +13,9 @@ const options = {
 };
 
 app.use(cors(options));
-app.use(bodyParser.json())
-app.use('/api/v1/workouts', v1WorkoutRouter)
+app.use(bodyParser.json());
+app.use('/api/v1', v1WorkoutRouter);
 
 app.listen(PORT, () => {
-    console.log(`API is listening on port ${PORT}`)
+    console.log(`API is listening on port ${PORT}`);
 });

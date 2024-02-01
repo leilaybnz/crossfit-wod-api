@@ -1,7 +1,7 @@
 import DB from "./db.json" assert { type: "json" };
 import { saveToDatabase } from "./utils.js";
 
-export const getAllWorkouts = (filterParams) => { 
+export const getAllWorkouts = (filterParams) => {
   try {
     let workouts = DB.workouts;
     if (filterParams.mode) {

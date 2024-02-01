@@ -173,6 +173,50 @@
       "id": "e6dad4e3-7796-4e33-92bf-44c01b8e171b",
       "createdAt": "10/1/2024, 16:41:01",
       "updatedAt": "10/1/2024, 16:41:01"
+    },
+    {
+      "name": "Testttt2",
+      "mode": "test mode2",
+      "equipment": [
+        "test2"
+      ],
+      "mobility": [
+        "test"
+      ],
+      "activation": [
+        "test"
+      ],
+      "exercises": [
+        "test"
+      ],
+      "trainerTips": [
+        "none"
+      ],
+      "id": "abaf4a8c-d42d-4182-9c10-5bce22d00ca5",
+      "createdAt": "31/1/2024, 23:11:14",
+      "updatedAt": "31/1/2024, 23:11:15"
+    },
+    {
+      "name": "Testttt5",
+      "mode": "test mode5",
+      "equipment": [
+        "test2"
+      ],
+      "mobility": [
+        "test"
+      ],
+      "activation": [
+        "test"
+      ],
+      "exercises": [
+        "test"
+      ],
+      "trainerTips": [
+        "none"
+      ],
+      "id": "a5df2f1a-9a0b-4946-9cf2-6dcccbfee86f",
+      "createdAt": "31/1/2024, 23:16:59",
+      "updatedAt": "31/1/2024, 23:16:59"
     }
   ],
   "members": [

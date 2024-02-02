@@ -251,6 +251,50 @@
       "dateOfBirth": "31/01/1984",
       "email": "pablo@mail.com",
       "password": "a6dcde7eceb689142f21a1e30b5fdb868ec4cd25d5537d67ac7e8c7816b0e862"
+    },
+    {
+      "name": "Mane",
+      "gender": "female",
+      "member": "/members/:memberId",
+      "dateOfBirth": "01/01/2000",
+      "email": "mane@mail.com",
+      "password": "ABCABC",
+      "id": "f306a57f-6999-49c3-9e7b-80fada264ab6",
+      "createdAt": "1/2/2024, 21:51:45",
+      "updatedAt": "1/2/2024, 21:51:45"
+    },
+    {
+      "name": "Edith",
+      "gender": "female",
+      "member": "/members/:memberId",
+      "dateOfBirth": "01/01/1963",
+      "email": "edith@mail.com",
+      "password": "ABCABC",
+      "id": "fde58efb-5d4a-4c02-9f3c-e870e4c9f101",
+      "createdAt": "1/2/2024, 21:52:01",
+      "updatedAt": "1/2/2024, 21:52:01"
+    },
+    {
+      "name": "Laura",
+      "gender": "female",
+      "member": "/members/:memberId",
+      "dateOfBirth": "01/01/1990",
+      "email": "edith@mail.com",
+      "password": "ABCABC",
+      "id": "dcd28a4c-670e-42d0-8842-5a4edc749136",
+      "createdAt": "1/2/2024, 21:52:16",
+      "updatedAt": "1/2/2024, 21:52:16"
+    },
+    {
+      "name": "updated user",
+      "gender": "female",
+      "member": "/members/:memberId",
+      "dateOfBirth": "01/01/1990",
+      "email": "edith@mail.com",
+      "password": "ABCABC",
+      "id": "cfc75989-fe38-4385-b2b9-02ea91863c50",
+      "createdAt": "1/2/2024, 21:55:07",
+      "updatedAt": "1/2/2024, 21:57:10"
     }
   ],
   "records": [

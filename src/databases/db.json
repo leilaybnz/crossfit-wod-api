@@ -295,6 +295,36 @@
       "id": "cfc75989-fe38-4385-b2b9-02ea91863c50",
       "createdAt": "1/2/2024, 21:55:07",
       "updatedAt": "1/2/2024, 21:57:10"
+    },
+    {
+      "name": "userrrrrr",
+      "gender": "female",
+      "member": "/members/:memberId",
+      "dateOfBirth": "01/01/1990",
+      "email": "edith@mail.com",
+      "password": "ABCABC",
+      "id": "ef27921b-35a1-44bd-8ec1-f71fb5597c87",
+      "createdAt": "1/2/2024, 22:27:42",
+      "updatedAt": "1/2/2024, 22:27:42"
+    },
+    {
+      "name": "userrrr",
+      "gender": "female",
+      "dateOfBirth": "01/01/1990",
+      "email": "edith@mail.com",
+      "password": "ABCABC",
+      "id": "4cd70965-11b8-4840-834a-ebaa0c2b279c",
+      "member": "/members/4cd70965-11b8-4840-834a-ebaa0c2b279c",
+      "createdAt": "1/2/2024, 22:28:00",
+      "updatedAt": "1/2/2024, 22:28:00"
+    },
+    {
+      "name": "Test front",
+      "dateOfBirth": "2024-02-06",
+      "id": "ed197580-5820-4677-a2c1-78ccfd64936d",
+      "member": "/members/ed197580-5820-4677-a2c1-78ccfd64936d",
+      "createdAt": "2/2/2024, 12:48:35",
+      "updatedAt": "2/2/2024, 12:48:35"
     }
   ],
   "records": [

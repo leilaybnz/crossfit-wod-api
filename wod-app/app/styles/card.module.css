@@ -1,5 +1,4 @@
-
-.container {
+.containerWorkout {
   width: 308px;
   padding: 8px 15px;
   font-size: calc(10px + 0.390625vw);
@@ -9,6 +8,15 @@
   white-space: wrap;
   overflow: scroll;
   text-overflow: ellipsis;
+  position: relative;
+}
+
+.containerMember {
+  width: 308px;
+  padding: 8px 15px 20px 15px;
+  border-radius: 8px;
+  box-shadow: 0 0 6px 6px peru;
+  font-size: calc(10px + 0.390625vw);
   position: relative;
 }
 

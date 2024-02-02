@@ -44,7 +44,6 @@ export const getMemberForRecordController = (req, res) => {
 
 export const createNewMemberController = (req, res) => {
   const { body } = req;
-  const memberURI = "/members/:memberId";
 
   if (!body.name) {
     res.status(400).send({
@@ -60,14 +59,15 @@ export const createNewMemberController = (req, res) => {
   const newMember = {
     name: body.name,
     gender: body.gender,
-    member: memberURI,
     dateOfBirth: body.dateOfBirth,
     email: body.email,
     password: body.password,
   };
 
+  const baseMemberURI = "/members";
+
   try {
-    const createdMember = createNewMemberService(newMember);
+    const createdMember = createNewMemberService(newMember, baseMemberURI);
     res.status(201).send({ status: "OK", data: createdMember });
   } catch (error) {
     res

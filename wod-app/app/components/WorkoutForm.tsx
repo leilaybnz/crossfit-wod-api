@@ -52,7 +52,7 @@ function postWorkout(body: {
   }).then((response) => response.json() as Promise<PostWorkoutResponseData>);
 }
 
-export default function Form() {
+export default function WorkoutForm() {
   const { reset, handleSubmit, register, control } = useForm<FormWorkoutProps>({
     defaultValues: {
       name: "",

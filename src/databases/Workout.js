@@ -2,19 +2,14 @@ import DB from "./db.json" assert { type: "json" };
 import { saveToDatabase } from "./utils.js";
 
 export const getAllWorkouts = (filterParams) => {
-  // try {
-  //   let workouts = DB.workouts;
-  //   if (filterParams.mode) {
-  //     return DB.workouts.filter((workout) =>
-  //       workout.mode.toLowerCase().includes(filterParams.mode)
-  //     );
-  //   }
-  //   return workouts;
-  // } catch (error) {
-  //   throw { status: 500, message: error };
-  // }
   try {
-    return DB.members;
+    let workouts = DB.workouts;
+    if (filterParams.mode) {
+      return DB.workouts.filter((workout) =>
+        workout.mode.toLowerCase().includes(filterParams.mode)
+      );
+    }
+    return workouts;
   } catch (error) {
     throw { status: 500, message: error };
   }

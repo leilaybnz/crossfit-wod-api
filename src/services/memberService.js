@@ -29,7 +29,6 @@ export const getMemberForRecordService = (recordId) => {
 
 export const createNewMemberService = (newMember) => {
   const memberToInsert =
-    //will add the remaining properties
     {
       ...newMember,
       id: uuid(),

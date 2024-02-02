@@ -28,7 +28,7 @@ export const getMemberForRecord = (recordId) => {
 
 export const createNewMember = (newMember) => {
   const isAlreadyAdded =
-    DB.members.findIndex((member) => member.name === newMember.name) > -1; //> /1 && if I try to add the same member it will return a 201 without the newly inserted member
+    DB.members.findIndex((member) => member.name === newMember.name) > -1;
 
   if (isAlreadyAdded) {
     throw {

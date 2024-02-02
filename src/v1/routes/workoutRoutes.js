@@ -1,43 +1,75 @@
-import express from "express";
 import apicache from "apicache";
+import express from "express";
 import {
+  createNewWorkoutController,
+  deleteOneWorkoutController,
   getAllWorkoutsController,
   getOneWorkoutController,
-  createNewWorkoutController,
   updateOneWorkoutController,
-  deleteOneWorkoutController,
 } from "../../controllers/workoutController.js";
 
 import {
+  createNewRecordController,
+  deleteOneRecordController,
   getAllRecordsController,
   getRecordForWorkoutController,
-  createNewRecordController,
   updateOneRecordController,
-  deleteOneRecordController,
 } from "../../controllers/recordController.js";
 
 import {
+  createNewMemberController,
+  deleteMemberController,
   getAllMembersController,
   getMemberForRecordController,
-  createNewMemberController,
   updateMemberController,
-  deleteMemberController
-} from '../../controllers/memberController.js';
+} from "../../controllers/memberController.js";
 
 export const router = express.Router();
 const cache = apicache.middleware;
 
+function groupCacheBy(key) {
+  return (req, res, next) => {
+    req.apicacheGroup = "workouts";
+    next();
+  };
+}
+
+function clearCacheKey(key) {
+  return (req, res, next) => {
+    apicache.clear(key);
+    next();
+  };
+}
+
+const workoutsCache = {
+  addToGroup: groupCacheBy("workouts"),
+  clearGroup: clearCacheKey("workouts"),
+};
+
 //WORKOUT ROUTES
 
-router.get("/", cache("2 minutes"), getAllWorkoutsController);
+router.get(
+  "/workouts/",
+  cache("30 seconds"),
+  workoutsCache.addToGroup,
+  getAllWorkoutsController
+);
 
-router.get("/:workoutId", getOneWorkoutController);
+router.get("/workouts/:workoutId", getOneWorkoutController);
 
-router.post("/", createNewWorkoutController);
+router.post("/workouts/", workoutsCache.clearGroup, createNewWorkoutController);
 
-router.patch("/:workoutId", updateOneWorkoutController);
+router.patch(
+  "/workouts/:workoutId",
+  workoutsCache.clearGroup,
+  updateOneWorkoutController
+);
 
-router.delete("/:workoutId", deleteOneWorkoutController);
+router.delete(
+  "/workouts/:workoutId",
+  workoutsCache.clearGroup,
+  deleteOneWorkoutController
+);
 
 //RECORDS ROUTES
 
@@ -49,15 +81,18 @@ router.post("/:workoutId/records", createNewRecordController);
 
 router.patch("/:workoutId/records/:recordId", updateOneRecordController);
 
-router.delete("/:workoutId/records/:recordId", deleteOneRecordController);//THROWS 200 BUT DOESNT DELETE
+router.delete("/:workoutId/records/:recordId", deleteOneRecordController); //THROWS 200 BUT DOESNT DELETE
 
 //MEMBERS ROUTES
 
-router.get("/", getAllMembersController); //Cannot GET /api/v1/members/
+router.get("/members/", getAllMembersController); //Cannot GET /api/v1/members/
 
-router.get("/:workoutId/records/:recordId/member", getMemberForRecordController);
+router.get(
+  "/:workoutId/records/:recordId/member",
+  getMemberForRecordController
+);
 
-router.post("/members/:memberId", createNewMemberController);
+router.post("/members/", createNewMemberController);
 
 router.patch("/members/:memberId", updateMemberController);
 

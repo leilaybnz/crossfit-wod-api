@@ -1,11 +1,11 @@
 import { v4 as uuid } from "uuid";
 import {
-    getAllMembers,
-    getMemberForRecord,
-    createNewMember,
-    updateMember,
-    deleteMember
-} from '../databases/Member.js';
+  createNewMember,
+  deleteMember,
+  getAllMembers,
+  getMemberForRecord,
+  updateMember,
+} from "../databases/Member.js";
 
 export const getAllMembersService = () => {
   try {
@@ -17,22 +17,23 @@ export const getAllMembersService = () => {
 };
 
 export const getMemberForRecordService = (recordId) => {
+  try {
+    const member = getMemberForRecord(recordId);
+    return member;
+  } catch (error) {
+    throw error;
+  }
+};
 
-    try {
-       const member = getMemberForRecord(recordId);
-        return member;
-    } catch (error) {
-        throw error;
-    }
+export const createNewMemberService = (newMember, baseMemberUri) => {
+  const id = uuid();
 
-}
-
-export const createNewMemberService = (newMember) => {
   const memberToInsert =
     //will add the remaining properties
     {
       ...newMember,
-      id: uuid(),
+      id,
+      member: `${baseMemberUri}/${id}`,
       createdAt: new Date().toLocaleString("es-AR", {
         timeZone: "America/Buenos_Aires",
       }),

@@ -16,9 +16,12 @@ export default function DeleteButton({
   function deleteWorkout({ workoutId, setShouldRefresh }: DeleteButtonProps) {
     fetch(`http://localhost:5000/api/v1/workouts/${workoutId}`, {
       method: "DELETE",
-    }).then((response) => response.json());
-
-    setShouldRefresh(true);
+    })
+      .then((response) => response.json())
+      .then(() => {
+        setShouldRefresh(true);
+        setIsModalOpen(false);
+      });
   }
 
   return (

@@ -173,6 +173,50 @@
       "id": "e6dad4e3-7796-4e33-92bf-44c01b8e171b",
       "createdAt": "10/1/2024, 16:41:01",
       "updatedAt": "10/1/2024, 16:41:01"
+    },
+    {
+      "name": "Testttt2",
+      "mode": "test mode2",
+      "equipment": [
+        "test2"
+      ],
+      "mobility": [
+        "test"
+      ],
+      "activation": [
+        "test"
+      ],
+      "exercises": [
+        "test"
+      ],
+      "trainerTips": [
+        "none"
+      ],
+      "id": "abaf4a8c-d42d-4182-9c10-5bce22d00ca5",
+      "createdAt": "31/1/2024, 23:11:14",
+      "updatedAt": "31/1/2024, 23:11:15"
+    },
+    {
+      "name": "Testttt5",
+      "mode": "test mode5",
+      "equipment": [
+        "test2"
+      ],
+      "mobility": [
+        "test"
+      ],
+      "activation": [
+        "test"
+      ],
+      "exercises": [
+        "test"
+      ],
+      "trainerTips": [
+        "none"
+      ],
+      "id": "a5df2f1a-9a0b-4946-9cf2-6dcccbfee86f",
+      "createdAt": "31/1/2024, 23:16:59",
+      "updatedAt": "31/1/2024, 23:16:59"
     }
   ],
   "members": [
@@ -207,6 +251,34 @@
       "dateOfBirth": "31/01/1984",
       "email": "pablo@mail.com",
       "password": "a6dcde7eceb689142f21a1e30b5fdb868ec4cd25d5537d67ac7e8c7816b0e862"
+    },
+    {
+      "name": "santi",
+      "member": "/members/:memberId",
+      "id": "e700c428-1cd3-4db7-a76d-6a47a99188f8",
+      "createdAt": "1/2/2024, 21:51:39",
+      "updatedAt": "1/2/2024, 21:51:39"
+    },
+    {
+      "name": "santis",
+      "member": "undefined/9a9f2afa-234a-4e72-b34a-b67d2f90a41e",
+      "id": "7624fae7-7bc6-4675-a525-c2bae3058612",
+      "createdAt": "1/2/2024, 22:01:36",
+      "updatedAt": "1/2/2024, 22:01:36"
+    },
+    {
+      "name": "lei",
+      "id": "f326e137-725d-4701-85ba-6c4787ee82fa",
+      "member": "/members/e9dc0886-8d67-4703-9559-eddc00768bfa",
+      "createdAt": "1/2/2024, 22:01:56",
+      "updatedAt": "1/2/2024, 22:01:56"
+    },
+    {
+      "name": "leila",
+      "id": "e6acb3de-8dfa-4d30-a82b-743ee0fdd1ad",
+      "member": "/members/e6acb3de-8dfa-4d30-a82b-743ee0fdd1ad",
+      "createdAt": "1/2/2024, 22:07:00",
+      "updatedAt": "1/2/2024, 22:07:00"
     }
   ],
   "records": [

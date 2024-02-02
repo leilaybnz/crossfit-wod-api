@@ -1,7 +1,11 @@
 import styles from "../styles/member.module.css";
 import { MemberType } from "../types";
 
-export default function Member(member: MemberType) {
+interface MemberProps {
+  member: MemberType;
+}
+
+export default function Member({ member }: MemberProps) {
   return (
     <div className={styles.container}>
       <p className={styles.title}>Member</p>

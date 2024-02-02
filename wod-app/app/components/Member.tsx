@@ -1,17 +1,18 @@
 import styles from "../styles/member.module.css";
+import { MemberType } from "../types";
 
-export default function Member() {
+export default function Member(member: MemberType) {
   return (
     <div className={styles.container}>
       <p className={styles.title}>Member</p>
       <p className={styles.name}>
-        Name: <span className={styles.text}>&quot;name&quot;</span>
+        Name: <span className={styles.text}>{member.name}</span>
       </p>
       <p className={styles.name}>
-        Birthday: <span className={styles.text}>&quot;Birthday&quot;</span>
+        Birthday: <span className={styles.text}>{member.dateOfBirth}</span>
       </p>
       <p className={styles.name}>
-        Mail: <span className={styles.text}>&quot;mail&quot;</span>
+        Mail: <span className={styles.text}>{member.email}</span>
       </p>
     </div>
   );

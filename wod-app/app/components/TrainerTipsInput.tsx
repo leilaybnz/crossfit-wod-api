@@ -1,7 +1,7 @@
 import { ChangeEvent, Dispatch, Fragment, SetStateAction } from "react";
 import styles from "../styles/addRemoveInput.module.css";
 import { Control, UseFormRegister, useFieldArray } from "react-hook-form";
-import { FormWorkoutProps } from "./Form";
+import { FormWorkoutProps } from "./WorkoutForm";
 
 interface TrainerTipsInputProps {
   formControl: Control<FormWorkoutProps>;

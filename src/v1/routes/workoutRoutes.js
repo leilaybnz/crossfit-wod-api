@@ -85,7 +85,7 @@ router.delete("/:workoutId/records/:recordId", deleteOneRecordController); //THR
 
 //MEMBERS ROUTES
 
-router.get("/members/", getAllMembersController); //Cannot GET /api/v1/members/
+router.get("/members/", getAllMembersController);
 
 router.get(
   "/:workoutId/records/:recordId/member",

@@ -25,22 +25,20 @@ export const getMemberForRecordService = (recordId) => {
   }
 };
 
-export const createNewMemberService = (newMember, baseMemberUri) => {
+export const createNewMemberService = (newMember, baseMemberURI) => {
   const id = uuid();
 
-  const memberToInsert =
-    //will add the remaining properties
-    {
-      ...newMember,
-      id,
-      member: `${baseMemberUri}/${id}`,
-      createdAt: new Date().toLocaleString("es-AR", {
-        timeZone: "America/Buenos_Aires",
-      }),
-      updatedAt: new Date().toLocaleString("es-AR", {
-        timeZone: "America/Buenos_Aires",
-      }),
-    };
+  const memberToInsert = {
+    ...newMember,
+    id,
+    member: `${baseMemberURI}/${id}`,
+    createdAt: new Date().toLocaleString("es-AR", {
+      timeZone: "America/Buenos_Aires",
+    }),
+    updatedAt: new Date().toLocaleString("es-AR", {
+      timeZone: "America/Buenos_Aires",
+    }),
+  };
 
   try {
     const createdMember = createNewMember(memberToInsert);

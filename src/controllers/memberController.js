@@ -64,10 +64,10 @@ export const createNewMemberController = (req, res) => {
     password: body.password,
   };
 
-  const baseMemberUri = "/members";
+  const baseMemberURI = "/members";
 
   try {
-    const createdMember = createNewMemberService(newMember, baseMemberUri);
+    const createdMember = createNewMemberService(newMember, baseMemberURI);
     res.status(201).send({ status: "OK", data: createdMember });
   } catch (error) {
     res

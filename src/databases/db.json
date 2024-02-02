@@ -253,32 +253,78 @@
       "password": "a6dcde7eceb689142f21a1e30b5fdb868ec4cd25d5537d67ac7e8c7816b0e862"
     },
     {
-      "name": "santi",
+      "name": "Mane",
+      "gender": "female",
       "member": "/members/:memberId",
-      "id": "e700c428-1cd3-4db7-a76d-6a47a99188f8",
-      "createdAt": "1/2/2024, 21:51:39",
-      "updatedAt": "1/2/2024, 21:51:39"
+      "dateOfBirth": "01/01/2000",
+      "email": "mane@mail.com",
+      "password": "ABCABC",
+      "id": "f306a57f-6999-49c3-9e7b-80fada264ab6",
+      "createdAt": "1/2/2024, 21:51:45",
+      "updatedAt": "1/2/2024, 21:51:45"
     },
     {
-      "name": "santis",
-      "member": "undefined/9a9f2afa-234a-4e72-b34a-b67d2f90a41e",
-      "id": "7624fae7-7bc6-4675-a525-c2bae3058612",
-      "createdAt": "1/2/2024, 22:01:36",
-      "updatedAt": "1/2/2024, 22:01:36"
+      "name": "Edith",
+      "gender": "female",
+      "member": "/members/:memberId",
+      "dateOfBirth": "01/01/1963",
+      "email": "edith@mail.com",
+      "password": "ABCABC",
+      "id": "fde58efb-5d4a-4c02-9f3c-e870e4c9f101",
+      "createdAt": "1/2/2024, 21:52:01",
+      "updatedAt": "1/2/2024, 21:52:01"
     },
     {
-      "name": "lei",
-      "id": "f326e137-725d-4701-85ba-6c4787ee82fa",
-      "member": "/members/e9dc0886-8d67-4703-9559-eddc00768bfa",
-      "createdAt": "1/2/2024, 22:01:56",
-      "updatedAt": "1/2/2024, 22:01:56"
+      "name": "Laura",
+      "gender": "female",
+      "member": "/members/:memberId",
+      "dateOfBirth": "01/01/1990",
+      "email": "edith@mail.com",
+      "password": "ABCABC",
+      "id": "dcd28a4c-670e-42d0-8842-5a4edc749136",
+      "createdAt": "1/2/2024, 21:52:16",
+      "updatedAt": "1/2/2024, 21:52:16"
     },
     {
-      "name": "leila",
-      "id": "e6acb3de-8dfa-4d30-a82b-743ee0fdd1ad",
-      "member": "/members/e6acb3de-8dfa-4d30-a82b-743ee0fdd1ad",
-      "createdAt": "1/2/2024, 22:07:00",
-      "updatedAt": "1/2/2024, 22:07:00"
+      "name": "updated user",
+      "gender": "female",
+      "member": "/members/:memberId",
+      "dateOfBirth": "01/01/1990",
+      "email": "edith@mail.com",
+      "password": "ABCABC",
+      "id": "cfc75989-fe38-4385-b2b9-02ea91863c50",
+      "createdAt": "1/2/2024, 21:55:07",
+      "updatedAt": "1/2/2024, 21:57:10"
+    },
+    {
+      "name": "userrrrrr",
+      "gender": "female",
+      "member": "/members/:memberId",
+      "dateOfBirth": "01/01/1990",
+      "email": "edith@mail.com",
+      "password": "ABCABC",
+      "id": "ef27921b-35a1-44bd-8ec1-f71fb5597c87",
+      "createdAt": "1/2/2024, 22:27:42",
+      "updatedAt": "1/2/2024, 22:27:42"
+    },
+    {
+      "name": "userrrr",
+      "gender": "female",
+      "dateOfBirth": "01/01/1990",
+      "email": "edith@mail.com",
+      "password": "ABCABC",
+      "id": "4cd70965-11b8-4840-834a-ebaa0c2b279c",
+      "member": "/members/4cd70965-11b8-4840-834a-ebaa0c2b279c",
+      "createdAt": "1/2/2024, 22:28:00",
+      "updatedAt": "1/2/2024, 22:28:00"
+    },
+    {
+      "name": "Test front",
+      "dateOfBirth": "2024-02-06",
+      "id": "ed197580-5820-4677-a2c1-78ccfd64936d",
+      "member": "/members/ed197580-5820-4677-a2c1-78ccfd64936d",
+      "createdAt": "2/2/2024, 12:48:35",
+      "updatedAt": "2/2/2024, 12:48:35"
     }
   ],
   "records": [

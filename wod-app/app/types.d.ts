@@ -12,9 +12,8 @@ export interface WorkoutType {
   setShouldRefresh:  Dispatch<SetStateAction<boolean>>;
 }
 
-export interface Member {
+export interface MemberType {
   name: string;
-  gender: number;
   email: string;
-  birthday?: string;
+  dateOfBirth?: string;
 }

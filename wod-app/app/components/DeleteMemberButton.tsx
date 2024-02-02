@@ -2,19 +2,19 @@ import { Dispatch, SetStateAction, useState } from "react";
 import styles from "../styles/deleteButton.module.css";
 import TrashCanSVG from "./TrashCanSvg";
 
-interface DeleteButtonProps {
-  workoutId: string;
+interface DeleteMemberButtonProps {
+  memberId: string;
   setShouldRefresh: Dispatch<SetStateAction<boolean>>;
 }
 
-export default function DeleteButton({
-  workoutId,
+export default function DeleteMemberButton({
+  memberId,
   setShouldRefresh,
-}: DeleteButtonProps) {
+}: DeleteMemberButtonProps) {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  function deleteWorkout({ workoutId, setShouldRefresh }: DeleteButtonProps) {
-    fetch(`http://localhost:5000/api/v1/workouts/${workoutId}`, {
+  function deleteMember({ memberId, setShouldRefresh }: DeleteMemberButtonProps) {
+    fetch(`http://localhost:5000/api/v1/members/${memberId}`, {
       method: "DELETE",
     })
       .then((response) => response.json())
@@ -34,12 +34,12 @@ export default function DeleteButton({
         <TrashCanSVG />
       </button>
       {isModalOpen && (
-        <div className={styles.modal}>
-          <p>Are you sure you want to delete this workout?</p>
+        <div className={styles.modalMember}>
+          <p>Are you sure you want to delete this member?</p>
           <div className={styles.buttonContainer}>
             <button
               type="button"
-              onClick={() => deleteWorkout({ workoutId, setShouldRefresh })}
+              onClick={() => deleteMember({ memberId, setShouldRefresh })}
             >
               Yes
             </button>

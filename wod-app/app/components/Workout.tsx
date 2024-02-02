@@ -1,7 +1,7 @@
 import { Dispatch, SetStateAction } from "react";
 import styles from "../styles/workout.module.css";
 import { WorkoutType } from "../types";
-import DeleteButton from "./DeleteButton";
+import DeleteWorkoutButton from "./DeleteWorkoutButton";
 
 interface WorkoutProps{
   workout: WorkoutType;
@@ -34,7 +34,7 @@ export default function Workout({ workout, setShouldRefresh }: WorkoutProps) {
         Trainer tips: <span className={styles.text}>{workout.trainerTips}</span>
       </p>
       <div className={styles.arrow}></div>
-      <DeleteButton
+      <DeleteWorkoutButton
         workoutId={workout.id}
         setShouldRefresh={setShouldRefresh}
       />

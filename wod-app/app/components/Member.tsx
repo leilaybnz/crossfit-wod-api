@@ -1,5 +1,5 @@
 import { Dispatch, SetStateAction } from "react";
-import styles from "../styles/member.module.css";
+import styles from "../styles/card.module.css";
 import { MemberType } from "../types";
 import DeleteMemberButton from "./DeleteMemberButton";
 
@@ -10,7 +10,7 @@ interface MemberProps {
 
 export default function Member({ member, setShouldRefresh }: MemberProps) {
   return (
-    <article className={styles.container}>
+    <article className={styles.containerMember}>
       <p className={styles.title}>Member</p>
       <p className={styles.name}>
         Name: <span className={styles.text}>{member.name}</span>

@@ -21,7 +21,7 @@ export interface MemberData {
 }
 
 function postMember(body: { name: string; dateOfBirth: string; mail: string }) {
-  return fetch("http://localhost:5000/api/v1/members", {
+  return fetch("http://localhost:3001/api/v1/members", {
     method: "POST",
     body: JSON.stringify(body),
     headers: {

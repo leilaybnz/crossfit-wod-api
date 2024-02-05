@@ -13,8 +13,11 @@ export default function DeleteMemberButton({
 }: DeleteMemberButtonProps) {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  function deleteMember({ memberId, setShouldRefresh }: DeleteMemberButtonProps) {
-    fetch(`http://localhost:5000/api/v1/members/${memberId}`, {
+  function deleteMember({
+    memberId,
+    setShouldRefresh,
+  }: DeleteMemberButtonProps) {
+    fetch(`http://localhost:3001/api/v1/members/${memberId}`, {
       method: "DELETE",
     })
       .then((response) => response.json())

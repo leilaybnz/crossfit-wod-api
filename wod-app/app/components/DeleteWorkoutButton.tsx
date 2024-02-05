@@ -14,7 +14,7 @@ export default function DeleteWorkoutButton({
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   function deleteWorkout({ workoutId, setShouldRefresh }: DeleteButtonProps) {
-    fetch(`http://localhost:5000/api/v1/workouts/${workoutId}`, {
+    fetch(`http://localhost:3001/api/v1/workouts/${workoutId}`, {
       method: "DELETE",
     })
       .then((response) => response.json())

@@ -1,17 +1,17 @@
+import { SubmitHandler, useForm } from "react-hook-form";
 import styles from "../styles/form.module.css";
 import ActivationInput from "./ActivationInput";
 import EquipmentInput from "./EquipmentInput";
 import ExercisesInput from "./ExercisesInput";
 import MobilityInput from "./MobilityInput";
 import TrainerTipsInput from "./TrainerTipsInput";
-import { SubmitHandler, useForm } from "react-hook-form";
 
 export interface FormWorkoutProps {
   name: string;
   mode: string;
   equipment: { value: string }[];
-  mobility: {value: string}[];
-  activation: {value: string}[];
+  mobility: { value: string }[];
+  activation: { value: string }[];
   exercises: { value: string }[];
   trainerTips: { value: string }[];
 }
@@ -43,7 +43,7 @@ function postWorkout(body: {
   exercises: string[];
   trainerTips: string[];
 }) {
-  return fetch("http://localhost:5000/api/v1/workouts", {
+  return fetch("http://localhost:3001/api/v1/workouts", {
     method: "POST",
     body: JSON.stringify(body),
     headers: {
@@ -114,10 +114,10 @@ export default function WorkoutForm() {
         <EquipmentInput register={register} formControl={control} />
       </div>
       <div className={styles.label}>
-          <MobilityInput register={register} formControl={control}/>
+        <MobilityInput register={register} formControl={control} />
       </div>
       <div className={styles.label}>
-          <ActivationInput register={register} formControl={control}/>
+        <ActivationInput register={register} formControl={control} />
       </div>
       <div className={styles.label}>
         <ExercisesInput register={register} formControl={control} />

@@ -1,12 +1,11 @@
 "use client";
-import Workout from "./Workout";
-import Member from "./Member";
-import styles from "../styles/container.module.css";
 import { useEffect, useState } from "react";
+import styles from "../styles/container.module.css";
 import { MemberType, WorkoutType } from "../types";
 import Button from "./Button";
-import CreateWorkoutButton from "./CreateWorkoutButton";
-import Form from "./Form";
+import CreateWorkoutButton from "./CreateButton";
+import Workout from "./Workout";
+import WorkoutForm from "./WorkoutForm";
 
 export default function Container() {
   const [workouts, setWorkouts] = useState<WorkoutType[]>([]);
@@ -17,22 +16,21 @@ export default function Container() {
   const [shouldRefresh, setShouldRefresh] = useState(false);
 
   useEffect(() => {
-    const workoutsFetch = fetch(`http://localhost:5000/api/v1/workouts`).then(
+    const workoutsFetch = fetch(`http://localhost:3001/api/v1/workouts`).then(
       (response) => response.json()
     );
-    const membersFetch = fetch(`http://localhost:5000/api/v1/members`).then(
+    const membersFetch = fetch(`http://localhost:3001/api/v1/members`).then(
       (response) => response.json()
     );
 
-    Promise.all([workoutsFetch, membersFetch])
-    .then((json) => {
+    Promise.all([workoutsFetch, membersFetch]).then((json) => {
       console.log(workoutsFetch);
       console.log(membersFetch);
       const workoutsData: WorkoutType = json.allWorkouts;
       const membersData: MemberType = json.data;
       setWorkouts(workoutsData);
       setMembers(membersData);
-    })
+    });
     // fetch(`http://localhost:5000/api/v1/workouts`),//ok
     //   fetch(`http://localhost:5000/api/v1/members`)//once this is no longer commented, new error  can't access property "map", workouts is undefined
     //     .then((response) => response.json())
@@ -81,7 +79,7 @@ export default function Container() {
         </section>
       )} */}
       <CreateWorkoutButton onClick={handleClickCreateBtn} />
-      {showForm && <Form />}
+      {showForm && <WorkoutForm />}
     </>
   );
 }

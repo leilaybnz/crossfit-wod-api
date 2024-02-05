@@ -1,31 +1,31 @@
-import apicache from "apicache";
 import express from "express";
+import apicache from "apicache";
 import {
-  createNewWorkoutController,
-  deleteOneWorkoutController,
   getAllWorkoutsController,
   getOneWorkoutController,
+  createNewWorkoutController,
   updateOneWorkoutController,
+  deleteOneWorkoutController,
 } from "../../controllers/workoutController.js";
 
 import {
-  createNewRecordController,
-  deleteOneRecordController,
   getAllRecordsController,
   getRecordForWorkoutController,
+  createNewRecordController,
   updateOneRecordController,
+  deleteOneRecordController,
 } from "../../controllers/recordController.js";
 
 import {
-  createNewMemberController,
-  deleteMemberController,
   getAllMembersController,
   getMemberForRecordController,
+  createNewMemberController,
   updateMemberController,
+  deleteMemberController,
 } from "../../controllers/memberController.js";
 
 export const router = express.Router();
-const cache = apicache.middleware;
+const cache = apicache.middleware;  
 
 function groupCacheBy(key) {
   return (req, res, next) => {

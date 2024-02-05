@@ -1,9 +1,9 @@
 import {
-  createNewMemberService,
-  deleteMemberService,
   getAllMembersService,
   getMemberForRecordService,
+  createNewMemberService,
   updateMemberService,
+  deleteMemberService,
 } from "../services/memberService.js";
 
 export const getAllMembersController = (req, res) => {

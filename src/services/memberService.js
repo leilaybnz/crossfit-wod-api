@@ -1,10 +1,10 @@
 import { v4 as uuid } from "uuid";
 import {
-  createNewMember,
-  deleteMember,
   getAllMembers,
   getMemberForRecord,
+  createNewMember,
   updateMember,
+  deleteMember,
 } from "../databases/Member.js";
 
 export const getAllMembersService = () => {

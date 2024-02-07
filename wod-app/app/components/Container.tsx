@@ -10,6 +10,20 @@ import WorkoutForm from "./WorkoutForm";
 import MemberForm from "./MemberForm";
 import { getAllMembers, getAllWorkouts } from "../api/wod";
 
+function Section({
+  isShown,
+  children,
+}: {
+  isShown: boolean;
+  children: React.ReactNode;
+}) {
+  if (!isShown) {
+    return null;
+  }
+
+  return <section className={styles.container}>{children}</section>;
+}
+
 export default function Container() {
   const [workouts, setWorkouts] = useState<WorkoutType[]>([]);
   const [members, setMembers] = useState<MemberType[]>([]);
@@ -49,28 +63,20 @@ export default function Container() {
       {/* <pre>{JSON.stringify(members, null, 2)}</pre> */}
       <Button title="workouts" onClick={handleClickWorkout} />
       <Button title="members" onClick={handleClickMember} />
-      {isShownWorkout && (
-        <section className={styles.container}>
-          {workouts.map((workout, i) => (
-            <Workout
-              workout={workout}
-              key={i}
-              setShouldRefresh={setShouldRefresh}
-            />
-          ))}
-        </section>
-      )}
-      {isShownMember && (
-        <section className={styles.container}>
-          {members.map((member, i) => (
-            <Member
-              member={member}
-              key={i}
-              setShouldRefresh={setShouldRefresh}
-            />
-          ))}
-        </section>
-      )}
+      <Section isShown={isShownWorkout}>
+        {workouts.map((workout, i) => (
+          <Workout
+            workout={workout}
+            key={i}
+            setShouldRefresh={setShouldRefresh}
+          />
+        ))}
+      </Section>
+      <Section isShown={isShownMember}>
+        {members.map((member, i) => (
+          <Member member={member} key={i} setShouldRefresh={setShouldRefresh} />
+        ))}
+      </Section>
       <CreateButton onClick={handleClickCreateWorkoutBtn} title="workout" />
       <CreateButton onClick={handleClickCreateMemberBtn} title="member" />
       {showWorkoutForm && <WorkoutForm />}

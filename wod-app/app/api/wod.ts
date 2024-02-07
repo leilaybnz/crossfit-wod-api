@@ -31,3 +31,26 @@ export async function getAllMembers() {
 
   return jsonData.allMembers as MemberType[];
 }
+
+export async function deleteWorkout(workoutId: string) {
+  let response: Response;
+
+  try {
+    response = await fetch(
+      `http://localhost:5000/api/v1/workouts/${workoutId}`,
+      {
+        method: "DELETE",
+      }
+    );
+  } catch (err) {
+    throw new Error(`Network error: ${err}`);
+  }
+
+  if (!response.ok || response.status !== 200) {
+    throw new Error(
+      `An error has occurred deleting workout ${workoutId}: ${response.status} ${response.statusText}`
+    );
+  }
+
+  return response.json();
+}

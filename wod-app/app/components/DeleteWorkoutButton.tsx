@@ -1,28 +1,16 @@
-import { Dispatch, SetStateAction, useState } from "react";
+import { useRouter } from "next/navigation";
+import { useState } from "react";
+import { deleteWorkoutAction } from "../actions";
 import styles from "../styles/deleteButton.module.css";
 import TrashCanSVG from "./TrashCanSvg";
 
 interface DeleteButtonProps {
   workoutId: string;
-  setShouldRefresh: Dispatch<SetStateAction<boolean>>;
 }
 
-export default function DeleteWorkoutButton({
-  workoutId,
-  setShouldRefresh,
-}: DeleteButtonProps) {
+export default function DeleteWorkoutButton({ workoutId }: DeleteButtonProps) {
   const [isModalOpen, setIsModalOpen] = useState(false);
-
-  function deleteWorkout({ workoutId, setShouldRefresh }: DeleteButtonProps) {
-    fetch(`http://localhost:3001/api/v1/workouts/${workoutId}`, {
-      method: "DELETE",
-    })
-      .then((response) => response.json())
-      .then(() => {
-        setShouldRefresh(true);
-        setIsModalOpen(false);
-      });
-  }
+  const router = useRouter();
 
   return (
     <>
@@ -34,12 +22,15 @@ export default function DeleteWorkoutButton({
         <TrashCanSVG />
       </button>
       {isModalOpen && (
-        <div className={styles.modal}>
+        <div className={styles.modalWorkout}>
           <p>Are you sure you want to delete this workout?</p>
           <div className={styles.buttonContainer}>
             <button
               type="button"
-              onClick={() => deleteWorkout({ workoutId, setShouldRefresh })}
+              onClick={async () => {
+                await deleteWorkoutAction(workoutId);
+                setIsModalOpen(false);
+              }}
             >
               Yes
             </button>

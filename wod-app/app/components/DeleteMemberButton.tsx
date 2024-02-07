@@ -1,28 +1,22 @@
-import { Dispatch, SetStateAction, useState } from "react";
+import { useState } from "react";
 import styles from "../styles/deleteButton.module.css";
 import TrashCanSVG from "./TrashCanSvg";
 
 interface DeleteMemberButtonProps {
   memberId: string;
-  setShouldRefresh: Dispatch<SetStateAction<boolean>>;
 }
 
 export default function DeleteMemberButton({
   memberId,
-  setShouldRefresh,
 }: DeleteMemberButtonProps) {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  function deleteMember({
-    memberId,
-    setShouldRefresh,
-  }: DeleteMemberButtonProps) {
+  function deleteMember({ memberId }: DeleteMemberButtonProps) {
     fetch(`http://localhost:3001/api/v1/members/${memberId}`, {
       method: "DELETE",
     })
       .then((response) => response.json())
       .then(() => {
-        setShouldRefresh(true);
         setIsModalOpen(false);
       });
   }
@@ -40,10 +34,7 @@ export default function DeleteMemberButton({
         <div className={styles.modalMember}>
           <p>Are you sure you want to delete this member?</p>
           <div className={styles.buttonContainer}>
-            <button
-              type="button"
-              onClick={() => deleteMember({ memberId, setShouldRefresh })}
-            >
+            <button type="button" onClick={() => deleteMember({ memberId })}>
               Yes
             </button>
             <button type="button" onClick={() => setIsModalOpen(false)}>

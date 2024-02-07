@@ -1,6 +1,6 @@
 .container {
-  height: 30px;
   width: 30px;
+  height: 30px;
   background-color: transparent;
   border: none;
   padding: 0px;
@@ -40,13 +40,15 @@
   font-size: 14px;
 }
 
-.modalWorkout, .modalMember div {
+.modalWorkout div,
+.modalMember div {
   display: flex;
   justify-content: space-around;
   margin-top: 6px;
 }
 
-.modalWorkout, .modalMember div button {
+.modalWorkout div button,
+.modalMember div button {
   height: 28px;
   width: 50px;
   font-family: monospace;

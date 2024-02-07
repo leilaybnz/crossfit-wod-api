@@ -1,14 +1,12 @@
-import { Dispatch, SetStateAction } from "react";
 import styles from "../styles/card.module.css";
 import { MemberType } from "../types";
 import DeleteMemberButton from "./DeleteMemberButton";
 
 interface MemberProps {
   member: MemberType;
-  setShouldRefresh: Dispatch<SetStateAction<boolean>>;
 }
 
-export default function Member({ member, setShouldRefresh }: MemberProps) {
+export default function Member({ member }: MemberProps) {
   return (
     <article className={styles.containerMember}>
       <p className={styles.title}>Member</p>
@@ -21,7 +19,7 @@ export default function Member({ member, setShouldRefresh }: MemberProps) {
       <p className={styles.name}>
         Mail: <span className={styles.text}>{member.email}</span>
       </p>
-      <DeleteMemberButton memberId={member.id} setShouldRefresh={setShouldRefresh}/>
+      <DeleteMemberButton memberId={member.id} />
     </article>
   );
 }

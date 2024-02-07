@@ -5,44 +5,27 @@ import styles from "../styles/container.module.css";
 import { useEffect, useState } from "react";
 import { MemberType, WorkoutType } from "../types";
 import Button from "./Button";
-import CreateWorkoutButton from "./CreateWorkoutButton";
-import Form from "./Form";
+import CreateButton from "./CreateButton";
+import WorkoutForm from "./WorkoutForm";
+import MemberForm from "./MemberForm";
+import { getAllMembers, getAllWorkouts } from "../api/wod";
 
 export default function Container() {
   const [workouts, setWorkouts] = useState<WorkoutType[]>([]);
   const [members, setMembers] = useState<MemberType[]>([]);
   const [isShownWorkout, setIsShownWorkout] = useState(false);
   const [isShownMember, setIsShownMember] = useState(false);
-  const [showForm, setShowForm] = useState(false);
+  const [showWorkoutForm, setShowWorkoutForm] = useState(false);
+  const [showMemberForm, setShowMemberForm] = useState(false);
   const [shouldRefresh, setShouldRefresh] = useState(false);
 
   useEffect(() => {
-    const workoutsFetch = fetch(`http://localhost:5000/api/v1/workouts`).then(
-      (response) => response.json()
+    Promise.all([getAllWorkouts(), getAllMembers()]).then(
+      ([workoutsJson, membersJson]) => {
+        setWorkouts(workoutsJson);
+        setMembers(membersJson);
+      }
     );
-    const membersFetch = fetch(`http://localhost:5000/api/v1/members`).then(
-      (response) => response.json()
-    );
-
-    Promise.all([workoutsFetch, membersFetch])
-    .then((json) => {
-      console.log(workoutsFetch);
-      console.log(membersFetch);
-      const workoutsData: WorkoutType = json.allWorkouts;
-      const membersData: MemberType = json.data;
-      setWorkouts(workoutsData);
-      setMembers(membersData);
-    })
-    // fetch(`http://localhost:5000/api/v1/workouts`),//ok
-    //   fetch(`http://localhost:5000/api/v1/members`)//once this is no longer commented, new error  can't access property "map", workouts is undefined
-    //     .then((response) => response.json())
-    //     .then((json) => {
-    //       const workoutData = json.allWorkouts;
-    //       // const memberData = json.data;
-    //       setWorkouts(workoutData);
-    //       // setMembers(memberData);
-    //       setShouldRefresh(false); //executes after the fetch && after we get the response
-    //     });
   }, [shouldRefresh]);
 
   const handleClickWorkout = () => {
@@ -53,15 +36,19 @@ export default function Container() {
     setIsShownMember(!isShownMember);
   };
 
-  const handleClickCreateBtn = () => {
-    setShowForm(!showForm);
+  const handleClickCreateWorkoutBtn = () => {
+    setShowWorkoutForm(!showWorkoutForm);
+  };
+
+  const handleClickCreateMemberBtn = () => {
+    setShowMemberForm(!showMemberForm);
   };
 
   return (
     <>
-      <pre>{JSON.stringify(members, null, 2)}</pre>
+      {/* <pre>{JSON.stringify(members, null, 2)}</pre> */}
       <Button title="workouts" onClick={handleClickWorkout} />
-      {/* <Button title="members" onClick={handleClickMember} /> */}
+      <Button title="members" onClick={handleClickMember} />
       {isShownWorkout && (
         <section className={styles.container}>
           {workouts.map((workout, i) => (
@@ -73,15 +60,21 @@ export default function Container() {
           ))}
         </section>
       )}
-      {/* {isShownMember && (
+      {isShownMember && (
         <section className={styles.container}>
           {members.map((member, i) => (
-            <Member member={member} key={i} />
+            <Member
+              member={member}
+              key={i}
+              setShouldRefresh={setShouldRefresh}
+            />
           ))}
         </section>
-      )} */}
-      <CreateWorkoutButton onClick={handleClickCreateBtn} />
-      {showForm && <Form />}
+      )}
+      <CreateButton onClick={handleClickCreateWorkoutBtn} title="workout" />
+      <CreateButton onClick={handleClickCreateMemberBtn} title="member" />
+      {showWorkoutForm && <WorkoutForm />}
+      {showMemberForm && <MemberForm />}
     </>
   );
 }

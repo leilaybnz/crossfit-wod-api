@@ -16,4 +16,5 @@ export interface MemberType {
   name: string;
   email: string;
   dateOfBirth?: string;
+  id: string;
 }

@@ -1,6 +1,6 @@
 import { MemberType, WorkoutType } from "../types";
 
-const baseUrl = "localhost:5000/api/v1/";
+const baseUrl = "http://localhost:5000/api/v1/";
 
 async function get(url: string) {
   let response: Response;

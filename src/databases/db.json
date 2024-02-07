@@ -317,14 +317,6 @@
       "member": "/members/4cd70965-11b8-4840-834a-ebaa0c2b279c",
       "createdAt": "1/2/2024, 22:28:00",
       "updatedAt": "1/2/2024, 22:28:00"
-    },
-    {
-      "name": "Test front",
-      "dateOfBirth": "2024-02-06",
-      "id": "ed197580-5820-4677-a2c1-78ccfd64936d",
-      "member": "/members/ed197580-5820-4677-a2c1-78ccfd64936d",
-      "createdAt": "2/2/2024, 12:48:35",
-      "updatedAt": "2/2/2024, 12:48:35"
     }
   ],
   "records": [

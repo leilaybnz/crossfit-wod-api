@@ -9,7 +9,7 @@ import {
 export const getAllMembersController = (req, res) => {
   try {
     const allMembers = getAllMembersService();
-    res.send({ status: "OK", data: allMembers });
+    res.send({ status: "OK", allMembers });
   } catch (error) {
     res.status(error?.status || 500).send({
       status: "FAILED",

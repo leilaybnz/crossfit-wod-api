@@ -1,7 +1,6 @@
 import { useState } from "react";
 import styles from "../styles/deleteButton.module.css";
 import TrashCanSVG from "./TrashCanSvg";
-import { useRouter } from "next/navigation";
 import { deleteWorkoutAction } from "../actions";
 
 interface DeleteButtonProps {
@@ -10,7 +9,6 @@ interface DeleteButtonProps {
 
 export default function DeleteWorkoutButton({ workoutId }: DeleteButtonProps) {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const router = useRouter();
 
   return (
     <>

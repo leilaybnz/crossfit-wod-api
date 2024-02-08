@@ -19,15 +19,13 @@ export const metadata: Metadata = {
   // },
 };
 
-export default function RootLayout() {
+export default function RootLayout({children}:{children: React.ReactNode}) {
   return (
     <html lang="en">
       <body className={redHatMono.className}>
         <main className={styles.main}>
           <Nav />
-          <Suspense fallback={<Loading />}>
-            <Container />
-          </Suspense>
+          {children}
           <LanguageButton />
           <Footer />
         </main>

@@ -2,13 +2,12 @@
 import Workout from "./Workout";
 import Member from "./Member";
 import styles from "../styles/container.module.css";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { MemberType, WorkoutType } from "../types";
 import Button from "./Button";
 import CreateButton from "./CreateButton";
 import WorkoutForm from "./WorkoutForm";
 import MemberForm from "./MemberForm";
-import { getAllMembers, getAllWorkouts } from "../api/wod";
 
 function Section({
   isShown,
@@ -24,23 +23,16 @@ function Section({
   return <section className={styles.container}>{children}</section>;
 }
 
-export default function Container() {
-  const [workouts, setWorkouts] = useState<WorkoutType[]>([]);
-  const [members, setMembers] = useState<MemberType[]>([]);
+interface ContainerProps {
+  workouts: WorkoutType[];
+  members: MemberType[];
+}
+
+export default function Container({ workouts, members }: ContainerProps) {
   const [isShownWorkout, setIsShownWorkout] = useState(false);
   const [isShownMember, setIsShownMember] = useState(false);
   const [showWorkoutForm, setShowWorkoutForm] = useState(false);
   const [showMemberForm, setShowMemberForm] = useState(false);
-  const [shouldRefresh, setShouldRefresh] = useState(false);
-
-  useEffect(() => {
-    Promise.all([getAllWorkouts(), getAllMembers()]).then(
-      ([workoutsJson, membersJson]) => {
-        setWorkouts(workoutsJson);
-        setMembers(membersJson);
-      }
-    );
-  }, [shouldRefresh]);
 
   const handleClickWorkout = () => {
     setIsShownWorkout(!isShownWorkout);
@@ -65,16 +57,12 @@ export default function Container() {
       <Button title="members" onClick={handleClickMember} />
       <Section isShown={isShownWorkout}>
         {workouts.map((workout, i) => (
-          <Workout
-            workout={workout}
-            key={i}
-            setShouldRefresh={setShouldRefresh}
-          />
+          <Workout workout={workout} key={i} />
         ))}
       </Section>
       <Section isShown={isShownMember}>
         {members.map((member, i) => (
-          <Member member={member} key={i} setShouldRefresh={setShouldRefresh} />
+          <Member member={member} key={i} />
         ))}
       </Section>
       <CreateButton onClick={handleClickCreateWorkoutBtn} title="workout" />

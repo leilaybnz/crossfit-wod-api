@@ -1,4 +1,4 @@
-import { ChangeEvent, Dispatch, Fragment, SetStateAction } from "react";
+import { Fragment } from "react";
 import styles from "../styles/addRemoveInput.module.css";
 import { FormWorkoutProps } from "./WorkoutForm";
 import { Control, UseFormRegister, useFieldArray } from "react-hook-form";
@@ -16,20 +16,6 @@ export default function ExercisesInput({
     control: formControl,
     name: "exercises",
   });
-  const handleInputChange = (
-    index: any,
-    event: ChangeEvent<HTMLInputElement>
-  ) => {
-    setExercises((oldExercises) => {
-      return oldExercises.map((exercises, i) => {
-        if (i === index) {
-          return event.target.value;
-        } else {
-          return exercises;
-        }
-      });
-    });
-  };
 
   const addInput = () => {
     append({ value: "" });

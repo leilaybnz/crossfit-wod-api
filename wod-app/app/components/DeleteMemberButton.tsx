@@ -1,28 +1,18 @@
-import { Dispatch, SetStateAction, useState } from "react";
+import { useState } from "react";
 import styles from "../styles/deleteButton.module.css";
 import TrashCanSVG from "./TrashCanSvg";
+import { useRouter } from "next/navigation";
+import { deleteMemberAction } from "../actions";
 
 interface DeleteMemberButtonProps {
   memberId: string;
-  setShouldRefresh: Dispatch<SetStateAction<boolean>>;
 }
 
 export default function DeleteMemberButton({
   memberId,
-  setShouldRefresh,
 }: DeleteMemberButtonProps) {
   const [isModalOpen, setIsModalOpen] = useState(false);
-
-  function deleteMember({ memberId, setShouldRefresh }: DeleteMemberButtonProps) {
-    fetch(`http://localhost:5000/api/v1/members/${memberId}`, {
-      method: "DELETE",
-    })
-      .then((response) => response.json())
-      .then(() => {
-        setShouldRefresh(true);
-        setIsModalOpen(false);
-      });
-  }
+  const router = useRouter();
 
   return (
     <>
@@ -39,7 +29,10 @@ export default function DeleteMemberButton({
           <div className={styles.buttonContainer}>
             <button
               type="button"
-              onClick={() => deleteMember({ memberId, setShouldRefresh })}
+              onClick={async () => {
+                await deleteMemberAction(memberId);
+                setIsModalOpen(false);
+              }}
             >
               Yes
             </button>

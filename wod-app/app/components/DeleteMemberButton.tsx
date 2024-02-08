@@ -26,7 +26,7 @@ export default function DeleteMemberButton({
       {isModalOpen && (
         <div className={styles.modalMember}>
           <p>Are you sure you want to delete this member?</p>
-          <div className={styles.buttonContainer}>
+          <div>
             <button
               type="button"
               onClick={async () => {

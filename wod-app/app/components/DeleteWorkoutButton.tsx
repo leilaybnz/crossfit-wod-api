@@ -24,7 +24,7 @@ export default function DeleteWorkoutButton({ workoutId }: DeleteButtonProps) {
       {isModalOpen && (
         <div className={styles.modalWorkout}>
           <p>Are you sure you want to delete this workout?</p>
-          <div className={styles.buttonContainer}>
+          <div>
             <button
               type="button"
               onClick={async () => {

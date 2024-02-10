@@ -1,5 +1,5 @@
-import { getAllMembers, getAllWorkouts } from "./api/wod";
 import Container from "./components/Container";
+import { getAllMembers, getAllWorkouts } from "./services/wod";
 
 export default async function Home() {
   const [workouts, members] = await Promise.all([

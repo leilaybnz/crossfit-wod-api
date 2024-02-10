@@ -1,3 +1,4 @@
+import { useRouter } from "next/navigation";
 import { SubmitHandler, useForm } from "react-hook-form";
 import styles from "../styles/form.module.css";
 import ActivationInput from "./ActivationInput";
@@ -43,7 +44,7 @@ function postWorkout(body: {
   exercises: string[];
   trainerTips: string[];
 }) {
-  return fetch("http://localhost:3001/api/v1/workouts", {
+  return fetch("http://localhost:3000/api/createNewWorkout", {
     method: "POST",
     body: JSON.stringify(body),
     headers: {
@@ -53,6 +54,8 @@ function postWorkout(body: {
 }
 
 export default function WorkoutForm() {
+  const router = useRouter();
+
   const { reset, handleSubmit, register, control } = useForm<FormWorkoutProps>({
     defaultValues: {
       name: "",
@@ -84,6 +87,7 @@ export default function WorkoutForm() {
       trainerTips: trainerTips.map((item) => item.value),
     }).then(() => {
       reset();
+      router.refresh();
     });
   };
 

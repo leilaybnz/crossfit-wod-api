@@ -26,7 +26,14 @@ export default function Workout({ workout }: WorkoutProps) {
         Activation: <span className={styles.text}>{workout.activation}</span>
       </p>
       <p className={styles.name}>
-        Exercises: <span className={styles.text}>{workout.exercises}</span>
+        Exercises:{" "}
+        <ul>
+          {workout.exercises.map((exercise) => (
+            <li key={exercise} className={styles.text}>
+              {exercise}
+            </li>
+          ))}
+        </ul>
       </p>
       <p className={styles.name}>
         Trainer tips: <span className={styles.text}>{workout.trainerTips}</span>

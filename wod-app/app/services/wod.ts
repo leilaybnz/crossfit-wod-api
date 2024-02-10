@@ -1,7 +1,5 @@
 import { kv } from "@vercel/kv";
 
-const baseUrl = "http://localhost:3001/api/v1";
-
 export interface CrossfitDatabase {
   workouts: Workout[];
   members: Member[];
@@ -77,6 +75,22 @@ export async function deleteWorkout(workoutId: string) {
   await saveToDatabase(db);
 }
 
+export async function deleteMember(memberId: string) {
+  const db = await getDatabase();
+
+  const indexForDeletion = db.members.findIndex(
+    (member) => member.id === memberId
+  );
+
+  if (indexForDeletion === -1) {
+    throw new Error(`Cannot find member with the id '${memberId}'`);
+  }
+
+  db.members.splice(indexForDeletion, 1);
+
+  await saveToDatabase(db);
+}
+
 export class AlreadyExistsError extends Error {}
 
 export async function createNewWorkout(newWorkout: Workout) {
@@ -95,4 +109,22 @@ export async function createNewWorkout(newWorkout: Workout) {
   await saveToDatabase(db);
 
   return newWorkout;
+}
+
+export async function createNewMember(newMember: Member) {
+  const db = await getDatabase();
+
+  const isAlreadyAdded =
+    db.members.findIndex((member) => member.name === newMember.name) > -1;
+
+  if (isAlreadyAdded) {
+    throw new AlreadyExistsError(
+      `Member with the name '${newMember.name}' already exists.`
+    );
+  }
+
+  db.members.push(newMember);
+  await saveToDatabase(db);
+
+  return newMember;
 }

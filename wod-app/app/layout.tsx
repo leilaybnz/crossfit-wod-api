@@ -3,10 +3,7 @@ import { Red_Hat_Mono } from "next/font/google";
 import "./globals.css";
 import Footer from "./components/Footer";
 import Nav from "./components/Nav";
-import Container from "./components/Container";
 import styles from "./styles/layout.module.css";
-import { Suspense } from "react";
-import Loading from "./loading";
 import LanguageButton from "./components/LanguageButton";
 
 const redHatMono = Red_Hat_Mono({ subsets: ["latin"] });

@@ -1,7 +1,7 @@
 import { Fragment } from "react";
 import styles from "../styles/addRemoveInput.module.css";
 import { Control, UseFormRegister, useFieldArray } from "react-hook-form";
-import { FormWorkoutProps } from "./WorkoutForm";
+import { FormWorkoutProps } from "./CreateWorkoutForm";
 
 interface EquipmentInputProps {
   formControl: Control<FormWorkoutProps>;

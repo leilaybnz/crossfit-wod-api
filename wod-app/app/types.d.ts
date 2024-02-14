@@ -9,7 +9,6 @@ export interface WorkoutType {
   exercises: string;
   trainerTips: string;
   id: string;
-  setShouldRefresh:  Dispatch<SetStateAction<boolean>>;
 }
 
 export interface MemberType {

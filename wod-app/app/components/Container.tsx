@@ -6,8 +6,8 @@ import { useState } from "react";
 import { MemberType, WorkoutType } from "../types";
 import Button from "./Button";
 import CreateButton from "./CreateButton";
-import WorkoutForm from "./WorkoutForm";
-import MemberForm from "./MemberForm";
+import WorkoutForm from "./CreateWorkoutForm";
+import MemberForm from "./CreateMemberForm";
 
 function Section({
   isShown,

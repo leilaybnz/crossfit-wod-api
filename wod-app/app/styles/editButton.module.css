@@ -1,0 +1,11 @@
+.container {
+    height: 35px;
+  width: 35px;
+  background-color: transparent;
+  border: none;
+  padding: 0px;
+  position: absolute;
+  top: 0.8rem;
+  right: 0.3rem;
+  cursor: pointer;
+  }

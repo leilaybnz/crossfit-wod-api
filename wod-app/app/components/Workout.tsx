@@ -1,7 +1,7 @@
-import { Dispatch, SetStateAction } from "react";
 import styles from "../styles/card.module.css";
 import { WorkoutType } from "../types";
 import DeleteWorkoutButton from "./DeleteWorkoutButton";
+import EditWorkoutButton from "./EditWorkoutButton";
 
 interface WorkoutProps {
   workout: WorkoutType;
@@ -33,7 +33,8 @@ export default function Workout({ workout }: WorkoutProps) {
         Trainer tips: <span className={styles.text}>{workout.trainerTips}</span>
       </p>
       <div className={styles.arrow}></div>
-      <DeleteWorkoutButton workoutId={workout.id} />
+      <DeleteWorkoutButton workoutId={workout.id}/>
+      <EditWorkoutButton workoutId={workout.id} />
     </article>
   );
 }

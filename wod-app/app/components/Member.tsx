@@ -1,6 +1,7 @@
 import styles from "../styles/card.module.css";
 import { MemberType } from "../types";
 import DeleteMemberButton from "./DeleteMemberButton";
+import EditMemberButton from "./EditMemberButton";
 
 interface MemberProps {
   member: MemberType;
@@ -19,6 +20,7 @@ export default function Member({ member }: MemberProps) {
       <p className={styles.name}>
         Mail: <span className={styles.text}>{member.email}</span>
       </p>
+      <EditMemberButton memberId={member.id} />
       <DeleteMemberButton memberId={member.id} />
     </article>
   );

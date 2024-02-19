@@ -2,8 +2,8 @@
   background-color: Canvas;
   color: CanvasText;
   color-scheme: dark;
+  font-family: monospace;
 }
-
 
 @media (prefers-color-scheme: dark) {
   html {

@@ -32,6 +32,26 @@
   font-weight: 600;
 }
 
+.list {
+  list-style: none;
+
+  .text::before {
+    content: "✨";
+    display: inline-block;
+    margin-right: 0.2rem;
+  }
+}
+
+.listThunder {
+  list-style: none;
+
+  .text::before {
+    content: "⚡️";
+    display: inline-block;
+    margin-right: 0.2rem;
+  }
+}
+
 .text {
   text-shadow: none;
   font-weight: 300;

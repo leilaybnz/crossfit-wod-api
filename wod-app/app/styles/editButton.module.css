@@ -1,11 +1,11 @@
 .container {
-    height: 35px;
-  width: 35px;
+  height: 30px;
+  width: 30px;
   background-color: transparent;
   border: none;
   padding: 0px;
   position: absolute;
-  top: 0.8rem;
-  right: 0.3rem;
+  top: 4rem;
+  right: 0.8rem;
   cursor: pointer;
-  }
+}

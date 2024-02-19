@@ -9,13 +9,15 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@vercel/kv": "^1.0.1",
     "i18next": "^23.7.16",
     "i18next-browser-languagedetector": "^7.2.0",
     "ldrs": "^1.0.1",
     "next": "^14.0.3",
     "react": "^18",
     "react-dom": "^18",
-    "react-i18next": "^14.0.0"
+    "react-i18next": "^14.0.0",
+    "vercel": "^33.5.1"
   },
   "devDependencies": {
     "@types/node": "^20",

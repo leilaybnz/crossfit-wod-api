@@ -47,7 +47,7 @@ async function getDatabase() {
   return (await kv.get("crossfit-db")) as CrossfitDatabase;
 }
 
-async function saveToDatabase(db: CrossfitDatabase) {
+export async function saveToDatabase(db: CrossfitDatabase) {
   await kv.set("crossfit-db", JSON.stringify(db, null, 2));
 }
 

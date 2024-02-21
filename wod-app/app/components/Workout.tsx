@@ -32,7 +32,7 @@ export default function Workout({ workout }: WorkoutProps) {
             Mobility:
             <ul className={styles.list}>
               {workout.mobility.map((mobility) => (
-                <li key={mobility} className={styles.list}>
+                <li key={mobility} className={styles.text}>
                   {" " + mobility}
                 </li>
               ))}

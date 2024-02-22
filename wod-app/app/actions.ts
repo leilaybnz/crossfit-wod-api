@@ -8,8 +8,14 @@ import {
   createNewMember,
   Member,
   Workout,
+  editWorkout,
 } from "./services/wod";
 import { randomUUID } from "crypto";
+
+interface EditWorkoutActionParams {
+  workoutId: string;
+  changes: Omit<Workout, "createdAt">;
+}
 
 export async function deleteWorkoutAction(workoutId: string) {
   revalidatePath("/");
@@ -39,5 +45,30 @@ export async function createWorkoutAction(
 
 export async function createMemberAction(newMember: Member) {
   revalidatePath("/");
-  return createNewMember(newMember);
+  return createNewMember({
+    ...newMember,
+    id: randomUUID(),
+    createdAt: new Date().toLocaleString("es-AR", {
+      timeZone: "America/Buenos_Aires",
+    }),
+    updatedAt: new Date().toLocaleString("es-AR", {
+      timeZone: "America/Buenos_Aires",
+    }),
+  });
+}
+
+export async function editWorkoutAction({
+  workoutId,
+  changes,
+}: EditWorkoutActionParams) {
+  revalidatePath("/");
+  return editWorkout({
+    workoutId: workoutId,
+    changes: {
+      ...changes,
+    },
+    updatedAt: new Date().toLocaleString("es-AR", {
+      timeZone: "America/Buenos_Aires",
+    }),
+  });
 }

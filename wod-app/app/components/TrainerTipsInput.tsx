@@ -35,7 +35,6 @@ export default function TrainerTipsInput({
                 id="trainer tips"
                 placeholder="Add workout trainer tips"
                 {...register(`trainerTips.${index}.value`)}
-                required
                 className={styles.input}
               />
             </div>

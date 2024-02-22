@@ -7,7 +7,7 @@ export interface WorkoutType {
   mobility?: string[];
   activation?: string[];
   exercises: string[];
-  trainerTips: string[];
+  trainerTips?: string[];
   id: string;
 }
 

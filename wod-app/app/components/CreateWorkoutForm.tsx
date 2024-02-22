@@ -1,3 +1,4 @@
+import { createWorkoutAction } from "../actions";
 import styles from "../styles/form.module.css";
 import ActivationInput from "./ActivationInput";
 import EquipmentInput from "./EquipmentInput";
@@ -34,24 +35,6 @@ export interface WorkoutData {
   updatedAt: string;
 }
 
-function postWorkout(body: {
-  name: string;
-  mode: string;
-  equipment: string[];
-  mobility: string[];
-  activation: string[];
-  exercises: string[];
-  trainerTips: string[];
-}) {
-  return fetch("http://localhost:5000/api/v1/workouts", {
-    method: "POST",
-    body: JSON.stringify(body),
-    headers: {
-      "Content-type": "application/json; charset=UTF-8",
-    },
-  }).then((response) => response.json() as Promise<PostWorkoutResponseData>);
-}
-
 export default function WorkoutForm() {
   const { reset, handleSubmit, register, control } = useForm<FormWorkoutProps>({
     defaultValues: {
@@ -74,7 +57,7 @@ export default function WorkoutForm() {
     exercises,
     trainerTips,
   }) => {
-    postWorkout({
+    createWorkoutAction({
       name: name.trim(),
       mode: mode.trim(),
       equipment: equipment.map((item) => item.value),

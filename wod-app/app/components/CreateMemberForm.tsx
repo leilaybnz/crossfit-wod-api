@@ -1,10 +1,15 @@
 import { SubmitHandler, useForm } from "react-hook-form";
 import styles from "../styles/form.module.css";
+import { createMemberAction } from "../actions";
+import { Gender } from "../services/wod";
 
 export interface FormMemberProps {
   name: string;
   dateOfBirth: string;
   mail: string;
+  gender: Gender;
+  id: string;
+  password: string;
 }
 
 export interface PostMemberResponseData {
@@ -20,16 +25,6 @@ export interface MemberData {
   password: string;
 }
 
-function postMember(body: { name: string; dateOfBirth: string; mail: string }) {
-  return fetch("http://localhost:5000/api/v1/members", {
-    method: "POST",
-    body: JSON.stringify(body),
-    headers: {
-      "Content-type": "application/json; charset=UTF-8",
-    },
-  }).then((response) => response.json() as Promise<PostMemberResponseData>);
-}
-
 export default function MemberForm() {
   const { reset, handleSubmit, register } = useForm<FormMemberProps>({
     defaultValues: {
@@ -43,11 +38,17 @@ export default function MemberForm() {
     name,
     dateOfBirth,
     mail,
+    gender,
+    id,
+    password,
   }) => {
-    postMember({
+    createMemberAction({
       name: name,
       dateOfBirth: dateOfBirth,
       mail: mail,
+      gender: gender,
+      id: id,
+      password: password,
     }).then(() => {
       reset();
     });

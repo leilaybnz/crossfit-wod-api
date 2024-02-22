@@ -1,3 +1,4 @@
+import { editWorkoutAction } from "../actions";
 import styles from "../styles/form.module.css";
 import ActivationInput from "./ActivationInput";
 import EquipmentInput from "./EquipmentInput";
@@ -14,6 +15,9 @@ export interface FormWorkoutProps {
   activation: { value: string }[];
   exercises: { value: string }[];
   trainerTips: { value: string }[];
+  id: string;
+  createdAt: string;
+  updatedAt: string;
 }
 
 export interface PatchWorkoutResponseData {
@@ -34,34 +38,22 @@ export interface WorkoutData {
   updatedAt: string;
 }
 
-function patchWorkout(body: {
-  name: string;
-  mode: string;
-  equipment: string[];
-  mobility: string[];
-  activation: string[];
-  exercises: string[];
-  trainerTips: string[];
-}) {
-  return fetch("http://localhost:5000/api/v1/workouts", {
-    method: "PATCH",
-    body: JSON.stringify(body),
-    headers: {
-      "Content-type": "application/json; charset=UTF-8",
-    },
-  }).then((response) => response.json() as Promise<PatchWorkoutResponseData>);
-}
-
-export default function EditWorkoutForm() {
+export default function EditWorkoutForm(workout: WorkoutData) {
   const { reset, handleSubmit, register, control } = useForm<FormWorkoutProps>({
     defaultValues: {
-      name: "",
-      mode: "",
-      equipment: [{ value: "" }],
-      mobility: [{ value: "" }],
-      activation: [{ value: "" }],
-      exercises: [{ value: "" }],
-      trainerTips: [{ value: "" }],
+      name: workout.name,
+      mode: workout.mode,
+      equipment: workout.equipment.map((equipment) => ({ value: equipment })),
+      mobility: workout.mobility.map((mobility) => ({ value: mobility })),
+      activation: workout.activation.map((activation) => ({
+        value: activation,
+      })),
+      exercises: workout.exercises.map((exercise) => ({ value: exercise })),
+      trainerTips: workout.trainerTips.map((trainerTip) => ({
+        value: trainerTip,
+      })),
+      createdAt: workout.createdAt,
+      updatedAt: workout.updatedAt,
     },
   });
 
@@ -73,8 +65,10 @@ export default function EditWorkoutForm() {
     activation,
     exercises,
     trainerTips,
+    id,
+    updatedAt,
   }) => {
-    patchWorkout({
+    editWorkoutAction({
       name: name.trim(),
       mode: mode.trim(),
       equipment: equipment.map((item) => item.value),
@@ -82,6 +76,8 @@ export default function EditWorkoutForm() {
       activation: activation.map((item) => item.value),
       exercises: exercises.map((item) => item.value),
       trainerTips: trainerTips.map((item) => item.value),
+      id: id,
+      updatedAt: updatedAt,
     }).then(() => {
       reset();
     });

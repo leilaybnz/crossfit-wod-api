@@ -75,7 +75,7 @@ export default function Workout({ workout }: WorkoutProps) {
       )}
       <div className={styles.arrow}></div>
       <DeleteWorkoutButton workoutId={workout.id} />
-      <EditWorkoutButton workoutId={workout.id} />
+      <EditWorkoutButton workout={workout}/>
     </article>
   );
 }

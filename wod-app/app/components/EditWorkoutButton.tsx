@@ -4,11 +4,11 @@ import EditSvg from "./EditSvg";
 import EditWorkoutForm from "./EditWorkoutForm";
 
 interface EditWorkoutButtonProps {
-  workoutId: string;
+  workout: string;
 }
 
 export default function EditWorkoutButton({
-  workoutId,
+  workout,
 }: EditWorkoutButtonProps) {
   const [isFormOpen, setIsFormOpen] = useState(false);
 
@@ -22,7 +22,7 @@ export default function EditWorkoutButton({
         <EditSvg />
       </button>
       {isFormOpen && (
-        <EditWorkoutForm/>
+        <EditWorkoutForm workout={workout}/>
       )}
     </>
   );

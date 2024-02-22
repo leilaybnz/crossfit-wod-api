@@ -35,7 +35,7 @@ export interface Workout {
   mode: string;
   equipment: string[];
   exercises: string[];
-  trainerTips: string[];
+  trainerTips?: string[];
   id: string;
   createdAt: string;
   updatedAt: string;

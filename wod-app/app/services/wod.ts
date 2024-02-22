@@ -11,7 +11,7 @@ export interface Member {
   name: string;
   gender: Gender;
   dateOfBirth: string;
-  email: string;
+  mail: string;
   password: string;
   member?: string;
   createdAt?: string;
@@ -37,10 +37,16 @@ export interface Workout {
   exercises: string[];
   trainerTips?: string[];
   id: string;
-  createdAt: string;
-  updatedAt: string;
   mobility?: string[];
   activation?: string[];
+  updatedAt: string;
+  createdAt: string;
+}
+
+interface EditWorkoutParams {
+  workoutId: string;
+  updatedAt: string;
+  changes: Omit<Workout, 'createdAt' | 'updatedAt'>
 }
 
 async function getDatabase() {
@@ -128,3 +134,39 @@ export async function createNewMember(newMember: Member) {
 
   return newMember;
 }
+
+export async function editWorkout({workoutId, changes}: EditWorkoutParams) {
+  const db = await getDatabase();
+
+  const isAlreadyAdded =
+    db.workouts.findIndex((workout) => workout.name === changes.name) >
+    -1;
+
+  if (isAlreadyAdded) {
+    throw new AlreadyExistsError(
+      `Workout with the name '${changes.name}' already exists.`
+    );
+  }
+
+  const indexForUpdate = db.workouts.findIndex(
+    (workout) => workout.id === workoutId
+  );
+
+  if (indexForUpdate === -1) {
+    throw {
+      status: 400,
+      message: `Cannot find workout with the id '${workoutId}'`,
+    };
+  }
+
+  const updatedWorkout = {
+    ...db.workouts[indexForUpdate],
+    ...changes
+  };
+
+  db.workouts[indexForUpdate] = updatedWorkout;
+  await saveToDatabase(db);
+  return updatedWorkout;
+}
+
+export async function editMember(existingMember: Member) {}

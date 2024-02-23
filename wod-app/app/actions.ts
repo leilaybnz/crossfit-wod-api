@@ -14,7 +14,7 @@ import { randomUUID } from "crypto";
 
 interface EditWorkoutActionParams {
   workoutId: string;
-  changes: Omit<Workout, "createdAt">;
+  changes: Omit<Workout, "createdAt" | "id">;
 }
 
 export async function deleteWorkoutAction(workoutId: string) {

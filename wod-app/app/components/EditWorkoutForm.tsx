@@ -7,7 +7,7 @@ import MobilityInput from "./MobilityInput";
 import TrainerTipsInput from "./TrainerTipsInput";
 import { SubmitHandler, useForm } from "react-hook-form";
 
-export interface FormWorkoutProps {
+export interface EditFormWorkoutProps {
   name: string;
   mode: string;
   equipment: { value: string }[];
@@ -16,7 +16,6 @@ export interface FormWorkoutProps {
   exercises: { value: string }[];
   trainerTips: { value: string }[];
   id: string;
-  createdAt: string;
   updatedAt: string;
 }
 
@@ -39,7 +38,7 @@ export interface WorkoutData {
 }
 
 export default function EditWorkoutForm(workout: WorkoutData) {
-  const { reset, handleSubmit, register, control } = useForm<FormWorkoutProps>({
+  const { reset, handleSubmit, register, control } = useForm<EditFormWorkoutProps>({
     defaultValues: {
       name: workout.name,
       mode: workout.mode,
@@ -52,12 +51,10 @@ export default function EditWorkoutForm(workout: WorkoutData) {
       trainerTips: workout.trainerTips.map((trainerTip) => ({
         value: trainerTip,
       })),
-      createdAt: workout.createdAt,
-      updatedAt: workout.updatedAt,
     },
   });
 
-  const editWorkout: SubmitHandler<FormWorkoutProps> = ({
+  const editWorkout: SubmitHandler<EditFormWorkoutProps> = ({
     name,
     mode,
     equipment,
@@ -69,15 +66,17 @@ export default function EditWorkoutForm(workout: WorkoutData) {
     updatedAt,
   }) => {
     editWorkoutAction({
-      name: name.trim(),
-      mode: mode.trim(),
-      equipment: equipment.map((item) => item.value),
-      mobility: mobility.map((item) => item.value),
-      activation: activation.map((item) => item.value),
-      exercises: exercises.map((item) => item.value),
-      trainerTips: trainerTips.map((item) => item.value),
-      id: id,
-      updatedAt: updatedAt,
+      workoutId: id,
+      changes: {
+        name: name,
+        mode: mode,
+        equipment: equipment.map((equipment) => equipment.value),
+        mobility: mobility.map((mobility) => mobility.value),
+        activation: activation.map((activation) => activation.value),
+        exercises: exercises.map((exercise) => exercise.value),
+        trainerTips: trainerTips.map((trainerTip) => trainerTip.value),
+        updatedAt: updatedAt,
+      },
     }).then(() => {
       reset();
     });
@@ -107,23 +106,23 @@ export default function EditWorkoutForm(workout: WorkoutData) {
         />
       </label>
       <div className={styles.label}>
-        <EquipmentInput register={register} formControl={control} />
+        <EquipmentInput registerEdit={register} formControlEdit={control} />
       </div>
       <div className={styles.label}>
-        <MobilityInput register={register} formControl={control} />
+        <MobilityInput registerEdit={register} formControlEdit={control} />
       </div>
       <div className={styles.label}>
-        <ActivationInput register={register} formControl={control} />
+        <ActivationInput registerEdit={register} formControlEdit={control} />
       </div>
       <div className={styles.label}>
-        <ExercisesInput register={register} formControl={control} />
+        <ExercisesInput registerEdit={register} formControlEdit={control} />
       </div>
       <div className={styles.label}>
-        <TrainerTipsInput register={register} formControl={control} />
+        <TrainerTipsInput registerEdit={register} formControlEdit={control} />
       </div>
       <button className={styles.button} type="submit">
         Submit
-      </button>
+      </button>m
     </form>
   );
 }

@@ -1,11 +1,14 @@
 import { Fragment } from "react";
 import styles from "../styles/addRemoveInput.module.css";
 import { Control, UseFormRegister, useFieldArray } from "react-hook-form";
-import { FormWorkoutProps } from "./CreateWorkoutForm";
+import { CreateFormWorkoutProps } from "./CreateWorkoutForm";
+import { EditFormWorkoutProps } from "./EditWorkoutForm";
 
 interface TrainerTipsInputProps {
-  formControl: Control<FormWorkoutProps>;
-  register: UseFormRegister<FormWorkoutProps>;
+  formControlCreate?: Control<CreateFormWorkoutProps>;
+  registerCreate?: UseFormRegister<CreateFormWorkoutProps>;
+  formControlEdit?: Control<EditFormWorkoutProps>;
+  registerEdit?: UseFormRegister<EditFormWorkoutProps>;
 }
 
 export default function TrainerTipsInput({

@@ -7,12 +7,12 @@ import MobilityInput from "./MobilityInput";
 import TrainerTipsInput from "./TrainerTipsInput";
 import { SubmitHandler, useForm } from "react-hook-form";
 
-export interface FormWorkoutProps {
+export interface CreateFormWorkoutProps {
   name: string;
   mode: string;
   equipment: { value: string }[];
-  mobility: {value: string}[];
-  activation: {value: string}[];
+  mobility: { value: string }[];
+  activation: { value: string }[];
   exercises: { value: string }[];
   trainerTips: { value: string }[];
 }
@@ -36,19 +36,20 @@ export interface WorkoutData {
 }
 
 export default function WorkoutForm() {
-  const { reset, handleSubmit, register, control } = useForm<FormWorkoutProps>({
-    defaultValues: {
-      name: "",
-      mode: "",
-      equipment: [{ value: "" }],
-      mobility: [{ value: "" }],
-      activation: [{ value: "" }],
-      exercises: [{ value: "" }],
-      trainerTips: [{ value: "" }],
-    },
-  });
+  const { reset, handleSubmit, register, control } =
+    useForm<CreateFormWorkoutProps>({
+      defaultValues: {
+        name: "",
+        mode: "",
+        equipment: [{ value: "" }],
+        mobility: [{ value: "" }],
+        activation: [{ value: "" }],
+        exercises: [{ value: "" }],
+        trainerTips: [{ value: "" }],
+      },
+    });
 
-  const addWorkout: SubmitHandler<FormWorkoutProps> = ({
+  const addWorkout: SubmitHandler<CreateFormWorkoutProps> = ({
     name,
     mode,
     equipment,
@@ -94,19 +95,25 @@ export default function WorkoutForm() {
         />
       </label>
       <div className={styles.label}>
-        <EquipmentInput register={register} formControl={control} />
+        <EquipmentInput registerCreate={register} formControlCreate={control} />
       </div>
       <div className={styles.label}>
-          <MobilityInput register={register} formControl={control}/>
+        <MobilityInput registerCreate={register} formControlCreate={control} />
       </div>
       <div className={styles.label}>
-          <ActivationInput register={register} formControl={control}/>
+        <ActivationInput
+          registerCreate={register}
+          formControlCreate={control}
+        />
       </div>
       <div className={styles.label}>
-        <ExercisesInput register={register} formControl={control} />
+        <ExercisesInput registerCreate={register} formControlCreate={control} />
       </div>
       <div className={styles.label}>
-        <TrainerTipsInput register={register} formControl={control} />
+        <TrainerTipsInput
+          registerCreate={register}
+          formControlCreate={control}
+        />
       </div>
       <button className={styles.button} type="submit">
         Submit

@@ -36,18 +36,19 @@ export interface WorkoutData {
 }
 
 export default function WorkoutForm() {
-  const { reset, handleSubmit, register, control } =
-    useForm<CreateFormWorkoutProps>({
-      defaultValues: {
-        name: "",
-        mode: "",
-        equipment: [{ value: "" }],
-        mobility: [{ value: "" }],
-        activation: [{ value: "" }],
-        exercises: [{ value: "" }],
-        trainerTips: [{ value: "" }],
-      },
-    });
+  const methods = useForm<CreateFormWorkoutProps>({
+    defaultValues: {
+      name: "",
+      mode: "",
+      equipment: [{ value: "" }],
+      mobility: [{ value: "" }],
+      activation: [{ value: "" }],
+      exercises: [{ value: "" }],
+      trainerTips: [{ value: "" }],
+    },
+  });
+
+  const { reset, handleSubmit, register } = methods;
 
   const addWorkout: SubmitHandler<CreateFormWorkoutProps> = ({
     name,
@@ -115,52 +116,5 @@ export default function WorkoutForm() {
         </button>
       </form>
     </FormProvider>
-    <form className={styles.form} onSubmit={handleSubmit(addWorkout)}>
-      <label className={styles.label}>
-        Name
-        <input
-          type="text"
-          placeholder="Add workout name"
-          {...register("name", {
-            required: true,
-            minLength: 3,
-          })}
-        />
-      </label>
-      <label className={styles.label}>
-        Mode
-        <input
-          type="text"
-          placeholder="Add workout mode"
-          {...register("mode", {
-            required: true,
-          })}
-        />
-      </label>
-      <div className={styles.label}>
-        <EquipmentInput registerCreate={register} formControlCreate={control} />
-      </div>
-      <div className={styles.label}>
-        <MobilityInput registerCreate={register} formControlCreate={control} />
-      </div>
-      <div className={styles.label}>
-        <ActivationInput
-          registerCreate={register}
-          formControlCreate={control}
-        />
-      </div>
-      <div className={styles.label}>
-        <ExercisesInput registerCreate={register} formControlCreate={control} />
-      </div>
-      <div className={styles.label}>
-        <TrainerTipsInput
-          registerCreate={register}
-          formControlCreate={control}
-        />
-      </div>
-      <button className={styles.button} type="submit">
-        Submit
-      </button>
-    </form>
   );
 }

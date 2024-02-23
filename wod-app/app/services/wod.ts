@@ -46,7 +46,7 @@ export interface Workout {
 interface EditWorkoutParams {
   workoutId: string;
   updatedAt: string;
-  changes: Omit<Workout, 'createdAt' | 'updatedAt'>
+  changes: Omit<Workout, 'createdAt' | 'updatedAt' | 'id'>
 }
 
 async function getDatabase() {

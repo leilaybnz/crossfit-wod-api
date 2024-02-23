@@ -5,7 +5,7 @@ import EquipmentInput from "./EquipmentInput";
 import ExercisesInput from "./ExercisesInput";
 import MobilityInput from "./MobilityInput";
 import TrainerTipsInput from "./TrainerTipsInput";
-import { SubmitHandler, useForm } from "react-hook-form";
+import { FormProvider, SubmitHandler, useForm } from "react-hook-form";
 
 export interface EditFormWorkoutProps {
   name: string;
@@ -38,7 +38,7 @@ export interface WorkoutData {
 }
 
 export default function EditWorkoutForm(workout: WorkoutData) {
-  const { reset, handleSubmit, register, control } = useForm<EditFormWorkoutProps>({
+  const methods = useForm<EditFormWorkoutProps>({
     defaultValues: {
       name: workout.name,
       mode: workout.mode,
@@ -53,6 +53,8 @@ export default function EditWorkoutForm(workout: WorkoutData) {
       })),
     },
   });
+
+  const { reset, handleSubmit, register } = methods;
 
   const editWorkout: SubmitHandler<EditFormWorkoutProps> = ({
     name,

@@ -1,3 +1,4 @@
+import { FormProvider, SubmitHandler, useForm } from "react-hook-form";
 import { editWorkoutAction } from "../actions";
 import styles from "../styles/form.module.css";
 import ActivationInput from "./ActivationInput";
@@ -5,7 +6,6 @@ import EquipmentInput from "./EquipmentInput";
 import ExercisesInput from "./ExercisesInput";
 import MobilityInput from "./MobilityInput";
 import TrainerTipsInput from "./TrainerTipsInput";
-import { SubmitHandler, useForm } from "react-hook-form";
 
 export interface EditFormWorkoutProps {
   name: string;
@@ -38,7 +38,7 @@ export interface WorkoutData {
 }
 
 export default function EditWorkoutForm(workout: WorkoutData) {
-  const { reset, handleSubmit, register, control } = useForm<EditFormWorkoutProps>({
+  const methods = useForm<EditFormWorkoutProps>({
     defaultValues: {
       name: workout.name,
       mode: workout.mode,
@@ -53,6 +53,8 @@ export default function EditWorkoutForm(workout: WorkoutData) {
       })),
     },
   });
+
+  const { reset, handleSubmit, register, control } = methods;
 
   const editWorkout: SubmitHandler<EditFormWorkoutProps> = ({
     name,
@@ -83,46 +85,49 @@ export default function EditWorkoutForm(workout: WorkoutData) {
   };
 
   return (
-    <form className={styles.form} onSubmit={handleSubmit(editWorkout)}>
-      <label className={styles.label}>
-        Name
-        <input
-          type="text"
-          placeholder="Edit workout name"
-          {...register("name", {
-            required: true,
-            minLength: 3,
-          })}
-        />
-      </label>
-      <label className={styles.label}>
-        Mode
-        <input
-          type="text"
-          placeholder="Edit workout mode"
-          {...register("mode", {
-            required: true,
-          })}
-        />
-      </label>
-      <div className={styles.label}>
-        <EquipmentInput registerEdit={register} formControlEdit={control} />
-      </div>
-      <div className={styles.label}>
-        <MobilityInput registerEdit={register} formControlEdit={control} />
-      </div>
-      <div className={styles.label}>
-        <ActivationInput registerEdit={register} formControlEdit={control} />
-      </div>
-      <div className={styles.label}>
-        <ExercisesInput registerEdit={register} formControlEdit={control} />
-      </div>
-      <div className={styles.label}>
-        <TrainerTipsInput registerEdit={register} formControlEdit={control} />
-      </div>
-      <button className={styles.button} type="submit">
-        Submit
-      </button>m
-    </form>
+    <FormProvider {...methods}>
+      <form className={styles.form} onSubmit={handleSubmit(editWorkout)}>
+        <label className={styles.label}>
+          Name
+          <input
+            type="text"
+            placeholder="Edit workout name"
+            {...register("name", {
+              required: true,
+              minLength: 3,
+            })}
+          />
+        </label>
+        <label className={styles.label}>
+          Mode
+          <input
+            type="text"
+            placeholder="Edit workout mode"
+            {...register("mode", {
+              required: true,
+            })}
+          />
+        </label>
+        <div className={styles.label}>
+          <EquipmentInput />
+        </div>
+        <div className={styles.label}>
+          <MobilityInput registerEdit={register} formControlEdit={control} />
+        </div>
+        <div className={styles.label}>
+          <ActivationInput registerEdit={register} formControlEdit={control} />
+        </div>
+        <div className={styles.label}>
+          <ExercisesInput registerEdit={register} formControlEdit={control} />
+        </div>
+        <div className={styles.label}>
+          <TrainerTipsInput registerEdit={register} formControlEdit={control} />
+        </div>
+        <button className={styles.button} type="submit">
+          Submit
+        </button>
+        m
+      </form>
+    </FormProvider>
   );
 }

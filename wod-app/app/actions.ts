@@ -1,20 +1,20 @@
 "use server";
 
+import { randomUUID } from "crypto";
 import { revalidatePath } from "next/cache";
 import {
-  deleteWorkout,
-  deleteMember,
-  createNewWorkout,
-  createNewMember,
   Member,
   Workout,
+  createNewMember,
+  createNewWorkout,
+  deleteMember,
+  deleteWorkout,
   editWorkout,
 } from "./services/wod";
-import { randomUUID } from "crypto";
 
 interface EditWorkoutActionParams {
   workoutId: string;
-  changes: Omit<Workout, "createdAt">;
+  changes: Omit<Workout, "createdAt" | "id">;
 }
 
 export async function deleteWorkoutAction(workoutId: string) {

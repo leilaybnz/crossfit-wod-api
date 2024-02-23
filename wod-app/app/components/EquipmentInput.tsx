@@ -1,22 +1,14 @@
 import { Fragment } from "react";
 import styles from "../styles/addRemoveInput.module.css";
-import { Control, UseFormRegister, useFieldArray } from "react-hook-form";
-import { CreateFormWorkoutProps } from "./CreateWorkoutForm";
-import { EditFormWorkoutProps } from "./EditWorkoutForm";
+import { useFieldArray, useFormContext } from "react-hook-form";
 
-interface EquipmentInputProps {
-  formControlCreate?: Control<CreateFormWorkoutProps>; //que pasa cuando quiero usar estos inputs en el form para editar? no puedo tener un formControl del tipo de CreateFormWorkoutProps y un formControl de EditForm, lo mismo con register
-  registerCreate?: UseFormRegister<CreateFormWorkoutProps>;
-  formControlEdit?: Control<EditFormWorkoutProps>;
-  registerEdit?: UseFormRegister<EditFormWorkoutProps>;
-}
+export default function EquipmentInput() {
+  const { register, control } = useFormContext<{
+    equipment: { value: string }[];
+  }>();
 
-export default function EquipmentInput({
-  register,
-  formControl,
-}: EquipmentInputProps) {
   const { append, remove, fields } = useFieldArray({
-    control: formControl,
+    control: control,
     name: "equipment",
   });
 

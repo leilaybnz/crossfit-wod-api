@@ -83,46 +83,49 @@ export default function EditWorkoutForm(workout: WorkoutData) {
   };
 
   return (
-    <form className={styles.form} onSubmit={handleSubmit(editWorkout)}>
-      <label className={styles.label}>
-        Name
-        <input
-          type="text"
-          placeholder="Edit workout name"
-          {...register("name", {
-            required: true,
-            minLength: 3,
-          })}
-        />
-      </label>
-      <label className={styles.label}>
-        Mode
-        <input
-          type="text"
-          placeholder="Edit workout mode"
-          {...register("mode", {
-            required: true,
-          })}
-        />
-      </label>
-      <div className={styles.label}>
-        <EquipmentInput registerEdit={register} formControlEdit={control} />
-      </div>
-      <div className={styles.label}>
-        <MobilityInput registerEdit={register} formControlEdit={control} />
-      </div>
-      <div className={styles.label}>
-        <ActivationInput registerEdit={register} formControlEdit={control} />
-      </div>
-      <div className={styles.label}>
-        <ExercisesInput registerEdit={register} formControlEdit={control} />
-      </div>
-      <div className={styles.label}>
-        <TrainerTipsInput registerEdit={register} formControlEdit={control} />
-      </div>
-      <button className={styles.button} type="submit">
-        Submit
-      </button>m
-    </form>
+    <FormProvider {...methods}>
+      <form className={styles.form} onSubmit={handleSubmit(editWorkout)}>
+        <label className={styles.label}>
+          Name
+          <input
+            type="text"
+            placeholder="Edit workout name"
+            {...register("name", {
+              required: true,
+              minLength: 3,
+            })}
+          />
+        </label>
+        <label className={styles.label}>
+          Mode
+          <input
+            type="text"
+            placeholder="Edit workout mode"
+            {...register("mode", {
+              required: true,
+            })}
+          />
+        </label>
+        <div className={styles.label}>
+          <EquipmentInput />
+        </div>
+        <div className={styles.label}>
+          <MobilityInput />
+        </div>
+        <div className={styles.label}>
+          <ActivationInput />
+        </div>
+        <div className={styles.label}>
+          <ExercisesInput />
+        </div>
+        <div className={styles.label}>
+          <TrainerTipsInput />
+        </div>
+        <button className={styles.button} type="submit">
+          Submit
+        </button>
+        m
+      </form>
+    </FormProvider>
   );
 }

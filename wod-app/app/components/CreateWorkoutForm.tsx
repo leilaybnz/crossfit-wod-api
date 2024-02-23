@@ -5,7 +5,7 @@ import EquipmentInput from "./EquipmentInput";
 import ExercisesInput from "./ExercisesInput";
 import MobilityInput from "./MobilityInput";
 import TrainerTipsInput from "./TrainerTipsInput";
-import { SubmitHandler, useForm } from "react-hook-form";
+import { FormProvider, SubmitHandler, useForm } from "react-hook-form";
 
 export interface CreateFormWorkoutProps {
   name: string;
@@ -72,6 +72,49 @@ export default function WorkoutForm() {
   };
 
   return (
+    <FormProvider {...methods}>
+      <form className={styles.form} onSubmit={handleSubmit(addWorkout)}>
+        <label className={styles.label}>
+          Name
+          <input
+            type="text"
+            placeholder="Add workout name"
+            {...register("name", {
+              required: true,
+              minLength: 3,
+            })}
+          />
+        </label>
+        <label className={styles.label}>
+          Mode
+          <input
+            type="text"
+            placeholder="Add workout mode"
+            {...register("mode", {
+              required: true,
+            })}
+          />
+        </label>
+        <div className={styles.label}>
+          <EquipmentInput />
+        </div>
+        <div className={styles.label}>
+          <MobilityInput />
+        </div>
+        <div className={styles.label}>
+          <ActivationInput />
+        </div>
+        <div className={styles.label}>
+          <ExercisesInput />
+        </div>
+        <div className={styles.label}>
+          <TrainerTipsInput />
+        </div>
+        <button className={styles.button} type="submit">
+          Submit
+        </button>
+      </form>
+    </FormProvider>
     <form className={styles.form} onSubmit={handleSubmit(addWorkout)}>
       <label className={styles.label}>
         Name

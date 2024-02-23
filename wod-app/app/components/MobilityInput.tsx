@@ -1,22 +1,14 @@
 import { Fragment } from "react";
 import styles from "../styles/addRemoveInput.module.css";
-import { Control, UseFormRegister, useFieldArray } from "react-hook-form";
-import { CreateFormWorkoutProps } from "./CreateWorkoutForm";
-import { EditFormWorkoutProps } from "./EditWorkoutForm";
+import { useFieldArray, useFormContext } from "react-hook-form";
 
-interface EquipmentInputProps {
-  formControlCreate?: Control<CreateFormWorkoutProps>;
-  registerCreate?: UseFormRegister<CreateFormWorkoutProps>;
-  formControlEdit?: Control<EditFormWorkoutProps>;
-  registerEdit?: UseFormRegister<EditFormWorkoutProps>;
-}
+export default function MobilityInput() {
+  const { register, control } = useFormContext<{
+    mobility: { value: string }[];
+  }>();
 
-export default function MobilityInput({
-  register,
-  formControl,
-}: EquipmentInputProps) {
   const { append, remove, fields } = useFieldArray({
-    control: formControl,
+    control: control,
     name: "mobility",
   });
 

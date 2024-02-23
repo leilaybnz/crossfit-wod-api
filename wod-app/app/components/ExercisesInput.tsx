@@ -1,22 +1,14 @@
 import { Fragment } from "react";
 import styles from "../styles/addRemoveInput.module.css";
-import { CreateFormWorkoutProps } from "./CreateWorkoutForm";
-import { EditFormWorkoutProps } from "./EditWorkoutForm";
-import { Control, UseFormRegister, useFieldArray } from "react-hook-form";
+import { useFieldArray, useFormContext } from "react-hook-form";
 
-interface ExercisesInputProps {
-  formControlCreate?: Control<CreateFormWorkoutProps>;
-  registerCreate?: UseFormRegister<CreateFormWorkoutProps>;
-  formControlEdit?: Control<EditFormWorkoutProps>;
-  registerEdit?: UseFormRegister<EditFormWorkoutProps>;
-}
+export default function ExercisesInput() {
+  const { register, control } = useFormContext<{
+    exercises: { value: string }[];
+  }>();
 
-export default function ExercisesInput({
-  register,
-  formControl,
-}: ExercisesInputProps) {
   const { append, remove, fields } = useFieldArray({
-    control: formControl,
+    control: control,
     name: "exercises",
   });
 

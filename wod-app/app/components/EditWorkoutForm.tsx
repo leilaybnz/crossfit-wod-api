@@ -42,15 +42,20 @@ export default function EditWorkoutForm(workout: WorkoutData) {
     defaultValues: {
       name: workout.name,
       mode: workout.mode,
-      equipment: workout.equipment.map((equipment) => ({ value: equipment })),
-      mobility: workout.mobility.map((mobility) => ({ value: mobility })),
-      activation: workout.activation.map((activation) => ({
-        value: activation,
-      })),
-      exercises: workout.exercises.map((exercise) => ({ value: exercise })),
-      trainerTips: workout.trainerTips.map((trainerTip) => ({
-        value: trainerTip,
-      })),
+      equipment:
+        workout.equipment?.map((equipment) => ({ value: equipment })) ?? [],
+      mobility:
+        workout.mobility?.map((mobility) => ({ value: mobility })) ?? [],
+      activation:
+        workout.activation?.map((activation) => ({
+          value: activation,
+        })) ?? [],
+      exercises:
+        workout.exercises?.map((exercise) => ({ value: exercise })) ?? [],
+      trainerTips:
+        workout.trainerTips?.map((trainerTip) => ({
+          value: trainerTip,
+        })) ?? [],
     },
   });
 
@@ -108,6 +113,7 @@ export default function EditWorkoutForm(workout: WorkoutData) {
             })}
           />
         </label>
+        <pre>{JSON.stringify(workout, null, 2)}</pre>
         <div className={styles.label}>
           <EquipmentInput />
         </div>
@@ -126,7 +132,6 @@ export default function EditWorkoutForm(workout: WorkoutData) {
         <button className={styles.button} type="submit">
           Submit
         </button>
-        m
       </form>
     </FormProvider>
   );

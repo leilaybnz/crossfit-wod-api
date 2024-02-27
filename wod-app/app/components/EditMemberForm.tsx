@@ -1,10 +1,17 @@
-import { SubmitHandler, useForm } from "react-hook-form";
+import { FormProvider, SubmitHandler, useForm } from "react-hook-form";
 import styles from "../styles/form.module.css";
+import { MemberType } from "../types";
+import { editMemberAction } from "../actions";
+import { Gender } from "../services/wod";
 
-export interface FormMemberProps {
+export interface EditFormMemberProps {
   name: string;
   dateOfBirth: string;
   mail: string;
+  id: string;
+  password: string;
+  gender: Gender;
+  updatedAt: string;
 }
 
 export interface PatchMemberResponseData {
@@ -13,86 +20,82 @@ export interface PatchMemberResponseData {
 }
 
 export interface MemberData {
-  name: string;
-  dateOfBirth: string;
-  mail: string;
-  id: string;
-  password: string;
+  member: MemberType;
 }
 
-function patchMember(body: {
-  name: string;
-  dateOfBirth: string;
-  mail: string;
-}) {
-  return fetch("http://localhost:5000/api/v1/members", {
-    method: "PATCH",
-    body: JSON.stringify(body),
-    headers: {
-      "Content-type": "application/json; charset=UTF-8",
-    },
-  }).then((response) => response.json() as Promise<PatchMemberResponseData>);
-}
-
-export default function EditMemberForm() {
-  const { reset, handleSubmit, register } = useForm<FormMemberProps>({
+export default function EditMemberForm({ member }: MemberData) {
+  const methods = useForm<EditFormMemberProps>({
     defaultValues: {
-      name: "",
-      dateOfBirth: "",
-      mail: "",
+      name: member.name,
+      dateOfBirth: member.dateOfBirth,
+      mail: member.email,
     },
   });
 
-  const editMember: SubmitHandler<FormMemberProps> = ({
+  const { reset, handleSubmit, register } = methods;
+
+  const editMember: SubmitHandler<EditFormMemberProps> = ({
     name,
     dateOfBirth,
     mail,
+    password,
+    gender,
+    id,
+    updatedAt,
   }) => {
-    patchMember({
-      name: name,
-      dateOfBirth: dateOfBirth,
-      mail: mail,
+    editMemberAction({
+      memberId: id,
+      changes: {
+        name: name,
+        dateOfBirth: dateOfBirth,
+        mail: mail,
+        password: password,
+        gender: gender,
+        updatedAt: updatedAt,
+      },
     }).then(() => {
       reset();
     });
   };
   return (
-    <form className={styles.form} onSubmit={handleSubmit(editMember)}>
-      <label className={styles.label}>
-        Name:
-        <input
-          type="text"
-          placeholder="Edit member name"
-          {...register("name", {
-            required: true,
-            minLength: 3,
-          })}
-        />
-      </label>
-      <label className={styles.label}>
-        Birthday:
-        <input
-          type="date"
-          placeholder="Edit member birthday"
-          {...register("dateOfBirth", {
-            required: true,
-          })}
-        />
-      </label>
-      <label className={styles.label}>
-        Mail:
-        <input
-          type="text"
-          placeholder="Edit member mail"
-          {...register("mail", {
-            required: true,
-            minLength: 3,
-          })}
-        />
-      </label>
-      <button className={styles.button} type="submit">
-        Submit
-      </button>
-    </form>
+    <FormProvider {...methods}>
+      <form className={styles.form} onSubmit={handleSubmit(editMember)}>
+        <label className={styles.label}>
+          Name:
+          <input
+            type="text"
+            placeholder="Edit member name"
+            {...register("name", {
+              required: true,
+              minLength: 3,
+            })}
+          />
+        </label>
+        <label className={styles.label}>
+          Birthday:
+          <input
+            type="date"
+            placeholder="Edit member birthday"
+            {...register("dateOfBirth", {
+              required: true,
+            })}
+          />
+        </label>
+        <label className={styles.label}>
+          Mail:
+          <input
+            type="text"
+            placeholder="Edit member mail"
+            {...register("mail", {
+              required: true,
+              minLength: 3,
+            })}
+          />
+        </label>
+        <button className={styles.button} type="submit">
+          Submit
+        </button>
+      </form>
+    </FormProvider>
   );
 }

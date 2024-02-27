@@ -2,12 +2,13 @@ import { useState } from "react";
 import styles from "../styles/editButton.module.css";
 import EditSvg from "./EditSvg";
 import EditMemberForm from "./EditMemberForm";
+import { MemberType } from "../types";
 
 interface EditMemberButtonProps {
-  memberId: string;
+  member: MemberType;
 }
 
-export default function EditMemberButton({ memberId }: EditMemberButtonProps) {
+export default function EditMemberButton({ member }: EditMemberButtonProps) {
   const [isFormOpen, setIsFormOpen] = useState(false);
 
   return (
@@ -19,7 +20,7 @@ export default function EditMemberButton({ memberId }: EditMemberButtonProps) {
       >
         <EditSvg />
       </button>
-      {isFormOpen && <EditMemberForm />}
+      {isFormOpen && <EditMemberForm member={member} />}
     </>
   );
 }

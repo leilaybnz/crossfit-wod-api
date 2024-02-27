@@ -1,5 +1,6 @@
 import { editWorkoutAction } from "../actions";
 import styles from "../styles/form.module.css";
+import { WorkoutType } from "../types";
 import ActivationInput from "./ActivationInput";
 import EquipmentInput from "./EquipmentInput";
 import ExercisesInput from "./ExercisesInput";
@@ -16,6 +17,7 @@ export interface EditFormWorkoutProps {
   exercises: { value: string }[];
   trainerTips: { value: string }[];
   id: string;
+  createdAt: string;
   updatedAt: string;
 }
 
@@ -25,19 +27,10 @@ export interface PatchWorkoutResponseData {
 }
 
 export interface WorkoutData {
-  name: string;
-  mode: string;
-  equipment: string[];
-  mobility: string[];
-  activation: string[];
-  exercises: string[];
-  trainerTips: string[];
-  id: string;
-  createdAt: string;
-  updatedAt: string;
+  workout: WorkoutType;
 }
 
-export default function EditWorkoutForm(workout: WorkoutData) {
+export default function EditWorkoutForm({ workout }: WorkoutData) {
   const methods = useForm<EditFormWorkoutProps>({
     defaultValues: {
       name: workout.name,
@@ -47,15 +40,11 @@ export default function EditWorkoutForm(workout: WorkoutData) {
       mobility:
         workout.mobility?.map((mobility) => ({ value: mobility })) ?? [],
       activation:
-        workout.activation?.map((activation) => ({
-          value: activation,
-        })) ?? [],
+        workout.activation?.map((activation) => ({ value: activation })) ?? [],
       exercises:
         workout.exercises?.map((exercise) => ({ value: exercise })) ?? [],
       trainerTips:
-        workout.trainerTips?.map((trainerTip) => ({
-          value: trainerTip,
-        })) ?? [],
+        workout.trainerTips?.map((trainerTip) => ({ value: trainerTip })) ?? [],
     },
   });
 

@@ -3,7 +3,18 @@ import { kv } from "@vercel/kv";
 export interface CrossfitDatabase {
   workouts: Workout[];
   members: Member[];
-  records: Record[];
+}
+export interface Workout {
+  name: string;
+  mode: string;
+  equipment: string[];
+  exercises: string[];
+  trainerTips?: string[];
+  id: string;
+  mobility?: string[];
+  activation?: string[];
+  updatedAt: string;
+  createdAt: string;
 }
 
 export interface Member {
@@ -20,33 +31,16 @@ export interface Member {
 
 export type Gender = "female" | "male";
 
-export interface Record {
-  workout: string;
-  record: string;
-  id: string;
-  createdAt: string;
-  updatedAt: string;
-  memberId?: string;
-  member: string;
-}
-
-export interface Workout {
-  name: string;
-  mode: string;
-  equipment: string[];
-  exercises: string[];
-  trainerTips?: string[];
-  id: string;
-  mobility?: string[];
-  activation?: string[];
-  updatedAt: string;
-  createdAt: string;
-}
-
 interface EditWorkoutParams {
   workoutId: string;
   updatedAt: string;
-  changes: Omit<Workout, 'createdAt' | 'updatedAt' | 'id'>
+  changes: Omit<Workout, "createdAt" | "updatedAt" | "id">;
+}
+
+interface EditMemberParams {
+  memberId: string;
+  updatedAt: string;
+  changes: Omit<Member, "createdAt" | "updatedAt" | "id">;
 }
 
 async function getDatabase() {
@@ -135,12 +129,11 @@ export async function createNewMember(newMember: Member) {
   return newMember;
 }
 
-export async function editWorkout({workoutId, changes}: EditWorkoutParams) {
+export async function editWorkout({ workoutId, changes }: EditWorkoutParams) {
   const db = await getDatabase();
 
   const isAlreadyAdded =
-    db.workouts.findIndex((workout) => workout.name === changes.name) >
-    -1;
+    db.workouts.findIndex((workout) => workout.name === changes.name) > -1;
 
   if (isAlreadyAdded) {
     throw new AlreadyExistsError(
@@ -161,7 +154,7 @@ export async function editWorkout({workoutId, changes}: EditWorkoutParams) {
 
   const updatedWorkout = {
     ...db.workouts[indexForUpdate],
-    ...changes
+    ...changes,
   };
 
   db.workouts[indexForUpdate] = updatedWorkout;
@@ -169,4 +162,35 @@ export async function editWorkout({workoutId, changes}: EditWorkoutParams) {
   return updatedWorkout;
 }
 
-export async function editMember(existingMember: Member) {}
+export async function editMember({ memberId, changes }: EditMemberParams) {
+  const db = await getDatabase();
+
+  const isAlreadyAdded =
+    db.members.findIndex((member) => member.name === changes.name) > -1;
+
+  if (isAlreadyAdded) {
+    throw new AlreadyExistsError(
+      `Member with the name '${changes.name}' already exists`
+    );
+  }
+
+  const indexForUpdate = db.members.findIndex(
+    (member) => member.id === memberId
+  );
+
+  if (indexForUpdate === -1) {
+    throw {
+      status: 400,
+      message: `Cannot find member with the id '${memberId}'`,
+    };
+  }
+
+  const updatedMember = {
+    ...db.members[indexForUpdate],
+    ...changes,
+  };
+
+  db.members[indexForUpdate] = updatedMember;
+  await saveToDatabase(db);
+  return updatedMember;
+}

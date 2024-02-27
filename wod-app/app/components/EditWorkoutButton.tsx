@@ -2,9 +2,10 @@ import { useState } from "react";
 import styles from "../styles/editButton.module.css";
 import EditSvg from "./EditSvg";
 import EditWorkoutForm from "./EditWorkoutForm";
+import { WorkoutType } from "../types";
 
 interface EditWorkoutButtonProps {
-  workout: string;
+  workout: WorkoutType;
 }
 
 export default function EditWorkoutButton({

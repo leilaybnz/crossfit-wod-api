@@ -8,9 +8,7 @@ interface EditWorkoutButtonProps {
   workout: WorkoutType;
 }
 
-export default function EditWorkoutButton({
-  workout,
-}: EditWorkoutButtonProps) {
+export default function EditWorkoutButton({ workout }: EditWorkoutButtonProps) {
   const [isFormOpen, setIsFormOpen] = useState(false);
 
   return (
@@ -22,9 +20,7 @@ export default function EditWorkoutButton({
       >
         <EditSvg />
       </button>
-      {isFormOpen && (
-        <EditWorkoutForm workout={workout}/>
-      )}
+      {isFormOpen && <EditWorkoutForm workout={workout} />}
     </>
   );
 }

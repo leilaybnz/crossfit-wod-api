@@ -4,8 +4,11 @@
   justify-content: center;
   /* padding: 25px; */
   padding: 30px 0px;
-  box-shadow: 0 0 6px 6px aquamarine;
+  /* box-shadow: 0 0 6px 6px aquamarine; */
   border-radius: 5px;
+  /* border: 1px solid aquamarine; */
+  background: linear-gradient(#212121, #212121) padding-box, linear-gradient(145deg, aquamarine, blueviolet) border-box;
+  border: 2px solid transparent;
 }
 
 .formEdit {
@@ -14,8 +17,9 @@
   justify-content: center;
   /* padding: 25px; */
   padding: 15px 0px;
-  box-shadow: 0 0 6px 6px aquamarine;
+  /* box-shadow: 0 0 6px 6px aquamarine; */
   border-radius: 5px;
+  border: 1px solid aquamarine;
 }
 
 .label {
@@ -65,24 +69,27 @@
   margin-top: 30px;
   font-family: monospace;
   font-size: 16px;
-  background-color: #3b3b3b;
-  border: none;
+  background-color: black;
+  /* border: none; */
   border-radius: 5px;
-  -webkit-box-shadow: 0px 0px 6px 1px rgba(222, 150, 159, 1);
+  /* -webkit-box-shadow: 0px 0px 6px 1px rgba(222, 150, 159, 1);
   -moz-box-shadow: 0px 0px 6px 1px rgba(222, 150, 159, 1);
-  box-shadow: 0px 0px 6px 1px rgba(222, 150, 159, 1);
+  box-shadow: 0px 0px 6px 1px rgba(222, 150, 159, 1); */
+  border: 1px solid rgba(222, 150, 159, 1);
 }
 
-.button:active {
-  box-shadow: 0px 0px 5px rgba(130, 203, 202, 1);
+.button:active, .button:hover {
+  /* box-shadow: 0px 0px 5px rgba(130, 203, 202, 1);
   -webkit-box-shadow: 0px 0px 5px rgba(130, 203, 202, 1);
-  -moz-box-shadow: 0px 0px 5px rgba(130, 203, 202, 1);
+  -moz-box-shadow: 0px 0px 5px rgba(130, 203, 202, 1); */
+  border:  1px solid rgba(130, 203, 202, 1);
 }
 
 .button:focus {
-  -webkit-box-shadow: 0px 0px 5px rgba(149, 62, 222, 1);
+  /* -webkit-box-shadow: 0px 0px 5px rgba(149, 62, 222, 1);
   -moz-box-shadow: 0px 0px 5px rgba(149, 62, 222, 1);
-  box-shadow: 0px 0px 5px rgba(149, 62, 222, 1);
+  box-shadow: 0px 0px 5px rgba(149, 62, 222, 1); */
+  border: 1px solid rgba(149, 62, 222, 1);
 }
 
 .formEdit .button {
@@ -93,7 +100,7 @@
   font-family: monospace;
   font-size: 15px;
   background-color: #3b3b3b;
-  border: none;
   border-radius: 5px;
   box-shadow: 0px 0px 6px 1px rgba(222, 150, 159, 1);
+  border: 1px solid rgba(222, 150, 159, 1);
 }

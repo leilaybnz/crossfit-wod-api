@@ -20,7 +20,7 @@ export default function Member({ member }: MemberProps) {
       <p className={styles.name}>
         Mail: <span className={styles.text}>{member.email}</span>
       </p>
-      <EditMemberButton memberId={member.id} />
+      <EditMemberButton member={member} />
       <DeleteMemberButton memberId={member.id} />
     </article>
   );

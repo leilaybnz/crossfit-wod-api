@@ -26,6 +26,7 @@ export interface MemberData {
 export default function EditMemberForm({ member }: MemberData) {
   const methods = useForm<EditFormMemberProps>({
     defaultValues: {
+      id: member.id,
       name: member.name,
       dateOfBirth: member.dateOfBirth,
       mail: member.email,

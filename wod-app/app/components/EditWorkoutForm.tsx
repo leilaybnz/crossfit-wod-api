@@ -33,6 +33,7 @@ export interface WorkoutData {
 export default function EditWorkoutForm({ workout }: WorkoutData) {
   const methods = useForm<EditFormWorkoutProps>({
     defaultValues: {
+      id: workout.id,
       name: workout.name,
       mode: workout.mode,
       equipment:

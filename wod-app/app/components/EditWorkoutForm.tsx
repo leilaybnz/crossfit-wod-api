@@ -80,8 +80,8 @@ export default function EditWorkoutForm({ workout }: WorkoutData) {
 
   return (
     <FormProvider {...methods}>
-      <form className={styles.form} onSubmit={handleSubmit(editWorkout)}>
-        <label className={styles.label}>
+      <form className={styles.formEdit} onSubmit={handleSubmit(editWorkout)}>
+        <label className={styles.labelEdit}>
           Name
           <input
             type="text"
@@ -92,7 +92,7 @@ export default function EditWorkoutForm({ workout }: WorkoutData) {
             })}
           />
         </label>
-        <label className={styles.label}>
+        <label className={styles.labelEdit}>
           Mode
           <input
             type="text"
@@ -102,20 +102,20 @@ export default function EditWorkoutForm({ workout }: WorkoutData) {
             })}
           />
         </label>
-        <pre>{JSON.stringify(workout, null, 2)}</pre>
-        <div className={styles.label}>
+        {/* <pre>{JSON.stringify(workout, null, 2)}</pre> */}
+        <div className={styles.labelEdit}>
           <EquipmentInput />
         </div>
-        <div className={styles.label}>
+        <div className={styles.labelEdit}>
           <MobilityInput />
         </div>
-        <div className={styles.label}>
+        <div className={styles.labelEdit}>
           <ActivationInput />
         </div>
-        <div className={styles.label}>
+        <div className={styles.labelEdit}>
           <ExercisesInput />
         </div>
-        <div className={styles.label}>
+        <div className={styles.labelEdit}>
           <TrainerTipsInput />
         </div>
         <button className={styles.button} type="submit">

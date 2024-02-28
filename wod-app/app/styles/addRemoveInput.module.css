@@ -1,6 +1,5 @@
 .form {
   display: block;
-  position: relative;
 }
 
 .form label {
@@ -13,31 +12,36 @@
 }
 
 .buttonContainer {
-  display: inline;
+  /* display: inline;
   position: absolute;
   right: -3.4rem;
-  bottom: 0.1rem;
+  bottom: 0.1rem; */
+  display: flex;
+  justify-content: center;
+  margin-top: 14px;
 }
 
 .button {
-  height: 18px;
-  width: 18px;
+  display: flex;
+  justify-content: center;
+  height: 20px;
+  width: 20px;
   padding: 1px 5px;
   background-color: #3b3b3b;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  -webkit-box-shadow: 0px 0px 6px 1px rgba(222, 150, 159, 1);
-  -moz-box-shadow: 0px 0px 6px 1px rgba(222, 150, 159, 1);
-  box-shadow: 0px 0px 6px 1px rgba(222, 150, 159, 1);
+  -webkit-box-shadow: 0px 0px 6px 1px rgba(199,230,172,1);
+  -moz-box-shadow: 0px 0px 6px 1px rgba(199,230,172,1);
+  box-shadow: 0px 0px 6px 1px rgba(199,230,172,1);
 }
 
-.button.add {
+/* .button.add {
   margin-left: 10px;
-}
+} */
 
 .button.remove {
-  margin-left: 10px;
+  margin-left: 20px;
 }
 
 .button:active {

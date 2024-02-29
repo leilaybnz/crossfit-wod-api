@@ -47,7 +47,7 @@ export default function EquipmentInput() {
         </button>
         <button
           type="button"
-          onClick={() => removeInput(index)}
+          onClick={() => removeInput(fields.length - 1)}
           className={`${styles.button} ${styles.remove}`}
         >
           -

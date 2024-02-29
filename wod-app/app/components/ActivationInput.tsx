@@ -34,25 +34,25 @@ export default function ActivationInput() {
                 className={styles.input}
               />
             </div>
-            <div className={styles.buttonContainer}>
-              <button
-                type="button"
-                onClick={addInput}
-                className={`${styles.button} ${styles.add}`}
-              >
-                +
-              </button>
-              <button
-                type="button"
-                onClick={() => removeInput(index)}
-                className={`${styles.button} ${styles.remove}`}
-              >
-                -
-              </button>
-            </div>
           </Fragment>
         );
       })}
+      <div className={styles.buttonContainer}>
+        <button
+          type="button"
+          onClick={addInput}
+          className={`${styles.button} ${styles.add}`}
+        >
+          +
+        </button>
+        <button
+          type="button"
+          onClick={() => removeInput(fields.length - 1)}
+          className={`${styles.button} ${styles.remove}`}
+        >
+          -
+        </button>
+      </div>
     </div>
   );
 }

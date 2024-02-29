@@ -22,7 +22,7 @@ export interface Member {
   name: string;
   gender: Gender;
   dateOfBirth: string;
-  mail: string;
+  email: string;
   password: string;
   member?: string;
   createdAt?: string;

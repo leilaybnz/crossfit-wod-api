@@ -23,7 +23,7 @@ export default function RootLayout({children}:{children: React.ReactNode}) {
         <main className={styles.main}>
           <Nav />
           {children}
-          <LanguageButton />
+          {/* <LanguageButton /> */}
           <Footer />
         </main>
       </body>

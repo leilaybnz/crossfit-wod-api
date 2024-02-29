@@ -22,6 +22,10 @@
   position: relative;
 }
 
+.content {
+  margin-top: 20px;
+}
+
 .title {
   font-size: calc(21px + 0.390625vw);
   text-align: center;

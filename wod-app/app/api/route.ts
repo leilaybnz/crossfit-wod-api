@@ -7,7 +7,7 @@ import {
   createNewWorkout,
 } from "../services/wod";
 
-export async function postWorkout(request: NextRequest) {
+export async function POST(request: NextRequest) {
   const body = await request.json();
 
   if (

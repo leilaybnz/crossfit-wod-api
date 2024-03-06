@@ -12,6 +12,7 @@ import {
   editMember,
 } from "./services/wod";
 import { randomUUID } from "crypto";
+import { signIn } from 'next-auth/react';
 
 interface EditWorkoutActionParams {
   workoutId: string;
@@ -93,4 +94,21 @@ export async function editMemberAction({
       timeZone: "America/Buenos_Aires",
     }),
   });
+}
+
+ 
+export async function authenticate(_currentState: unknown, formData: FormData) {
+  try {
+    await signIn('credentials', formData)
+  } catch (error) {
+    if (error) {
+      switch (error.type) {
+        case 'CredentialsSignin':
+          return 'Invalid credentials.'
+        default:
+          return 'Something went wrong.'
+      }
+    }
+    throw error
+  }
 }

@@ -45,7 +45,7 @@ export default function MemberForm() {
     createMemberAction({
       name: name,
       dateOfBirth: dateOfBirth,
-      mail: mail,
+      email: mail,
       gender: gender,
       id: id,
       password: password,

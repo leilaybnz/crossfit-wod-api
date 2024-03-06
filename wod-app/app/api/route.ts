@@ -89,7 +89,7 @@ export async function POST(request: NextRequest) {
   }
 }
 
-export async function postMember(request: NextRequest) {
+export async function GET(request: NextRequest) {
   const body = await request.json();
 
   if (

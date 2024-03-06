@@ -7,7 +7,7 @@ import { Gender } from "../services/wod";
 export interface EditFormMemberProps {
   name: string;
   dateOfBirth: string;
-  mail: string;
+  email: string;
   id: string;
   password: string;
   gender: Gender;
@@ -29,7 +29,7 @@ export default function EditMemberForm({ member }: MemberData) {
       id: member.id,
       name: member.name,
       dateOfBirth: member.dateOfBirth,
-      mail: member.email,
+      email: member.email,
     },
   });
 
@@ -38,7 +38,7 @@ export default function EditMemberForm({ member }: MemberData) {
   const editMember: SubmitHandler<EditFormMemberProps> = ({
     name,
     dateOfBirth,
-    mail,
+    email,
     password,
     gender,
     id,
@@ -49,7 +49,7 @@ export default function EditMemberForm({ member }: MemberData) {
       changes: {
         name: name,
         dateOfBirth: dateOfBirth,
-        mail: mail,
+        email: email,
         password: password,
         gender: gender,
         updatedAt: updatedAt,
@@ -87,7 +87,7 @@ export default function EditMemberForm({ member }: MemberData) {
           <input
             type="text"
             placeholder="Edit member mail"
-            {...register("mail", {
+            {...register("email", {
               required: true,
               minLength: 3,
             })}
